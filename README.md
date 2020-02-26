@@ -69,7 +69,7 @@ As a user I should be able to...
   | --- | --- | --- |
   | GET_ACTIVITY | activity | For accessing the chosen activity (inside activity data includes difficulty, locations and meetup posts)| 
   | GET_ACTIVITIES | activity | For accessing all activities to display on the homepage |
-  | GET_LOCATION |  | For displaying the l |
+  | GET_LOCATION |  | For displaying the currentlocation |
   | SET_SKILL_LEVEL | posts | For accessing and displaying posts based on skill level   |
   | GET_POSTS | posts | For accessing the posts that having the same location id |
   | ADD_POST | posts | To Make a post and add it to posts |
@@ -81,7 +81,7 @@ As a user I should be able to...
 | Method | Endpoint | Protected | Usage | Response |
 | --- | --- | --- | --- | --- |
 | Get | /api/v1/activities | No | Get activities | Array of activity objects |
-| Get | /api/v1/activities/:id | No | Get chosen activity and corresponding locations | object |
+| Get | /api/v1/activities/:id | No | Get chosen activities corresponding locations | object |
 | Get | /api/v1/posts/:id | No | get posts for a certain location using location id | object |
 | POST | /api/v1/posts | Yes (if we do it) | post a post to the database| null |
 | POST | /api/v1/posts/rsvp | Yes (if we do it) | set rsvp for a post | null |
