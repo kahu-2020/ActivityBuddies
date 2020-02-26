@@ -1,4 +1,4 @@
-# Lost and Found
+# ActivityBuddies
 
 ##Final Group Project
 
@@ -106,7 +106,6 @@ As a user I should be able to...
   | --- | --- | --- |
   | id | Integer | Unique identifier for each location |
   | name | String | Name of each location |
-  | post_id | integer | Foreign key for posts |
   | activity_id | integer | foreign key of activities |
 
 ### Posts
@@ -121,6 +120,7 @@ As a user I should be able to...
  | time | string | displayed for time of post (will be called on expiry) |
  | tracks | string | post tracks |
  | skill | string | post skill level of post |
+ | location_id | integer | Foreign key for locations |
  ---
 
 
