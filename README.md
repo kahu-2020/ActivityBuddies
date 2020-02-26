@@ -58,18 +58,22 @@ As a user I should be able to...
   | name | purpose |
   | --- | --- |
   | auth(*stretch) | Store information regarding user logins, auth status and auth errors | 
-  | skillLevel | Changes the CSS of the meetups posting |
-  | currentActivity | Hold current location information |
+  | skillLevel (this is local state, not reducer)| Changes the CSS of the meetups posting |
+  | currentActivity | Hold current activity information |
+  | currentLocation | Hold current location information |
   | posts | posts and changes posts |
+  
 ## Actions (Client Side)
 
   | type | data | purpose |
   | --- | --- | --- |
   | GET_ACTIVITY | activity | For accessing the chosen activity (inside activity data includes difficulty, locations and meetup posts)| 
-  | SET_SKILL_LEVEL | posts | For accessing  |
+  | GET_ACTIVITIES | activity | For accessing all activities to display on the homepage |
+  | GET_LOCATION |  | For displaying the l |
+  | SET_SKILL_LEVEL | posts | For accessing and displaying posts based on skill level   |
   | GET_POSTS | posts | For accessing the posts that having the same location id |
   | ADD_POST | posts | To Make a post and add it to posts |
-  | SET_RSVP | posts | Chnages the display of post referring to the number of people going |
+  | SET_RSVP | posts | Changes the display of post referring to the number of people going |
 
 
 ## API (Client - Server)
