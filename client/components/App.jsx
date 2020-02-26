@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { HashRouter as Router, Route } from 'react-router-dom'
+import ActivityList from './ActivityList'
 
 
 class App extends React.Component{
@@ -9,6 +10,7 @@ class App extends React.Component{
   return (
     <Router>
       <div>
+        <Route path="/" component={ActivityList} />
       </div>
     </Router>
 
