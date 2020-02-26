@@ -11,3 +11,8 @@ router.get('/:id', (req, res) => {
     db.getLocations(req.params.id)
       .then(locations => res.json(locations))
   })
+
+
+
+  
+  module.exports = router
