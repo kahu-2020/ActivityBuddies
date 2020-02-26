@@ -11,3 +11,8 @@ server.use('/api/v1/activities', activitiesRoutes)
 server.use('/api/v1/posts', postsRoutes)
 
 module.exports = server
+
+
+
+
+
