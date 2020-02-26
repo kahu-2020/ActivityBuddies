@@ -141,6 +141,37 @@ To run in production:
 npm start
 ```
 
+### Git - Managing Branches
+
+Pull down dev branch - git pull origin dev
+
+Checkout to feature branch - git checkout feature_branch
+
+git add
+
+git commit -m "commmit message"
+
+git checkout dev
+
+git pull origin dev
+
+git checkout feature_branch
+
+git pull origin dev
+
+fix all conflicts - check localhost still works*
+
+git add
+
+git commit
+
+git push origin feature_branch
+
+create pull request in Github
+
+notify git master
+
+
 
 ## Heroku!!!
 
