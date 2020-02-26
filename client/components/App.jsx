@@ -1,10 +1,18 @@
 import React from 'react'
 
+import { HashRouter as Router, Route } from 'react-router-dom'
 
-const App = () => (
-  <div className='app'>
 
-  </div>
-)
+class App extends React.Component{
+
+  render() {
+  return (
+    <Router>
+      <div>
+      </div>
+    </Router>
+
+  )}
+}
 
 export default App

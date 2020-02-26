@@ -1,2 +1,7 @@
 node_modules
-bundle*
+static
+npm-debug.log
+dev.sqlite3
+bundle.js
+bundle.js.map
+.env
