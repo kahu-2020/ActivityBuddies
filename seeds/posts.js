@@ -15,6 +15,7 @@ exports.seed = function (knex) {
           location_id: ''
         },
         {
+          id: 2,
           user_name: 'Claire',
           notes: 'double shakka',
           dateTime: '',
@@ -23,6 +24,7 @@ exports.seed = function (knex) {
           location_id: ''
         },
         {
+          id: 3,
           user_name: 'Ethan',
           notes: 'has anyone seen Lui?',
           dateTime: '',
