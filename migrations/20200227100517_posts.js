@@ -4,10 +4,10 @@ exports.up = function(knex) {
     table.increments('id').primary()
     table.string('user_name')
     table.string('notes')
-    table.interger('dateTime')
+    table.integer('dateTime')
     table.string('tracks')
     table.string('skill')
-    table.interger('location_id')
+    table.integer('location_id')
   })
 };
 
