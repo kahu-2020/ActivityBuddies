@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { HashRouter as Router, Route } from 'react-router-dom'
-import ActivityList from './ActivityList'
+import Home from './Home'
 
 import AddPostForm from './AddPostForm'
 
@@ -11,7 +11,7 @@ class App extends React.Component{
   return (
     <Router>
       <div>
-        <Route path="/" component={ActivityList} />
+        <Route path="/" component={Home} />
         <Route path='/addpostform' component={AddPostForm} />
       </div>
     </Router>
