@@ -16,6 +16,11 @@ class AddPostForm extends React.Component {
     })
   }
 
+  handleChange = (e) => {
+    console.log
+  }
+  
+
   render() {
     return (
     <div className='addPostForm'>

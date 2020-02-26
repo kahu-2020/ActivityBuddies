@@ -11,7 +11,4 @@ router.get('/:id', (req, res) => {
       .then(locations => res.json(locations))
   })
 
-
-
-
-  module.exports = router
+module.exports = router

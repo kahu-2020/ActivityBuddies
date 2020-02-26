@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.use(express.json())
 
+//get.router('/')
 
 
-
-  module.exports = router
+module.exports = router
