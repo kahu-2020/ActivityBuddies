@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
   return knex.schema.createTable('activities', (table) => {
-      table.increment().primary
+      table.increments('id').primary
       table.string('name')
       table.string('symbol')
       table.string('color')
