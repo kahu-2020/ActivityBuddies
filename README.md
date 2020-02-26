@@ -1,4 +1,4 @@
-# Lost and Found
+# ActivityBuddies
 
 ##Final Group Project
 
