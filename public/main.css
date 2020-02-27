@@ -1,6 +1,40 @@
+
+.act-btn {
+    color: white;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 100px;
+
+
+}
+
+.activity-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-shadow: black 2px 2px;
+}
+
+.about-blurb {
+    font-size: 50px;
+    color: white;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-shadow: black 2px 2px;
+    margin: 5px 10% 5px 10%;
+    font-family: 'Courgette';
+
+
+}
 body {
     font-size: 25px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans JP' ;
     color: white;
     margin: 0px 0px;
     background-image: url('images/cliff.jpg');
