@@ -35,6 +35,7 @@ class AddPostForm extends React.Component {
     e.preventDefault()
 
     const post = this.state
+    this.props.goBack()
     return addPostApi(post)
   }
 
@@ -42,7 +43,7 @@ class AddPostForm extends React.Component {
     return (
     <div className='addPostForm'>
 
-      <button>Go back</button>
+      <button onClick={this.props.goBack}>Go back</button>
 
       {/* Add new post form */}
       <h4>Add your new post here!</h4>
