@@ -4,7 +4,12 @@ const router = express.Router()
 
 router.use(express.json())
 
-//get.router('/')
+
+//router to get all posts
+router.get('/', (req, res) => {
+  db.getPosts(req.params.id)
+  .then(posts => res.json(posts))
+})
 
 
 module.exports = router
