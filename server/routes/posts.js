@@ -5,10 +5,15 @@ const router = express.Router()
 router.use(express.json())
 
 
-//router to get all posts
-router.get('/', (req, res) => {
-  db.getPosts(req.params.id)
-  .then(posts => res.json(posts))
+//router to add new posts
+router.post('/', (req, res) => {
+  const newPost = req.body
+  console.log(req.body)
+  db.addPost(newPost)
+  .then(newPost => {
+    console.log(newPost)
+    res.redirect('/')
+  })
 })
 
 

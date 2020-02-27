@@ -17,9 +17,23 @@ function getActivities(db = connection) {
         .select('*')
 }
 
+// add new meetup post to database
+function addPost (db = connection) {
+    return db('posts')
+        .insert({
+            user_name: '',
+            notes: '',
+            dateTime: '',
+            tracks: '',
+            skill: '',
+            location_id: ''
+        })
+}
+
 
 
 module.exports = {
     getLocations: getLocations, 
-    getActivities: getActivities
+    getActivities: getActivities,
+    addPost: addPost
 }
