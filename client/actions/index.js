@@ -15,3 +15,13 @@ export function setCurrentLocation(location){
         currentLocation: location
     }
 }
+
+export function getLocations(id) {
+    return (dispatch) => {
+        request.get('/api/v1/activities/'+id) // fix id is it $id
+        .then(res => res.body)
+        .then(locations => {
+            dispatch(gotLocations(locations))
+        })
+    }
+}

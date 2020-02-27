@@ -41,7 +41,7 @@ class Locations extends React.Component {
                     <h2>Locations to choose from</h2>
                     <div className='locationList'>
                         {this.props.locations.map(location => {
-                            return <p onClick={() => handleClick(location)}>{location}</p>
+                            return <p key={location.id} onClick={() => handleClick(location)}>{location.name}</p>
                         })}
                     </div>
                 </div>
