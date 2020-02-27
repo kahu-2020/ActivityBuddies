@@ -3,7 +3,6 @@ import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import Home from './Home'
 
-import ActivityList from './ActivityList'
 import AddPostForm from './AddPostForm'
 import Locations from './Locations'
 
