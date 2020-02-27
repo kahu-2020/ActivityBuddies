@@ -13,7 +13,7 @@ class App extends React.Component{
   return (
     <Router>
       <div>
-        <Route exact path="/" component={ActivityList} />
+        <Route exact path="/" component={Home} />
         <Route path='/locations' component={Locations} />
         <Route path='/addpostform' component={AddPostForm} />
       </div>
