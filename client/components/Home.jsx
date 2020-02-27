@@ -17,6 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+          <h1>Activity Buddies</h1>
           <ActivityList/>
       </div>
     )

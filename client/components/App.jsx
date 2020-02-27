@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { HashRouter as Router, Route } from 'react-router-dom'
-import ActivityList from './ActivityList'
+import Home from './Home'
 
 //Component Imports
 import LocationMeetups from './LocationMeetups'
