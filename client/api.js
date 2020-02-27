@@ -18,6 +18,13 @@ export function getActivities() {
     })
 }
 
+export function getPostsByLocationId(locationId) {
+    return request.get('api/v1/posts/' + locationId)
+    .then(res => {
+        return res.body
+    })
+}
+
 // function to add posts to the api
 export function addPostApi(newPost) {
     return request.post('api/v1/posts')
