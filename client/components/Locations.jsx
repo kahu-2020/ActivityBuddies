@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-// import { actionName } from '../actions/index'
+import { getLocations } from '../actions/index'
+import { setCurrentLocation } from '../actions/index'
 
 
 
@@ -13,16 +14,16 @@ class Locations extends React.Component {
     }
 
 
-    // componentDidMount() {
-    //     this.props.dispatch(getLocations(this.props.currentActivity.id)) // gets all locations
+    componentDidMount() {
+        this.props.dispatch(getLocations(1)) // gets all locations (this.props.currentActivity.id)
 
-    // }
+    }
 
 
-    // handleClick(evt) {
-    //     evt.preventDefault()
-    //    this.props.dispatch(setCurrentLocation(this.props.locations.id)) // sets the global state of currentLocation
-    // }
+    handleClick() {
+        evt.preventDefault()
+       this.props.dispatch(setCurrentLocation(location)) // sets the global state of currentLocation
+    }
 
 
 
@@ -40,7 +41,7 @@ class Locations extends React.Component {
                     <h2>Locations to choose from</h2>
                     <div className='locationList'>
                         {this.props.locations.map(location => {
-                            return <p>{location}</p>
+                            return <p onClick={() => handleClick(location)}>{location}</p>
                         })}
                     </div>
                 </div>
