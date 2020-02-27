@@ -21,8 +21,8 @@ h3 {
 .logo{
 padding: 50px;
 }
-
-.wrapper {
+/* wrapper around each individual component excluding home */
+.wrapper { 
     background-color: rgb(244, 248, 249);
     color: grey;
 }

@@ -10,8 +10,8 @@ exports.seed = function (knex) {
           user_name: 'Henry',
           notes: 'cowabunga',
           dateTime: '2020-03-07T09:00',
-          tracks: 'Ridgeline',
-          skill: 'Advanced',
+          tracks: 'To Summit + Ridgeline',
+          skill: 'Expert',
           location_id: 1
         },
         {
@@ -19,7 +19,7 @@ exports.seed = function (knex) {
           user_name: 'Claire',
           notes: 'double shakka',
           dateTime: '2020-03-07T12:00',
-          tracks: 'Trickle Falls',
+          tracks: 'To Summit + Trickle Falls',
           skill: 'Expert',
           location_id: 1
         },
@@ -28,8 +28,8 @@ exports.seed = function (knex) {
           user_name: 'Ethan',
           notes: 'has anyone seen Lui?',
           dateTime: '2020-03-08T13:00',
-          tracks: 'Starfish',
-          skill: 'Intermediate',
+          tracks: 'Mid Peak loop + Starfish',
+          skill: 'Advanced',
           location_id: 1
         },
         {
@@ -46,10 +46,28 @@ exports.seed = function (knex) {
           user_name: 'Dan',
           notes: 'can someone lend me a bike please?',
           dateTime: '2020-03-08T13:00',
-          tracks: 'Serendipity',
+          tracks: 'Clinical + Highbury fling + Serendipity + Transient',
           skill: 'Advanced',
           location_id: 2
-        }
+        },
+        {
+          id: 6,
+          user_name: 'Seb',
+          notes: 'Meeting at the carpark, coffee afterwards?',
+          dateTime: '2020-03-07T12:00',
+          tracks: 'Beginners loop + Skills area',
+          skill: 'Beginner',
+          location_id: 1
+        },
+        {
+          id: 7,
+          user_name: 'Scott',
+          notes: 'Nice slow ride with a few challenging tracks',
+          dateTime: '2020-03-08T13:00',
+          tracks: 'Mid Peak loop + Magic Carpet',
+          skill: 'Intermediate',
+          location_id: 1
+        },
       ]);
     });
 };
