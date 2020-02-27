@@ -9,7 +9,7 @@ exports.seed = function (knex) {
           id: 1,
           user_name: 'Henry',
           notes: 'cowabunga',
-          dateTime: '',
+          dateTime: '2020-03-07T09:00',
           tracks: 'Ridgeline',
           skill: 'Advanced',
           location_id: ''
@@ -18,7 +18,7 @@ exports.seed = function (knex) {
           id: 2,
           user_name: 'Claire',
           notes: 'double shakka',
-          dateTime: '',
+          dateTime: '2020-03-07T12:00',
           tracks: 'Trickle Falls',
           skill: 'Expert',
           location_id: ''
@@ -27,7 +27,7 @@ exports.seed = function (knex) {
           id: 3,
           user_name: 'Ethan',
           notes: 'has anyone seen Lui?',
-          dateTime: '',
+          dateTime: '2020-03-08T13:00',
           tracks: 'Starfish',
           skill: 'Intermediate',
           location_id: ''
