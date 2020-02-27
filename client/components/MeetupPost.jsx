@@ -7,7 +7,13 @@ class MeetupPost extends React.Component {
 
     render() {
         return(
-            <p> I am a cool posting that has a lot of cool stuff going for me.</p>
+            <div className="meetupCard">
+                <h3> {this.props.currentPost.tracks} </h3>
+                <h4> {this.props.currentPost.user_name} </h4>
+                <p className="meetupSkill"> <span> Skill Level: </span> {this.props.currentPost.skill} </p>
+                <p className="meetupTime"> <span> Time: </span> {this.props.currentPost.dateTime} </p>
+                <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>
+            </div>
         )
     }
 }

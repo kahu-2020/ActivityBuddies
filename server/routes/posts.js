@@ -4,11 +4,25 @@ const router = express.Router()
 
 router.use(express.json())
 
-function getPostsByLocation(locationID) {
-    return db('locations')
-    .join('posts', 'posts.location_id', '=', 'id')
-    .where('locations.id', '=', locationID)
-    .select('notes', 'dateTime', 'tracks', 'skill')
-}
+
+
+//router to add new posts
+router.post('/', (req, res) => {
+  const newPost = req.body
+  console.log(req.body)
+  db.addPost(newPost)
+  .then(newPost => {
+    console.log(newPost)
+    res.redirect('/')
+  })
+})
+
+router.get('/:id', (req, res) => {
+    db.getPostsByLocation(req.params.id)
+    .then(postList => {
+        res.json(postList)
+    })
+})
+
 
 module.exports = router

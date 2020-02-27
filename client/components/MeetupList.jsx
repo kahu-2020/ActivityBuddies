@@ -1,6 +1,9 @@
 import React from 'react'
 import MeetupPost from './MeetupPost'
 
+import { connect } from 'react-redux'
+
+
 class MeetupList extends React.Component {
     constructor(props) {
         super(props)
@@ -15,12 +18,19 @@ class MeetupList extends React.Component {
             <div className="meetupList"> 
                 <h2>Meetups</h2>
                 <button onClick={this.props.handleClick}> Add Meetup </button>
-                {this.state.testPosts.map( (post, i) => {
-                    return <MeetupPost key={i} />
+                {this.props.posts.map( (post, i) => {
+                    return <MeetupPost key={i} currentPost={post} />
                 })}
             </div>
         )
     }
 }
 
-export default MeetupList
+
+function mapStateToProps(state) {
+    return {
+        posts: state.postList
+    }
+}
+
+export default connect(mapStateToProps)(MeetupList)

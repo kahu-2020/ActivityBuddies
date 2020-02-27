@@ -2,6 +2,9 @@ import React from 'react'
 import MeetupList from './MeetupList'
 import AddPostForm from './AddPostForm'
 
+import { connect } from 'react-redux'
+import { gotPostsByLocationID } from '../actions/postListActions'
+
 class LocationMeetups extends React.Component {
     constructor(props) {
         super(props)
@@ -19,6 +22,10 @@ class LocationMeetups extends React.Component {
         })    
     }
 
+    componentDidMount() {
+        this.props.dispatch(gotPostsByLocationID(1))
+    }
+
     render() {
         console.log("Rerender.")
         return (
@@ -32,7 +39,7 @@ class LocationMeetups extends React.Component {
                     </div>
                     <div className="postListingWrapper">
                         
-                        {this.state.addingMeetup ?   <AddPostForm /> : <MeetupList handleClick={this.activateMeetingForm} /> }
+                        {this.props.addingMeetup ?   <AddPostForm /> : <MeetupList handleClick={this.activateMeetingForm} posts={'hi'} /> }
                         
 
 
@@ -43,12 +50,11 @@ class LocationMeetups extends React.Component {
     }
 }
 
-export default LocationMeetups
-/*
+function mapStateToProps(state) {
+    return {
+        posts: state.postList
+    }
+}
 
-<div class="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="satellite" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
-<div class="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="satellite" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
-<div class="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="satellite" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>00px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="satellite" data-trailstyle="difficulty" data-controls="0" <div class="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="satellite" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>bels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
-<div class="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="satellite" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
-*/
+export default connect(mapStateToProps)(LocationMeetups)
 
