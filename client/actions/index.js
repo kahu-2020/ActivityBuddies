@@ -26,3 +26,21 @@ export function getLocations(id) {
         })
     }
 }
+
+export function getActivities() {
+    return (dispatch) => {
+        request.get('/api/v1/activities/') 
+        .then(res => res.body)
+        .then(activities => {
+            dispatch(gotActivities(activities))
+        })
+    }
+}
+
+export function gotActivities(activities) {
+    return {
+        type: 'GOT_ACTIVITIES',
+        activities: activities 
+    }
+
+}

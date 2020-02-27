@@ -39,9 +39,20 @@ class Locations extends React.Component {
                     <h2>Locations to choose from</h2>
                     <div className='locationList'>
                         {this.props.locations.map(location => {
+<<<<<<< HEAD
                             return <Link to='/LocationMeetups' className='links'>  
                                 <p key={location.id} onClick={() => this.handleClick(location)}>{location.name}</p>
                             </Link>
+||||||| merged common ancestors
+                            // return <Link to='/locationMeetup'>  check with ethan this is the right view
+                                <p key={location.id} onClick={() => this.handleClick(location)}>{location.name}</p>
+                            // </Link>
+=======
+                            // return <Link to='/locationMeetup'>  check with ethan this is the right view
+                            return <p key={location.id} onClick={() => this.handleClick(location)}>{location.name}
+                            </p>
+                            // </Link>
+>>>>>>> 0b936acbd9f4ec43b59a60c86a37efb7415c8b3b
                         })}
                     </div>
 

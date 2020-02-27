@@ -18,15 +18,15 @@ function getActivities(db = connection) {
 }
 
 // add new meetup post to database
-function addPost (db = connection) {
+function addPost (post, db = connection) {
     return db('posts')
         .insert({
-            user_name: '',
-            notes: '',
-            dateTime: '',
-            tracks: '',
-            skill: '',
-            location_id: ''
+            user_name: post.user_name,
+            notes: post.notes,
+            dateTime: post.dateTime,
+            tracks: post.tracks,
+            skill: post.skill,
+            location_id: post.location_id
         })
 }
 

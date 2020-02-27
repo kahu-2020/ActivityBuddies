@@ -1,12 +1,11 @@
 import React from 'react'
+import { addPostApi } from '../api'
 
 class AddPostForm extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      testValue: null,
-      id: '',
       user_name: '',
       notes: '',
       dateTime: '',
@@ -15,17 +14,9 @@ class AddPostForm extends React.Component {
       location_id: ''
     }
     this.handleChange = this.handleChange.bind(this),
-    this.handleSubmit = this.handleSubmit.bind(this),
-    this.testClick = this.testClick.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  
-  testClick = (e) => {
-    e.preventDefault()
-    this.setState({
-      testValue: e.target.value
-    })
-  }
 
 
   //the state change when user typing
@@ -43,17 +34,18 @@ class AddPostForm extends React.Component {
     e.preventDefault()
 
     const post = this.state
-    post.id = this.props.id
+    // post.id = this.props.id
 
-    this.setState({
-      id: '',
-      user_name: '',
-      notes: '',
-      dateTime: '',
-      tracks: '',
-      skill: '',
-      location_id: ''
-    })
+    return addPostApi(post)
+    // this.setState({
+    //   id: '',
+    //   user_name: '',
+    //   notes: '',
+    //   dateTime: '',
+    //   tracks: '',
+    //   skill: '',
+    //   location_id: ''
+    // })
   }
 
   render() {
@@ -62,7 +54,7 @@ class AddPostForm extends React.Component {
 
       <button>Go back</button>
 
-      {/* Add new post form (line 64 - 119) */}
+      {/* Add new post form */}
       <h4>Add your new post here!</h4>
       <br/>
       
@@ -76,6 +68,7 @@ class AddPostForm extends React.Component {
           onChange={this.handleChange}
         />
         <br />
+        <br />
 
         <label htmlFor='name'>Notes: </label>
         <textarea
@@ -86,31 +79,49 @@ class AddPostForm extends React.Component {
           onChange={this.handleChange}
         />
         <br />
+        <br />
+
+       <label htmlFor='name'>Location: </label>
+          <select name='location_id' value={this.setState.location_id}
+            onChange={this.handleChange}>
+            <option value=''>--Please select the location--</option>
+            <option value='1'>Makara</option>
+            <option value='2'>Polhill</option>
+            <option value='3'>Mt. Vic</option>
+          </select>
+        <br />
+        <br />
 
         <label htmlFor='name'>Tracks: </label>
         <input
           type='text'
           name='tracks'
-          placeholder='tracks you are doing' //drop down menu?
-          value={this.setState.lost_pet_photo}
+          placeholder='tracks you are doing' 
+          value={this.setState.tracks}
           onChange={this.handleChange}
         />
         <br />
+        <br />
+
+
+        
 
         <label htmlFor='name'>Skill: </label>
-        <input
-          type='text'
-          name='skill'
-          placeholder='your skill level' //dropdown menu?
-          value={this.setState.lost_pet_photo}
-          onChange={this.handleChange}
-        />
+          <select name='skill' value={this.setState.skill}
+            onChange={this.handleChange}>
+            <option value=''>--Please select your skill level--</option>
+            <option value='Beginner'>Beginner</option>
+            <option value='Intermediate'>Intermediate</option>
+            <option value='Advanced'>Advanced</option>
+            <option value='Expert'>Expert</option>
+          </select>
+        <br />
         <br />
 
         <label htmlFor='name'>Date and time: </label>
         <input type="datetime-local" id="meeting-time"
-         name="meetup-time"
-         min={new Date()} max="2040-06-14T00:00" onChange={this.testClick}>
+         name="dateTime"
+         min={new Date()} max="2040-06-14T00:00" onChange={this.handleChange}>
         </input>
         
         <br /><br />

@@ -18,3 +18,11 @@ export function getActivities() {
     })
 }
 
+// function to add posts to the api
+export function addPostApi(newPost) {
+    return request.post('api/v1/posts')
+    .send(newPost)
+    .then(res => {
+        return res.body
+    })
+}
