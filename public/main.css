@@ -1,12 +1,92 @@
 
 .act-btn {
-    color: red;
+    color: white;
     margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 100px;
+
 }
 
 .activity-container {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: wheat;
+    text-shadow: black 2px 2px;
+
+
 }
+
+.about-blurb {
+    font-size: 50px;
+    color: white;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-shadow: black 2px 2px;
+    margin: 5px 10% 5px 10%;
+    font-family: 'Dancing Script';
+
+
+}
+body {
+    font-size: 25px;
+    font-family: 'Noto Sans JP' ;
+    color: white;
+    margin: 0px 0px;
+    background-image: url('images/cliff.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 150px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.logo{
+padding: 50px;
+}
+
+.wrapper {
+    background-color: rgb(244, 248, 249);
+    color: grey;
+}
+
+.wrapperBody {
+    display: flex;
+    flex-direction: row;
+    
+}
+.imagesWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.mapImages {
+    width: 700px;
+}
+
+.locationList {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin: 0px 0px 25px 0px;
+    font-size: 70px;
+    width: 400px;
+    height: auto;
+    color: navy;
+}
+
