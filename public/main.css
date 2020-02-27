@@ -6,6 +6,7 @@
     margin-bottom: 5%;
     font-size: 100px;
 
+
 }
 
 .activity-container {
@@ -14,8 +15,6 @@
     flex-wrap: wrap;
     justify-content: center;
     text-shadow: black 2px 2px;
-
-
 }
 
 .about-blurb {
@@ -29,7 +28,7 @@
     justify-content: center;
     text-shadow: black 2px 2px;
     margin: 5px 10% 5px 10%;
-    font-family: 'Dancing Script';
+    font-family: 'Courgette';
 
 
 }
