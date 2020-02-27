@@ -26,3 +26,19 @@ export function getLocations(id) {
         })
     }
 }
+
+export function postAdded(newPost) {
+    console.log(newPost)
+    return {
+        type: 'ADD_POST',
+        newPost: newPost
+    }
+}
+
+export function addPost(newPost) {
+    return (dispatch) => {
+        request.post('/api/v1/posts/')
+        .send(newPost)
+        .then(dispatch(postAdded(newPost)))
+    }
+}

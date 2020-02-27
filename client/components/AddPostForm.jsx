@@ -1,5 +1,6 @@
 import React from 'react'
 import { addPostApi } from '../api'
+import {connect} from 'react-redux'
 
 class AddPostForm extends React.Component {
   constructor(props) {
@@ -34,18 +35,7 @@ class AddPostForm extends React.Component {
     e.preventDefault()
 
     const post = this.state
-    // post.id = this.props.id
-
     return addPostApi(post)
-    // this.setState({
-    //   id: '',
-    //   user_name: '',
-    //   notes: '',
-    //   dateTime: '',
-    //   tracks: '',
-    //   skill: '',
-    //   location_id: ''
-    // })
   }
 
   render() {
@@ -136,5 +126,11 @@ class AddPostForm extends React.Component {
   
   
 }
-  
-export default AddPostForm
+ 
+function mapStateToProps(state){
+  return {
+    post: state.post
+  }
+}
+
+export default connect(mapStateToProps)(AddPostForm)
