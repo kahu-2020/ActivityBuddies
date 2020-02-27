@@ -40,7 +40,8 @@ class Locations extends React.Component {
                     <div className='locationList'>
                         {this.props.locations.map(location => {
                             // return <Link to='/locationMeetup'>  check with ethan this is the right view
-                                <p key={location.id} onClick={() => this.handleClick(location)}>{location.name}</p>
+                            return <p key={location.id} onClick={() => this.handleClick(location)}>{location.name}
+                            </p>
                             // </Link>
                         })}
                     </div>
