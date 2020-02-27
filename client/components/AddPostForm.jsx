@@ -1,12 +1,11 @@
 import React from 'react'
+import { addPostApi } from '../api'
 
 class AddPostForm extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      testValue: null,
-      id: '',
       user_name: '',
       notes: '',
       dateTime: '',
@@ -15,22 +14,13 @@ class AddPostForm extends React.Component {
       location_id: ''
     }
     this.handleChange = this.handleChange.bind(this),
-    this.handleSubmit = this.handleSubmit.bind(this),
-    this.testClick = this.testClick.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  
-  testClick = (e) => {
-    e.preventDefault()
-    this.setState({
-      testValue: e.target.value
-    })
-  }
 
 
   //the state change when user typing
   handleChange = (e) => {
-    console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -43,17 +33,18 @@ class AddPostForm extends React.Component {
     e.preventDefault()
 
     const post = this.state
-    post.id = this.props.id
+    // post.id = this.props.id
 
-    this.setState({
-      id: '',
-      user_name: '',
-      notes: '',
-      dateTime: '',
-      tracks: '',
-      skill: '',
-      location_id: ''
-    })
+    return addPostApi(post)
+    // this.setState({
+    //   id: '',
+    //   user_name: '',
+    //   notes: '',
+    //   dateTime: '',
+    //   tracks: '',
+    //   skill: '',
+    //   location_id: ''
+    // })
   }
 
   render() {
