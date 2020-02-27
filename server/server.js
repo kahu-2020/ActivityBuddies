@@ -12,7 +12,7 @@ server.use(express.json())
 server.use('/api/v1/activities', activitiesRoutes)
 server.use('/api/v1/posts', postsRoutes)
 
-
+server.use(express.json())
 
 module.exports = server
 

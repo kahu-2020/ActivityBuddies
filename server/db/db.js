@@ -30,10 +30,16 @@ function addPost (post, db = connection) {
         })
 }
 
-
+//get all posts via location id
+function getPostsByLocation(locationID, db = connection) {
+    return db('posts')
+    .where('posts.location_id', '=', locationID)
+    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill')
+}
 
 module.exports = {
     getLocations: getLocations, 
     getActivities: getActivities,
-    addPost: addPost
+    addPost: addPost,
+    getPostsByLocation: getPostsByLocation
 }
