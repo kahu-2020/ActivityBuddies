@@ -2,42 +2,46 @@ body {
     font-size: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0px 0px;
+    background-image: url(https://unsplash.com/photos/y4v96Sy2ne4);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 150px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 50px;
+    text-align: center;
 }
 
 
-
-.navbar {
-    height: 150px;
-    width: 100% ;
-    padding: 25px;
-    background-color: rgba(255, 255, 0, 0.468);
+.wrapperBody {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    
 }
-
-.navo {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.collapse {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.navTitle {
-    font-size: 70px;
-}
-
-
-.links {
-    text-decoration: none;
-}
-
 .imagesWrapper {
     display: flex;
+    flex-direction: column;
+    margin: 50px;
 }
 .mapImages {
     width: 700px;
+}
+
+.locationList {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin: 0px 0px 25px 0px;
+    font-size: 70px;
+    width: 400px;
+    height: auto;
+    color: navy;
 }

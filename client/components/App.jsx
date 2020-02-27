@@ -14,7 +14,7 @@ class App extends React.Component{
   return (
     <Router>
       <div>
-        <Nav />
+        <h3>BUDS</h3>
         <Route exact path="/" component={Home} />
         <Route path='/locations' component={Locations} />
         <Route path='/addpostform' component={AddPostForm} />
