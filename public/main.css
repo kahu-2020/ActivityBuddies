@@ -34,3 +34,10 @@ body {
 .links {
     text-decoration: none;
 }
+
+.imagesWrapper {
+    display: flex;
+}
+.mapImages {
+    width: 700px;
+}
