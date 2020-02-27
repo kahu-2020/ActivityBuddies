@@ -1,0 +1,57 @@
+body {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0px 0px;
+    background-image: url('images/cliff.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 150px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.logo{
+padding: 50px;
+}
+
+.wrapper {
+    background-color: rgb(244, 248, 249);
+    color: grey;
+}
+
+.wrapperBody {
+    display: flex;
+    flex-direction: row;
+    
+}
+.imagesWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.mapImages {
+    width: 700px;
+}
+
+.locationList {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin: 0px 0px 25px 0px;
+    font-size: 70px;
+    width: 400px;
+    height: auto;
+    color: navy;
+}
+

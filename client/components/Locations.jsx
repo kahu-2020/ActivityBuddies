@@ -27,25 +27,24 @@ class Locations extends React.Component {
     render() {
         return (
             <div className='wrapper'>
-
-                <div className='WellingtonImgs'>
-                    <img src="images/makaraMap.png" alt="Makara pinpointed in Wellington map" />
-                    <img src="images/polhillMap.png" alt="Polhill pinpointed in Wellington map" />
-                    <img src="images/mtVicMap.png" alt="MtVic pinpointed in Wellington map" />
+                <h1>RIDE</h1>
+                <div className='wrapperBody'>
+                <div className='imagesWrapper'>
+                    <img src="images/makaraMap.png" className='mapImages' alt="Makara pinpointed in Wellington map" />
+                    {/* <img src="images/polhillMap.png" className='mapImages' alt="Polhill pinpointed in Wellington map" />
+                    <img src="images/mtVicMap.png" className='mapImages' alt="MtVic pinpointed in Wellington map" /> */}
                 </div>
 
                 <div className='locationWrapper'>
-                    <h1>Mountain Biking</h1>
-                    <h2>Locations to choose from</h2>
+                    
                     <div className='locationList'>
                         {this.props.locations.map(location => {
-                            // return <Link to='/locationMeetup'>  check with ethan this is the right view
-                            return <p key={location.id} onClick={() => this.handleClick(location)}>{location.name}
-                            </p>
-                            // </Link>
+                            return <Link to='/meetups' className='links'>  
+                                <button className='btn btn-outline-primary' key={location.id} onClick={() => this.handleClick(location)}>{location.name}</button>
+                            </Link>
                         })}
                     </div>
-
+</div>
                 </div>
 
 

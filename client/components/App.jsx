@@ -2,6 +2,7 @@ import React from 'react'
 
 import { HashRouter as Router, Route } from 'react-router-dom'
 import Home from './Home'
+import ActivityList from './ActivityList'
 
 //Component Imports
 import LocationMeetups from './LocationMeetups'
@@ -15,8 +16,9 @@ class App extends React.Component{
   return (
     <Router>
       <div>
-        <Route path="/banana" component={LocationMeetups} />
+        <h3 className='logo'>BUDS</h3>
         <Route exact path="/" component={Home} />
+        <Route path="/banana" component={LocationMeetups} />
         <Route path='/locations' component={Locations} />
         <Route path='/addpostform' component={AddPostForm} />
       </div>
