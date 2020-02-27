@@ -52,7 +52,8 @@ class LocationMeetups extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        posts: state.postList
+        posts: state.postList,
+        location: state.currentLocation
     }
 }
 
