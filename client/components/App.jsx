@@ -14,7 +14,7 @@ class App extends React.Component{
     <Router>
       <div>
         <Route path="/banana" component={LocationMeetups} />
-        <Route path="/" component={ActivityList} />
+        {/* <Route path="/" component={ActivityList} /> */}
         <Route path='/addpostform' component={AddPostForm} />
       </div>
     </Router>
