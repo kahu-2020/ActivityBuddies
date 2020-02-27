@@ -11,7 +11,10 @@ router.get('/:id', (req, res) => {
       .then(locations => res.json(locations))
   })
 
+//router to get all activities
+router.get('/'), (req, res) => {
+  db.getActivities(req.params.id)
+    .then(activities => res.json(activities))
+}
 
-
-
-  module.exports = router
+module.exports = router
