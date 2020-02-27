@@ -1,4 +1,5 @@
 import React from 'react'
+import Rsvp from './Rsvp'
 
 class MeetupPost extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class MeetupPost extends React.Component {
                 <p className="meetupSkill"> <span> Skill level: </span> {this.props.currentPost.skill} </p>
                 <p className="meetupTime"> <span> Meet at: </span> {this.props.currentPost.dateTime} </p>
                 <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>
+                <Rsvp />
             </div>
         )
     }
