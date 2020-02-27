@@ -31,6 +31,7 @@ class Locations extends React.Component {
             <div>
                 <h1>Mountain Biking</h1>
                 <h2>Locations</h2>
+                
             </div>
         )
     }
