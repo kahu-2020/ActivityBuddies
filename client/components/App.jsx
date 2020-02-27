@@ -16,7 +16,7 @@ class App extends React.Component{
   return (
     <Router>
       <div>
-        <h3>BUDS</h3>
+        <h3 className='logo'>BUDS</h3>
         <Route exact path="/" component={Home} />
         <Route path="/banana" component={LocationMeetups} />
         <Route path='/locations' component={Locations} />

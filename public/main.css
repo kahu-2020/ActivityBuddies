@@ -1,8 +1,9 @@
 body {
     font-size: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
     margin: 0px 0px;
-    background-image: url(https://unsplash.com/photos/y4v96Sy2ne4);
+    background-image: url('images/cliff.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -17,6 +18,14 @@ h3 {
     text-align: center;
 }
 
+.logo{
+padding: 50px;
+}
+
+.wrapper {
+    background-color: rgb(244, 248, 249);
+    color: grey;
+}
 
 .wrapperBody {
     display: flex;
@@ -45,3 +54,4 @@ h3 {
     height: auto;
     color: navy;
 }
+
