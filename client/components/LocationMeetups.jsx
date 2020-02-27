@@ -16,9 +16,14 @@ class LocationMeetups extends React.Component {
     }
 
     activateMeetingForm = () => {
-        console.log("Hi")
         this.setState({
             addingMeetup: true 
+        })    
+    }
+
+    deactivateMeetingForm = () => {
+         this.setState({
+            addingMeetup: false 
         })    
     }
 
@@ -44,7 +49,7 @@ class LocationMeetups extends React.Component {
                     </div>
                     <div className="postListingWrapper">
                         
-                        {this.state.addingMeetup ?   <AddPostForm /> : <MeetupList handleClick={this.activateMeetingForm} posts={'hi'} /> }
+                        {this.state.addingMeetup ?   <AddPostForm goBack={this.deactivateMeetingForm} /> : <MeetupList handleClick={this.activateMeetingForm} posts={'hi'} /> }
                     
                     </div>
                 </div>
