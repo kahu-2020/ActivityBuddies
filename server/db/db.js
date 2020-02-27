@@ -11,9 +11,15 @@ function getLocations(id, db = connection) {
     .select('*')
 }
 
+//get all activities from the activity database for display on the home page
+function getActivities(db = connection) {
+    return db('activities')
+        .select('*')
+}
 
 
 
 module.exports = {
     getLocations: getLocations, 
+    getActivities: getActivities
 }
