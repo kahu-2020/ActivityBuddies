@@ -10,6 +10,7 @@ export function gotLocations(locations) {
 }
 
 export function setCurrentLocation(location){
+    console.log(location)
     return {
         type: 'SET_CURRENTLOCATION', 
         currentLocation: location

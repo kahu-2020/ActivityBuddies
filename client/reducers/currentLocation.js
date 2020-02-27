@@ -1,4 +1,5 @@
 const initialState = {}
+// const initialState = []
 
 function currentLocation (state = initialState, action) {
   switch(action.type) {
