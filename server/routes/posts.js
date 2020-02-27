@@ -11,9 +11,8 @@ router.post('/', (req, res) => {
   const newPost = req.body
   console.log(req.body)
   db.addPost(newPost)
-  .then(newPost => {
-    console.log(newPost)
-    res.redirect('/')
+  .then(newPostId => {
+    res.json(newPostId)
   })
 })
 
