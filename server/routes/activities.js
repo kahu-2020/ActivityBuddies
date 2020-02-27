@@ -1,6 +1,5 @@
 const express = require('express')
-const db = require('../db')
-
+const db = require('../db/db')
 const router = express.Router()
 
 router.use(express.json())
@@ -11,3 +10,5 @@ router.get('/:id', (req, res) => {
     db.getLocations(req.params.id)
       .then(locations => res.json(locations))
   })
+
+module.exports = router
