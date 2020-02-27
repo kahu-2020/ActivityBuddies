@@ -2,7 +2,7 @@ const express = require('express')
 const db = require('../db/db')
 const router = express.Router()
 
-router.use(express.json())
+
 
 
 //router to get the locations of a corresponding activity id 
@@ -12,9 +12,12 @@ router.get('/:id', (req, res) => {
   })
 
 //router to get all activities
-router.get('/'), (req, res) => {
-  db.getActivities(req.params.id)
-    .then(activities => res.json(activities))
-}
+router.get('/', (req, res) => {
+  console.log('hi')
+  db.getActivities()
+    .then(activities => {
+      console.log(activities)
+      res.json(activities)})
+})
 
 module.exports = router
