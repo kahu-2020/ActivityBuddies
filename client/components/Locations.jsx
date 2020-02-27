@@ -39,9 +39,9 @@ class Locations extends React.Component {
                     <h2>Locations to choose from</h2>
                     <div className='locationList'>
                         {this.props.locations.map(location => {
-                            // return <Link to='/locationMeetup'>  check with ethan this is the right view
+                            return <Link to='/LocationMeetups' className='links'>  
                                 <p key={location.id} onClick={() => this.handleClick(location)}>{location.name}</p>
-                            // </Link>
+                            </Link>
                         })}
                     </div>
 
