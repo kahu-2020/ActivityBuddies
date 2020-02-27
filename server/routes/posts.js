@@ -4,7 +4,11 @@ const router = express.Router()
 
 router.use(express.json())
 
-//get.router('/')
-
+function getPostsByLocation(locationID) {
+    return db('locations')
+    .join('posts', 'posts.location_id', '=', 'id')
+    .where('locations.id', '=', locationID)
+    .select('notes', 'dateTime', 'tracks', 'skill')
+}
 
 module.exports = router
