@@ -25,9 +25,14 @@ class Locations extends React.Component {
 
 
     render() {
+
         return (
             <div className='wrapper'>
-                <h1>RIDE</h1>
+                <div className='loc-nav'>
+                    <Link className='loc-home' to='/'>Home</Link>
+                    <h1 className='loc-hedr'>RIDE</h1>
+                </div>
+
                 <div className='wrapperBody'>
                     <div className='imagesWrapper'>
                         <img src="images/makara.png" className='mapImages' alt="Makara pinpointed in Wellington map" />
@@ -39,7 +44,7 @@ class Locations extends React.Component {
                         <div className='locationList'>
                             {this.props.locations.map(location => {
                                 return <Link to='/meetups' className='links'>
-                                    <button className='btn btn-outline-primary' key={location.id} onClick={() => this.handleClick(location)}>{location.name}</button>
+                                    <button className='location-btn' key={location.id} onClick={() => this.handleClick(location)}>{location.name}</button>
                                 </Link>
                             })}
                         </div>
