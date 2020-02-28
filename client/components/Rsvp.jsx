@@ -4,12 +4,11 @@ class Rsvp extends React.Component {
     constructor(props) {
       super(props);
 
-      this.state = {value: 0};
       this.buttonClicked = this.buttonClicked.bind(this);
     }
     
     buttonClicked() {
-      this.props.dispatch(addRsvp(1))
+      this.props.dispatch(addRsvp(this.props.posts.id))
       
     }
     
@@ -23,4 +22,10 @@ class Rsvp extends React.Component {
     }
   }
 
+  mapStateToProps() {
+    return {
+      
+    }
+
+  }
 export default Rsvp

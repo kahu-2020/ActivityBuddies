@@ -24,11 +24,11 @@ export function setRsvp(rsvp) {
     }
 }
 
-export function addRsvp(rsvp) {
+export function addRsvp(id) {
     return (dispatch) => {
         request
         .post('/api/v1/posts/rsvp')
-        .send(rsvp)
+        .send(id)
         .then(dispatch(gotRsvp(rsvp)))
     }
 }
