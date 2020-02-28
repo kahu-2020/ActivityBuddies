@@ -10,7 +10,14 @@ import { setCurrentLocation } from '../actions/index'
 class Locations extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            activity_id: 0
+        }
     }
+
+
+
+    // if activity id is (x) then render corresponding id page. 
 
 
     componentDidMount() {
@@ -25,6 +32,7 @@ class Locations extends React.Component {
 
 
     render() {
+        if(this.state.activity_id === 1){
         return (
             <div className='wrapper'>
                 <h1>RIDE</h1>
@@ -49,7 +57,11 @@ class Locations extends React.Component {
 
 
             </div>
+        
         )
+        } else if(this.state.activity_id === 2){
+            
+        }
     }
 }
 
