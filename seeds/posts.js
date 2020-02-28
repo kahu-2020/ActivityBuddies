@@ -14,8 +14,6 @@ exports.seed = function (knex) {
           skill: 'Expert',
           location_id: 1,
           attendees: 0
-          
-
         },
         {
           id: 2,
