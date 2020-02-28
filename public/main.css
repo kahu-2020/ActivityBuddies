@@ -60,8 +60,8 @@ padding: 50px;
 text-align: center;
 font-size: 2rem;
 }
-
-.wrapper {
+/* wrapper around each individual component excluding home */
+.wrapper { 
     background-color: rgb(244, 248, 249);
     color: grey;
 }
