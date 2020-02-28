@@ -14,7 +14,11 @@ exports.seed = function (knex) {
           skill: 'Expert',
           location_id: 1,
           attendees: 0
+<<<<<<< HEAD
                  },
+=======
+        },
+>>>>>>> fb6c164a4d58ca51b04f37a4389be56a242ec4e5
         {
           id: 2,
           user_name: 'Claire',
@@ -75,6 +79,10 @@ exports.seed = function (knex) {
           location_id: 1,
           attendees: 0
         },
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb6c164a4d58ca51b04f37a4389be56a242ec4e5
       ]);
     });
 };
