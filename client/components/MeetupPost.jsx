@@ -1,10 +1,17 @@
 import React from 'react'
-import Rsvp from './Rsvp'
 
 class MeetupPost extends React.Component {
     constructor(props) {
         super(props)
+
+        this.state = {
+            value: 0
+        }
     }
+
+    buttonClicked = (event) => {
+        this.setState({value: this.state.value+1});
+      }
 
     render() {
         return(
@@ -13,7 +20,9 @@ class MeetupPost extends React.Component {
                 <p className="meetupSkill"> <span> Skill level: </span> {this.props.currentPost.skill} </p>
                 <p className="meetupTime"> <span> Meet at: </span> {this.props.currentPost.dateTime} </p>
                 <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>
-                <Rsvp />
+                <p>Attendees: {this.state.value}</p>
+                <button onClick={this.buttonClicked}>I'm keen!</button>
+
             </div>
         )
     }

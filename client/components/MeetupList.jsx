@@ -18,9 +18,12 @@ class MeetupList extends React.Component {
             <div className="meetupList"> 
                 <h2>Meetups</h2>
                 <button onClick={this.props.handleClick} className="addButton"> + </button>
+                
+                <div className="cardList">
                 {this.props.posts.map( (post, i) => {
                     return <MeetupPost key={i} currentPost={post} />
                 })}
+                </div>
             </div>
         )
     }
