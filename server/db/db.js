@@ -34,19 +34,20 @@ function addPost (post, db = connection) {
 function getPostsByLocation(locationID, db = connection) {
     return db('posts')
     .where('posts.location_id', '=', locationID)
-    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill')
+    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
 }
 
-// function setRsvp(postId, db=connection) {
-//     return db('posts')
-//     .where('posts.id', '=', postID)
-//     .update()
-// }
+function setRsvp(post, db=connection) {
+    console.log(post)
+    return db('posts')
+    .where('posts.user_name', '=', post.user_name)
+    .increment('attendees', 1)
+}
 
 module.exports = {
     getLocations: getLocations, 
     getActivities: getActivities,
     addPost: addPost,
     getPostsByLocation: getPostsByLocation, 
-    // setRsvp: setRsvp
+    setRsvp: setRsvp
 }
