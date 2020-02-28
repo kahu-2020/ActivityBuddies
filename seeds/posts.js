@@ -77,6 +77,8 @@ exports.seed = function (knex) {
           attendees: 0
         },
 
+        
+
       ]);
     });
 };
