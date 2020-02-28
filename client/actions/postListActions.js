@@ -17,18 +17,18 @@ export function gotPosts(posts) {
     }
 }
 
-export function gotRsvp(attendees) {
+export function setRsvp(rsvp) {
     return {
         type: 'SET_RSVP',
-        attendees: attendees
+        rsvp: rsvp
     }
 }
 
-export function addPost(attendee) {
+export function addRsvp(rsvp) {
     return (dispatch) => {
         request
         .post('/api/v1/posts/rsvp')
-        .send(attendee)
-        .then(dispatch(gotRsvp(attendees)))
+        .send(rsvp)
+        .then(dispatch(gotRsvp(rsvp)))
     }
 }
