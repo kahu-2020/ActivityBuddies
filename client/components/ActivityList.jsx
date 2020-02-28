@@ -15,11 +15,10 @@ class ActivityList extends React.Component {
     }
 
     render() {
-        console.log(this.props.activities)
         return (
-            <div>
+            <div className='activity-container'>
                 {this.props.activities.map(activity => {
-                    return <p>{activity.name}</p>
+                    return < p className='act-btn'  key={activity.id}>{activity.name}</p>
                 })}
             </div>
         )

@@ -17,8 +17,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          <h1>Activity Buddies</h1>
           <ActivityList/>
+          <p className="about-blurb">This is a shitty placeholder text that tells you sweet fuck all about this website but looks pretty while doing nothing. And it has to take up a decent portion of the page which is why im typing this sentence.
+</p>
       </div>
     )
   }

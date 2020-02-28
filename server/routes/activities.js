@@ -13,10 +13,9 @@ router.get('/:id', (req, res) => {
 
 //router to get all activities
 router.get('/', (req, res) => {
-  console.log('hi')
+
   db.getActivities()
     .then(activities => {
-      console.log(activities)
       res.json(activities)})
 })
 
