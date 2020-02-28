@@ -7,14 +7,13 @@
     font-size: 100px;
 }
 
-
-
 .activity-container {
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-shadow: black 2px 2px;
+    
 }
 
 .about-blurb {
@@ -42,9 +41,6 @@ body {
     font-size: 25px;
     font-family: 'Noto Sans JP' ;
     color: white;
-    /* background-image: url('https://mocah.org/uploads/posts/5306315-mountain-blue-teal-range-mountain-range-layers-amazing-wallpaper-desktop-wallpaper-desktop-background-monochrome-layer-shape-minimalist-minimal-wallpaper-silhouette-light-shadow-landscape-natu.jpg'); */
-    /* background-image: url(images/cliff.jpg); */
-    /* background-image: url(images/landscape.jpg); */
     background-image: url(images/river.jpg);
     background-size: cover;
     background-repeat: no-repeat;
