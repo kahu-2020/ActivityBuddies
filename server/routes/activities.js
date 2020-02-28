@@ -7,6 +7,7 @@ const router = express.Router()
 
 //router to get the locations of a corresponding activity id 
 router.get('/:id', (req, res) => {
+  console.log('hi')
     db.getLocations(req.params.id)
       .then(locations => res.json(locations))
   })
