@@ -1,10 +1,14 @@
+.front-links {
+    margin-top: 0px;
+} 
 
 .act-btn {
     color: white;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 0%;
     margin-bottom: 5%;
     font-size: 100px;
+    text-decoration: none;
 }
 
 .activity-container {
@@ -70,6 +74,30 @@ font-size: 2rem;
     background-color: aqua;
     font-size: 16px;
 }
+
+.locationWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+.btn {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    background-color: rgb(33, 114, 36); /* Green */
+    color: white;
+  }
 
 .widgetWrapper {
     display: flex;
