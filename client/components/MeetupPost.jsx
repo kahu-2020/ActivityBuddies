@@ -21,7 +21,7 @@ class MeetupPost extends React.Component {
                 <p className="meetupTime"> <span> Meet at: </span> {this.props.currentPost.dateTime} </p>
                 <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>
                 <p>Attendees: {this.state.value}</p>
-                <button onClick={this.buttonClicked}>I'm keen!</button>
+                <button className="flagButton" onClick={this.buttonClicked}> RSVP </button>
 
             </div>
         )

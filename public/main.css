@@ -102,6 +102,9 @@ font-size: 2rem;
 }
 
 .meetupList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     
     background-color: #F3F5F0;
@@ -145,12 +148,19 @@ font-size: 2rem;
     margin-top: 10px;
     padding: 5px;
 
-    width: 45%;
+    width: 85%;
 
     text-align: left;   
     
     border-radius: 7px;
     box-shadow: black;
+
+    transition: 0.3s;
+
+}
+
+.meetupCard:hover {
+    background-color: #8BB7C7;
 }
 
 .meetupCard p {
@@ -171,7 +181,7 @@ font-size: 2rem;
 
 .addButton {
     background-color: #B4954E;
-    color: #fff;
+    color: #F3F5F0;
     margin-top: 5px;
     padding-top: 0px;
 
@@ -184,6 +194,14 @@ font-size: 2rem;
     border: none;
 
     border-radius: 7px;
+}
+
+.flagButton {
+    border: none;
+    border-radius: 7px;
+    height: 20px;
+    background-color: #5fb174;
+    color: #F3F5F0;
 }
 
 
