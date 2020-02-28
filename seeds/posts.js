@@ -14,8 +14,6 @@ exports.seed = function (knex) {
           skill: 'Expert',
           location_id: 1,
           attendees: 0
-          
-
         },
         {
           id: 2,
@@ -78,9 +76,6 @@ exports.seed = function (knex) {
           location_id: 1,
           attendees: 0
         },
-
-          
-        }
 
       ]);
     });

@@ -16,3 +16,19 @@ export function gotPosts(posts) {
         posts: posts
     }
 }
+
+export function setRsvp(rsvp) {
+    return {
+        type: 'SET_RSVP',
+        rsvp: rsvp
+    }
+}
+
+export function addRsvp(rsvp) {
+    return (dispatch) => {
+        request
+        .post('/api/v1/posts/rsvp')
+        .send(rsvp)
+        .then(dispatch(gotRsvp(rsvp)))
+    }
+}

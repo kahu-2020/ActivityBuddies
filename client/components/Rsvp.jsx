@@ -3,12 +3,14 @@ import React from 'react'
 class Rsvp extends React.Component {
     constructor(props) {
       super(props);
+
       this.state = {value: 0};
       this.buttonClicked = this.buttonClicked.bind(this);
     }
     
-    buttonClicked(event) {
-      this.setState({value: this.state.value+1});
+    buttonClicked() {
+      this.props.dispatch(addRsvp(1))
+      
     }
     
     render() {
