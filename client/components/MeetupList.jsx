@@ -17,10 +17,10 @@ class MeetupList extends React.Component {
         return (
             <div className="meetupList"> 
                 <h2>Meetups</h2>
+                <button onClick={this.props.handleClick} className="addButton"> + </button>
                 {this.props.posts.map( (post, i) => {
                     return <MeetupPost key={i} currentPost={post} />
                 })}
-                <button onClick={this.props.handleClick}> + </button>
             </div>
         )
     }
