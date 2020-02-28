@@ -61,3 +61,10 @@ export function gotActivities(activities) {
 
 }
 
+export function currentActivity(activity) {
+    return {
+        type: 'SET_CURRENT_ACTIVITY',
+        activity: activity
+    }
+}
+
