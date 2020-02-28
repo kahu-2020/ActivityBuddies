@@ -25,6 +25,7 @@ class Locations extends React.Component {
 
 
     render() {
+        
         return (
             <div className='wrapper'>
                 <h1>RIDE</h1>
