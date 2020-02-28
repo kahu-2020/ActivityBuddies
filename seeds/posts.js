@@ -12,7 +12,10 @@ exports.seed = function (knex) {
           dateTime: '2020-03-07T09:00',
           tracks: 'To Summit + Ridgeline',
           skill: 'Expert',
-          location_id: 1
+          location_id: 1,
+          attendees: 0
+          
+
         },
         {
           id: 2,
@@ -21,16 +24,19 @@ exports.seed = function (knex) {
           dateTime: '2020-03-07T12:00',
           tracks: 'To Summit + Trickle Falls',
           skill: 'Expert',
-          location_id: 1
+          location_id: 1,
+          attendees: 0
         },
         {
           id: 3,
           user_name: 'Ethan',
           notes: 'has anyone seen Lui?',
           dateTime: '2020-03-08T13:00',
+
           tracks: 'Mid Peak loop + Starfish',
           skill: 'Advanced',
-          location_id: 1
+          location_id: 1,
+          attendees: 0
         },
         {
           id: 4,
@@ -39,7 +45,8 @@ exports.seed = function (knex) {
           dateTime: '2020-03-08T13:00',
           tracks: 'Hataitai Zigzag',
           skill: 'Beginner',
-          location_id: 3
+          location_id: 3,
+          attendees: 0
         },
         {
           id: 5,
@@ -48,7 +55,8 @@ exports.seed = function (knex) {
           dateTime: '2020-03-08T13:00',
           tracks: 'Clinical + Highbury fling + Serendipity + Transient',
           skill: 'Advanced',
-          location_id: 2
+          location_id: 2,
+          attendees: 0
         },
         {
           id: 6,
@@ -57,7 +65,8 @@ exports.seed = function (knex) {
           dateTime: '2020-03-07T12:00',
           tracks: 'Beginners loop + Skills area',
           skill: 'Beginner',
-          location_id: 1
+          location_id: 1,
+          attendees: 0
         },
         {
           id: 7,
@@ -66,8 +75,13 @@ exports.seed = function (knex) {
           dateTime: '2020-03-08T13:00',
           tracks: 'Mid Peak loop + Magic Carpet',
           skill: 'Intermediate',
-          location_id: 1
+          location_id: 1,
+          attendees: 0
         },
+
+          
+        }
+
       ]);
     });
 };

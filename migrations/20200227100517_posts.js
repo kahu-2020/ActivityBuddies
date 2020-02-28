@@ -8,6 +8,7 @@ exports.up = function(knex) {
     table.string('tracks')
     table.string('skill')
     table.integer('location_id')
+    table.integer('attendees')
   })
 };
 

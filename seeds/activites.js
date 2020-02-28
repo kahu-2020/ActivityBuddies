@@ -6,19 +6,19 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('activities').insert([
         {
-          id: 1, name: 'Surfing',
+          id: 1, name: 'SURF',
           symbol: '',
           color: '',
           photo: ''
         },
         {
-          id: 2, name: 'Mountain Biking',
+          id: 2, name: 'RIDE',
           symbol: '',
           color: '',
           photo: ''
         },
         {
-          id: 3, name: 'Hiking',
+          id: 3, name: 'HIKE',
           symbol: '',
           color: '',
           photo: ''
