@@ -35,8 +35,13 @@ class LocationMeetups extends React.Component {
         console.log("Rerender.")
         return (
             <React.Fragment>   
-                <div className="LocationMeetupContainer">
+                <div className="LocationMeetupHeader">
                     <h1> {this.props.location.name} </h1>
+                </div>
+
+                <div className="LocationMeetupContainer">
+                    
+                    
                     <div className="widgetWrapper">
                         
                         <div className="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="terrain" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
