@@ -19,6 +19,7 @@ export function getActivities() {
 }
 
 export function getPostsByLocationId(locationId) {
+    console.log('hi')
     return request.get('api/v1/posts/' + locationId)
     .then(res => {
         return res.body
