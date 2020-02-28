@@ -11,11 +11,11 @@ router.get('/:id', (req, res) => {
   })
 })
 
-router.post('/rsvp', (req, res) => {
-  console.log(req.body)
-  db.setRsvp(req.body)
-  .then(console.log(attendees))// what do we get back from an update???
-})
+// router.post('/rsvp', (req, res) => {
+//   console.log(req.body)
+//   db.setRsvp(req.body)
+//   .then(console.log(attendees))// what do we get back from an update???
+// })
 
 //router to add new posts
 router.post('/', (req, res) => {
