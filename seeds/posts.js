@@ -14,9 +14,7 @@ exports.seed = function (knex) {
           skill: 'Expert',
           location_id: 1,
           attendees: 0
-          
-
-        },
+                 },
         {
           id: 2,
           user_name: 'Claire',
@@ -32,7 +30,6 @@ exports.seed = function (knex) {
           user_name: 'Ethan',
           notes: 'has anyone seen Lui?',
           dateTime: '2020-03-08T13:00',
-
           tracks: 'Mid Peak loop + Starfish',
           skill: 'Advanced',
           location_id: 1,
@@ -78,10 +75,6 @@ exports.seed = function (knex) {
           location_id: 1,
           attendees: 0
         },
-
-          
-        }
-
       ]);
     });
 };
