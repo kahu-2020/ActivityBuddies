@@ -18,6 +18,7 @@ export function setCurrentLocation(location){
 }
 
 export function getLocations(id) {
+    console.log(id)
     return (dispatch) => {
         request.get('/api/v1/activities/'+id) // fix id is it $id
         .then(res => res.body)
