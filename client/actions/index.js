@@ -14,7 +14,6 @@ export function gotLocations(locations) {
         type: 'GOT_LOCATIONS',
         locations: locations 
     }
-
 }
 
 export function setCurrentLocation(location){

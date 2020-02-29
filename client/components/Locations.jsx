@@ -22,14 +22,14 @@ class Locations extends React.Component {
     }
 
     render() {
+        let activity = this.props.currentActivity
+
         return (
             <div className='wrapper'>
-                {/* <h1>{this.props.currentActivity.name}</h1> */}
+                <h1>{activity.name}</h1>
                 <div className='wrapperBody'>
                     <div className='imagesWrapper'>
-                        <img src="images/makaraMap.png" className='mapImages' alt="locations pinpointed on Wellington map" />
-                        {/* <img src="images/polhillMap.png" className='mapImages' alt="Polhill pinpointed in Wellington map" />
-                    <img src="images/mtVicMap.png" className='mapImages' alt="MtVic pinpointed in Wellington map" /> */}
+                        <img src={activity.photo} className='mapImages' alt="locations pinpointed on Wellington map" />
                     </div>
 
                     <div className='locationWrapper'>
