@@ -5,6 +5,9 @@ import AddPostForm from './AddPostForm'
 import { connect } from 'react-redux'
 import { gotPostsByLocationID } from '../actions/postListActions'
 
+//check if the user is authenticated.
+
+
 class LocationMeetups extends React.Component {
     constructor(props) {
         super(props)
