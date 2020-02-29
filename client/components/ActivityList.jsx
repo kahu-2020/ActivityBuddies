@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { getActivities } from '../actions/index'
-
+import { setCurrentActivity } from '../actions/index'
 
 class ActivityList extends React.Component {
     constructor(props) {
@@ -14,11 +14,15 @@ class ActivityList extends React.Component {
         this.props.dispatch(getActivities())
     }
 
+    handleClick(activity) {
+        this.props.dispatch(setCurrentActivity(activity)) // sets the global state of currentActivity
+    }
+
     render() {
         return (
             <div className='activity-container'>
                 {this.props.activities.map(activity => {
-                    return <Link className='act-btn hover-1' path='/locations'><p key={activity.id}>{activity.name}</p></Link>
+                    return <Link className='act-btn hover-1' to='/locations' onClick={() => this.handleClick(activity)}><p key={activity.id}>{activity.name}</p></Link>
                 })}
             </div>
         )
@@ -28,7 +32,7 @@ class ActivityList extends React.Component {
 function mapStateToProps(state) {
     return {
         activities: state.activities,
-
+        currentActivity: state.currentActivity
     }
 }
 
