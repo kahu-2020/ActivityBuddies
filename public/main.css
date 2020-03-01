@@ -62,10 +62,12 @@ font-size: 2rem;
 /* wrapper around each individual component excluding home */
 .wrapperBody {
     display: flex;
+    width: 100%;
 }
 .wrapper { 
     background-color: rgb(244, 248, 249);
     color: grey;
+    width: 100%;
 }
 
 /* Location-Meetups CSS */
@@ -86,6 +88,7 @@ font-size: 2rem;
 .locationList {
     display: flex;
     flex-direction: column;
+    width: 30%;
 }
 
 
@@ -104,10 +107,12 @@ font-size: 2rem;
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: stretch;
+    width: 10%;
+
 }
 
 .btn {
-    background-color: #4CAF50; 
+    background-color:  #495264;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -116,10 +121,13 @@ font-size: 2rem;
     display: inline-block;
     font-size: 16px;
     transition-duration: 0.4s;
+    width: 500%;
+    margin-bottom: 20px;
+    border-radius: 2em;
 }
 
 .btn:hover {
-    background-color: rgb(33, 114, 36); /* Green */
+    background-color: #8BB7C7;
     color: white;
   }
 
@@ -256,4 +264,11 @@ font-size: 2rem;
     color: #F3F5F0;
 }
 
+.imagesWrapper {
+    width: 50%;
+}
+
+.mapImages {
+    width: 100%;
+}
 

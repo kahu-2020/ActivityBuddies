@@ -10,7 +10,14 @@ import { setCurrentLocation } from '../actions/index'
 class Locations extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            activity_id: 0
+        }
     }
+
+
+
+    // if activity id is (x) then render corresponding id page. 
 
 
     componentDidMount() {
@@ -25,19 +32,14 @@ class Locations extends React.Component {
 
 
     render() {
-        console.log('test12')
-
         return (
             <div className='wrapper'>
-                <div className='loc-nav'>
-                    <Link className='loc-home' to='/'>Home</Link>
-                    <h1 className='loc-hedr'>RIDE</h1>
-                </div>
-
+                <h1>RIDE</h1>
                 <div className='wrapperBody'>
                     <div className='imagesWrapper'>
                         <img src="images/makara.png" className='mapImages' alt="Makara pinpointed in Wellington map" />
-
+                        {/* <img src="images/polhillMap.png" className='mapImages' alt="Polhill pinpointed in Wellington map" />
+                    <img src="images/mtVicMap.png" className='mapImages' alt="MtVic pinpointed in Wellington map" /> */}
                     </div>
 
                     <div className='locationWrapper'>
@@ -45,7 +47,7 @@ class Locations extends React.Component {
                         <div className='locationList'>
                             {this.props.locations.map(location => {
                                 return <Link to='/meetups' className='links'>
-                                    <button className='location-btn' key={location.id} onClick={() => this.handleClick(location)}>{location.name} placeholder</button>
+                                    <button className='btn btn-outline-primary' key={location.id} onClick={() => this.handleClick(location)}>{location.name}</button>
                                 </Link>
                             })}
                         </div>
@@ -54,9 +56,13 @@ class Locations extends React.Component {
 
 
             </div>
+
         )
     }
+
 }
+
+
 
 
 function mapStateToProps(state) {
