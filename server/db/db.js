@@ -6,6 +6,7 @@ const {generateHash} = require('authenticare/server')
 
 // get the locations based on the activity id of the current activity selected
 function getLocations(id, db = connection) {
+  console.log(id)
     return db('locations')
     .where('activity_id', '=', id)
     .select('*')
@@ -26,7 +27,8 @@ function addPost (post, db = connection) {
             dateTime: post.dateTime,
             tracks: post.tracks,
             skill: post.skill,
-            location_id: post.location_id
+            location_id: post.location_id, 
+            attendees: 0
         })
 }
 
@@ -80,6 +82,10 @@ module.exports = {
     getPostsByLocation: getPostsByLocation, 
     userExists,
     getUserByName,
+<<<<<<< HEAD
     createUser,
+=======
+    createUser, 
+>>>>>>> f61719eba16269bfaf48a290ffc8e7901bba17ae
     setRsvp: setRsvp
 }

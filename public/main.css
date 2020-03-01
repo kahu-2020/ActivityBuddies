@@ -227,6 +227,45 @@ font-size: 2rem;
 
 }
 
+.meetupCardInActive {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #49526493;
+    color: #F3F5F0;
+
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding: 5px;
+
+    width: 85%;
+
+    text-align: left;   
+    
+    border-radius: 7px;
+    box-shadow: black;
+
+    transition: 0.3s;
+}
+
+.skillDropdown {
+    background-color: #5fb174;
+    color: #F3F5F0;
+    margin-top: 5px;
+    padding-top: 0px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 60px;
+    width: 100%;
+    border: none;
+    border-radius: 7px
+}
+
+.meetupCard:hover {
+    background-color: #8BB7C7;
+}
 
 .meetupCard p {
     text-align: center;

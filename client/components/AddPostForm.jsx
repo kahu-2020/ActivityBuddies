@@ -1,6 +1,11 @@
 import React from 'react'
 import { addPostApi } from '../api'
+<<<<<<< HEAD
 import { connect } from 'react-redux'
+=======
+import {connect} from 'react-redux'
+import { addPost } from '../actions'
+>>>>>>> f61719eba16269bfaf48a290ffc8e7901bba17ae
 
 class AddPostForm extends React.Component {
   constructor(props) {
@@ -36,7 +41,7 @@ class AddPostForm extends React.Component {
 
     const post = this.state
     this.props.goBack()
-    return addPostApi(post)
+    this.props.dispatch(addPost(post))
   }
 
   render() {
