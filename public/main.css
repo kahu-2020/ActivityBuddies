@@ -250,6 +250,20 @@ font-size: 2rem;
     transition: 0.3s;
 }
 
+.skillDropdown {
+    background-color: #5fb174;
+    color: #F3F5F0;
+    margin-top: 5px;
+    padding-top: 0px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 60px;
+    width: 100%;
+    border: none;
+    border-radius: 7px
+}
+
 .meetupCard:hover {
     background-color: #8BB7C7;
 }
