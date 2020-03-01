@@ -38,16 +38,15 @@ function getPostsByLocation(locationID, db = connection) {
     .orderBy('dateTime', 'desc')
 }
 
-function getUpComingPosts(locationID, time, db = connection) {
+function getUpComingPosts(locationID, db = connection) {
     var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var currentTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         return db('posts')
         .where('posts.location_id', '=', locationID)
-        .where('dateTime', '=', time)
+        .andWhere('dateTime', '>', currentTime) //
         .select('user_name', 'notes', 'dateTime', 'tracks', 'skill')
         .orderBy('dateTime', 'desc')
 }
-
 
 
 // function setRsvp(postId, db=connection) {

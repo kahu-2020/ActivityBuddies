@@ -34,13 +34,12 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.get('/upcomingposts', (req, res) => {
+router.get('/upcoming/:id', (req, res) => {
   console.log('expiry')
-  res.send('upcoming')
-  // db.getUpComingPosts(req.params.id)    
-  //   .then(postList => {
-  //       res.json(postList)
-  // })
+  db.getUpComingPosts(req.params.id)    
+    .then(postList => {
+        res.json(postList)
+  })
 })
 
 module.exports = router
