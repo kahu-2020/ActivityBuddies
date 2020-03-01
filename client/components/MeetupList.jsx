@@ -31,10 +31,11 @@ class MeetupList extends React.Component {
 
         // ---- if MeetupPost does not == state (skill level) then make MeetupPost dull opacity ----
         // 
-        // let postCardStyle = {className}
-        // 
-        // const skillLevel = ''
-        // this.state.skillLevel 
+        let postCardStyle = {className}        
+        let skillLevel = ''
+        if (this.state.skillLevel !== skillLevel){
+           {postCardStyle = {className}}
+         }
 
 
         return (
