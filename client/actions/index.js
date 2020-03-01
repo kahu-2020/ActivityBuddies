@@ -9,13 +9,7 @@ export function setCurrentActivity(activity){
 }
 
 
-export function gotLocations(locations) {
-    return {
-        type: 'GOT_LOCATIONS',
-        locations: locations 
-    }
 
-}
 
 export function setCurrentLocation(location){
     console.log(location)
@@ -33,6 +27,12 @@ export function getLocations(id) {
         .then(locations => {
             dispatch(gotLocations(locations))
         })
+    }
+}
+export function gotLocations(locations) {
+    return {
+        type: 'GOT_LOCATIONS',
+        locations: locations 
     }
 }
 

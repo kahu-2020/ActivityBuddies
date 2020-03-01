@@ -14,6 +14,7 @@ class Locations extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props.currentActivity.id)
         this.props.dispatch(getLocations(this.props.currentActivity.id)) //(this.props.currentActivity.id) - will get all locationd for the currentActivities.id
     }
 
@@ -22,15 +23,15 @@ class Locations extends React.Component {
     }
 
     render() {
+        let activity = this.props.currentActivity
+        console.log(this.props.locations)
+
         return (
             <div className='wrapper'>
-                {/* <h1>{this.props.currentActivity.name}</h1> */}
+                <h1>{activity.name}</h1>
                 <div className='wrapperBody'>
                     <div className='imagesWrapper'>
-                        <img src="images/makara.png" className='mapImages' alt="locations pinpointed on Wellington map" />
-                      
-                        {/* <img src="images/polhillMap.png" className='mapImages' alt="Polhill pinpointed in Wellington map" />
-                    <img src="images/mtVicMap.png" className='mapImages' alt="MtVic pinpointed in Wellington map" /> */}
+                        <img src={activity.photo} className='mapImages' alt="locations pinpointed on Wellington map" />
                     </div>
 
                     <div className='locationWrapper'>
@@ -55,8 +56,7 @@ class Locations extends React.Component {
 function mapStateToProps(state) {
     return {
         currentActivity: state.currentActivity,
-        locations: [{id:1,name:'makara'},{id:1,name:'makara'},{id:1,name:'makara'}],
-        // locations: state.locations,
+        locations: state.locations,
         currentLocation: state.currentLocation
     }
 }
