@@ -6,6 +6,7 @@ const {generateHash} = require('authenticare/server')
 
 // get the locations based on the activity id of the current activity selected
 function getLocations(id, db = connection) {
+  console.log(id)
     return db('locations')
     .where('activity_id', '=', id)
     .select('*')

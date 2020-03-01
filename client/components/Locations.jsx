@@ -14,7 +14,6 @@ class Locations extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.currentActivity.id)
         this.props.dispatch(getLocations(this.props.currentActivity.id)) //(this.props.currentActivity.id) - will get all locationd for the currentActivities.id
     }
 
@@ -31,7 +30,7 @@ class Locations extends React.Component {
                 <h1>{activity.name}</h1>
                 <div className='wrapperBody'>
                     <div className='imagesWrapper'>
-                        <img src={activity.photo} className='mapImages' alt="locations pinpointed on Wellington map" />
+                        <img src={activity.photo} className='TrailforksWidgetMap' alt="locations pinpointed on Wellington map" />
                     </div>
 
                     <div className='locationWrapper'>
