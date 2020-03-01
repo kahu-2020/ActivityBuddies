@@ -8,7 +8,7 @@ import { gotPostsByLocationID } from '../actions/postListActions'
 class LocationMeetups extends React.Component {
     constructor(props) {
         super(props)
-        
+
         this.state = {
             currentDifficulty: 0,
             addingMeetup: false,
@@ -17,14 +17,14 @@ class LocationMeetups extends React.Component {
 
     activateMeetingForm = () => {
         this.setState({
-            addingMeetup: true 
-        })    
+            addingMeetup: true
+        })
     }
 
     deactivateMeetingForm = () => {
-         this.setState({
-            addingMeetup: false 
-        })    
+        this.setState({
+            addingMeetup: false
+        })
     }
 
     componentDidMount() {
@@ -32,25 +32,26 @@ class LocationMeetups extends React.Component {
     }
 
     render() {
-        console.log("Rerender.")
+
         return (
-            <React.Fragment>   
+            <React.Fragment>
                 <div className="LocationMeetupHeader">
                     <h1> {this.props.location.name} </h1>
                 </div>
 
                 <div className="LocationMeetupContainer">
-                    
-                    
                     <div className="widgetWrapper">
-                        
-                        <div className="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="terrain" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
-
+                        {
+                            this.props.currentActivity.id == 1 
+                                ? <React.Fragment><link href="//www.surf-forecast.com/stylesheets/widget.css" media="screen" rel="stylesheet" type="text/css" /><div class="wf-width-cont surf-fc-widget"><div class="widget-container"><div class="external-cont"><iframe class="surf-fc-i" allowtransparency="true" src={this.props.location.widget} scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div></div></div></React.Fragment> 
+                                : <iframe src={this.props.location.widget} scrolling="no" frameborder="0" allowfullscreen="1" width="800px" height="400px" id="map0" />
+                        }
                     </div>
+
                     <div className="postListingWrapper">
-                        
-                        {this.state.addingMeetup ?   <AddPostForm goBack={this.deactivateMeetingForm} /> : <MeetupList handleClick={this.activateMeetingForm} posts={'hi'} /> }
-                    
+
+                        {this.state.addingMeetup ? <AddPostForm goBack={this.deactivateMeetingForm} /> : <MeetupList handleClick={this.activateMeetingForm} posts={'hi'} />}
+
                     </div>
                 </div>
             </React.Fragment>
@@ -61,9 +62,13 @@ class LocationMeetups extends React.Component {
 function mapStateToProps(state) {
     return {
         posts: state.postList,
-        location: state.currentLocation
+        location: state.currentLocation,
+        currentActivity: state.currentActivity,
     }
 }
 
 export default connect(mapStateToProps)(LocationMeetups)
+
+
+
 
