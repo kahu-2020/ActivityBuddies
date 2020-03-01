@@ -8,6 +8,7 @@ import ActivityList from './ActivityList'
 import LocationMeetups from './LocationMeetups'
 import AddPostForm from './AddPostForm'
 import Locations from './Locations'
+import Expiry from './Expiry'
 
 class App extends React.Component{
  
@@ -21,6 +22,7 @@ class App extends React.Component{
         <Route path="/banana" component={LocationMeetups} />
         <Route path='/locations' component={Locations} />
         <Route path='/addpostform' component={AddPostForm} />
+        <Route path='/expiry' component={Expiry} />
       </div>
     </Router>
 

@@ -28,12 +28,19 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-
     db.getPostsByLocation(req.params.id)
     .then(postList => {
         res.json(postList)
     })
 })
 
+router.get('/upcomingposts', (req, res) => {
+  console.log('expiry')
+  res.send('upcoming')
+  // db.getUpComingPosts(req.params.id)    
+  //   .then(postList => {
+  //       res.json(postList)
+  // })
+})
 
 module.exports = router
