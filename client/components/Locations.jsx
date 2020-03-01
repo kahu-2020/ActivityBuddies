@@ -7,37 +7,28 @@ import { setCurrentLocation } from '../actions/index'
 
 
 
+
 class Locations extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            activity_id: 0
-        }
     }
-
-
-
-    // if activity id is (x) then render corresponding id page. 
-
 
     componentDidMount() {
-        this.props.dispatch(getLocations(1)) //(this.props.currentActivity.id) - will get all locationd for the currentActivities.id
-
+        this.props.dispatch(getLocations(this.props.currentActivity.id)) //(this.props.currentActivity.id) - will get all locationd for the currentActivities.id
     }
-
 
     handleClick(location) {
         this.props.dispatch(setCurrentLocation(location)) // sets the global state of currentLocation
     }
 
-
     render() {
         return (
             <div className='wrapper'>
-                <h1>RIDE</h1>
+                {/* <h1>{this.props.currentActivity.name}</h1> */}
                 <div className='wrapperBody'>
                     <div className='imagesWrapper'>
-                        <img src="images/makara.png" className='mapImages' alt="Makara pinpointed in Wellington map" />
+                        <img src="images/makara.png" className='mapImages' alt="locations pinpointed on Wellington map" />
+                      
                         {/* <img src="images/polhillMap.png" className='mapImages' alt="Polhill pinpointed in Wellington map" />
                     <img src="images/mtVicMap.png" className='mapImages' alt="MtVic pinpointed in Wellington map" /> */}
                     </div>
@@ -53,13 +44,9 @@ class Locations extends React.Component {
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         )
     }
-
 }
 
 

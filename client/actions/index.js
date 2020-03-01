@@ -1,5 +1,13 @@
 import request from 'superagent'
 
+export function setCurrentActivity(activity){
+    console.log(activity)
+    return {
+        type: 'SET_CURRENT_ACTIVITY', 
+        currentActivity: activity
+    }
+}
+
 
 export function gotLocations(locations) {
     return {
@@ -18,6 +26,7 @@ export function setCurrentLocation(location){
 }
 
 export function getLocations(id) {
+    console.log(id)
     return (dispatch) => {
         request.get('/api/v1/locations/'+id) // fix id is it $id
         .then(res => res.body)
@@ -59,12 +68,5 @@ export function gotActivities(activities) {
         activities: activities 
     }
 
-}
-
-export function currentActivity(activity) {
-    return {
-        type: 'SET_CURRENT_ACTIVITY',
-        activity: activity
-    }
 }
 

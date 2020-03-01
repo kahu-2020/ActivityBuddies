@@ -1,7 +1,4 @@
 const initialState = {
-  id: 1,
-  name: 'Makara',
-  activity_id: 1
 }
 
 function currentLocation (state = initialState, action) {

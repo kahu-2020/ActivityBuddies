@@ -76,9 +76,36 @@ exports.seed = function (knex) {
           location_id: 1,
           attendees: 0
         },
-
-        
-
+      {
+        id: 8,
+        user_name: 'Clive',
+        notes: 'Beer on the beach afterwards?',
+        dateTime: '2020-04-08T13:00',
+        tracks: '',
+        skill: 'Expert',
+        location_id: 9,
+        attendees: 0
+      },
+      {
+        id: 9,
+        user_name: 'Reuben',
+        notes: 'Spare boogieboards if needed',
+        dateTime: '2020-03-07T12:00',
+        tracks: 'Maranui end',
+        skill: 'Beginner',
+        location_id: 7,
+        attendees: 0
+      },
+      {
+        id: 10,
+        user_name: 'Samantha',
+        notes: 'Fish and chips to share post surf',
+        dateTime: '2020-04-08T13:00',
+        tracks: 'Airport reef end',
+        skill: 'Intermediate',
+        location_id: 7,
+        attendees: 0
+      },
       ]);
     });
 };

@@ -1,18 +1,11 @@
-const initialState = {
-  id: 2, 
-  name: 'RIDE',
-  symbol: '',
-  color: '',
-  photo: ''
-}
+const initialState = {}
 
 function currentActivity (state = initialState, action) {
   switch(action.type){
     case 'SET_CURRENT_ACTIVITY':
       return action.currentActivity
-
-      default:
-        return state
+    default:
+      return state
   }
 }
 

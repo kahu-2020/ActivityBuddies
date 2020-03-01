@@ -26,7 +26,8 @@ function addPost (post, db = connection) {
             dateTime: post.dateTime,
             tracks: post.tracks,
             skill: post.skill,
-            location_id: post.location_id
+            location_id: post.location_id, 
+            attendees: 0
         })
 }
 
@@ -80,6 +81,6 @@ module.exports = {
     getPostsByLocation: getPostsByLocation, 
     userExists,
     getUserByName,
-    createUser
+    createUser, 
     setRsvp: setRsvp
 }

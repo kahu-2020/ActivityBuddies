@@ -5,6 +5,7 @@ import locations from './locations'
 import currentLocation from './currentLocation'
 import newPost from './newPost'
 import activities from './activities'
+import currentActivity from './currentActivity'
 
 
 export default combineReducers({
@@ -13,5 +14,7 @@ export default combineReducers({
     activities,
     postList,
     newPost,
-    activities
+    activities, 
+    currentActivity,
+
 })
