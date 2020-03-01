@@ -4,7 +4,9 @@ import AddPostForm from './AddPostForm'
 
 import { connect } from 'react-redux'
 import { gotPostsByLocationID } from '../actions/postListActions'
-import  BikeWidget from './widgets/BikeWidget'
+
+//check if the user is authenticated.
+
 
 class LocationMeetups extends React.Component {
     constructor(props) {
@@ -45,7 +47,7 @@ class LocationMeetups extends React.Component {
                     
                     <div className="widgetWrapper">
                         
-                       <BikeWidget location={this.props.location.id} />
+                        <div className="TrailforksWidgetMap" data-w="500px" data-h="800px" data-rid="1" data-activitytype="1" data-maptype="terrain" data-trailstyle="difficulty" data-controls="0" data-list="0" data-dml="1" data-layers="labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
 
                     </div>
                     <div className="postListingWrapper">
