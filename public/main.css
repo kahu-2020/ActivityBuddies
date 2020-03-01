@@ -60,6 +60,9 @@ text-align: center;
 font-size: 2rem;
 }
 /* wrapper around each individual component excluding home */
+.wrapperBody {
+    display: flex;
+}
 .wrapper { 
     background-color: rgb(244, 248, 249);
     color: grey;
@@ -78,6 +81,11 @@ font-size: 2rem;
 
 .loc-hedr {
     margin-left: 20%;
+}
+
+.locationList {
+    display: flex;
+    flex-direction: column;
 }
 
 

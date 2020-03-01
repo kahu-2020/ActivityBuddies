@@ -25,6 +25,7 @@ class Locations extends React.Component {
 
 
     render() {
+        console.log('test12')
 
         return (
             <div className='wrapper'>
@@ -44,7 +45,7 @@ class Locations extends React.Component {
                         <div className='locationList'>
                             {this.props.locations.map(location => {
                                 return <Link to='/meetups' className='links'>
-                                    <button className='location-btn' key={location.id} onClick={() => this.handleClick(location)}>{location.name}</button>
+                                    <button className='location-btn' key={location.id} onClick={() => this.handleClick(location)}>{location.name} placeholder</button>
                                 </Link>
                             })}
                         </div>
@@ -61,7 +62,8 @@ class Locations extends React.Component {
 function mapStateToProps(state) {
     return {
         currentActivity: state.currentActivity,
-        locations: state.locations,
+        locations: [{id:1,name:'makara'},{id:1,name:'makara'},{id:1,name:'makara'}],
+        // locations: state.locations,
         currentLocation: state.currentLocation
     }
 }
