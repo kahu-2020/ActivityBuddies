@@ -1,4 +1,5 @@
 import request from 'superagent'
+import { gotPostsByLocationID } from './postListActions'
 
 export function setCurrentActivity(activity){
     console.log(activity)
@@ -45,10 +46,19 @@ export function postAdded(newPost) {
 }
 
 export function addPost(newPost) {
-    return (dispatch) => {
+    return (dispatch, getState) => {
         request.post('/api/v1/posts/')
         .send(newPost)
-        .then(dispatch(postAdded(newPost)))
+        .then(() => {
+            dispatch(postAdded(newPost))
+        })
+        .then(() => {
+            console.log('hi', getState()) 
+            dispatch(gotPostsByLocationID(getState().currentLocation.id))
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 

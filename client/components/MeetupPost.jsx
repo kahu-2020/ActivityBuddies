@@ -12,7 +12,6 @@ class MeetupPost extends React.Component {
         console.log(this.props.currentPost)
         this.props.dispatch(addRsvp(this.props.currentPost))
         this.props.dispatch(gotPostsByLocationID(this.props.location.id))
-
       }
 
     render() {
