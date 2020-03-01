@@ -19,6 +19,7 @@ class ActivityList extends React.Component {
     }
 
     render() {
+<a href=""></a>
         return (
             <div className='activity-container'>
                 {this.props.activities.map(activity => {

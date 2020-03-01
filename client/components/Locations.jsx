@@ -27,7 +27,8 @@ class Locations extends React.Component {
                 {/* <h1>{this.props.currentActivity.name}</h1> */}
                 <div className='wrapperBody'>
                     <div className='imagesWrapper'>
-                        <img src="images/makaraMap.png" className='mapImages' alt="locations pinpointed on Wellington map" />
+                        <img src="images/makara.png" className='mapImages' alt="locations pinpointed on Wellington map" />
+                      
                         {/* <img src="images/polhillMap.png" className='mapImages' alt="Polhill pinpointed in Wellington map" />
                     <img src="images/mtVicMap.png" className='mapImages' alt="MtVic pinpointed in Wellington map" /> */}
                     </div>
@@ -54,7 +55,8 @@ class Locations extends React.Component {
 function mapStateToProps(state) {
     return {
         currentActivity: state.currentActivity,
-        locations: state.locations,
+        locations: [{id:1,name:'makara'},{id:1,name:'makara'},{id:1,name:'makara'}],
+        // locations: state.locations,
         currentLocation: state.currentLocation
     }
 }

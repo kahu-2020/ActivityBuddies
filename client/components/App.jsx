@@ -18,6 +18,7 @@ class App extends React.Component{
       <div>
         <h3 className='logo'>BUDS</h3>
         <Route exact path="/" component={Home} />
+        <Route path="/meetups" component={LocationMeetups} />
         <Route path='/locations' component={Locations} />
         <Route path="/meetups" component={LocationMeetups} />
         <Route path='/addpostform' component={AddPostForm} />
