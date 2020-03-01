@@ -22,6 +22,7 @@ class MeetupPost extends React.Component {
                 <p className="meetupSkill"> <span> Skill level: </span> {this.props.currentPost.skill} </p>
                 <p className="meetupTime"> <span> Meet at: </span> {this.props.currentPost.dateTime} </p>
                 <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>
+
                 <p>Attendees: {this.props.currentPost.attendees}</p>
                 <button className="flagButton" onClick={this.buttonClicked}> RSVP </button>
 
