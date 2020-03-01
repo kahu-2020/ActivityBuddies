@@ -14,6 +14,7 @@ class Locations extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props.currentActivity.id)
         this.props.dispatch(getLocations(this.props.currentActivity.id)) //(this.props.currentActivity.id) - will get all locationd for the currentActivities.id
     }
 
@@ -23,6 +24,7 @@ class Locations extends React.Component {
 
     render() {
         let activity = this.props.currentActivity
+        console.log(this.props.locations)
 
         return (
             <div className='wrapper'>

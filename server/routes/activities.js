@@ -6,6 +6,7 @@ const router = express.Router()
 
 
 //router to get the locations of a corresponding activity id 
+// MERGE CONFLICT
 router.get('/:id', (req, res) => {
   console.log(req.params.id)
     db.getLocations(req.params.id)
