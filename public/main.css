@@ -304,19 +304,44 @@ font-size: 2rem;
     text-align: center;
     border-radius: 2em;
     justify-content: center;
+    padding: 10px;
 }
 
 .pst-frm-bck-btn {
     border: none;
     border-radius: 7px;
-    height: 20px;
+    height: 40px;
     background-color: #5fb174;
     color: #F3F5F0;
+    margin-top: 20px;
+    width: 80%;
     transition-duration: 0.4s;
+    margin: auto;
+    font-size: 30px;
+
 }
 
 .pst-frm-bck-btn:hover {
     background-color: #8BB7C7;
+
+}
+
+.frm-usr-lbl{
+    color: white;
+
+}
+
+.frm-usr-ipt {
+    background-color: rgb(214, 184, 113);
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    border-radius: 7px;
+    height: 40px;
+}
+
+.frm-usr-ipt::placeholder{
+    font-family: 'Noto Sans JP' ;
 }
 
     
