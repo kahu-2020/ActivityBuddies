@@ -14,27 +14,29 @@ class MeetupList extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        // this.handleSubmit = this.handleSubmit.bind(this)
+
     }
 
-    // handleSubmit = (e) => {
-    //     console.log(e.target.value)
-    //     e.preventDefault()
 
-    //     this.setState({
-    //         skillLevel: [e.target.value]
-    //     })
-
-    // }
 
     handleChange = (e) => {
         console.log(e.target.value)
         this.setState({
-            [e.target.name]: e.target.value
+            skillLevel: e.target.value
         })
     }
 
     render() {
+
+
+        // ---- if MeetupPost does not == state (skill level) then make MeetupPost dull opacity ----
+        // 
+        // let postCardStyle = {className}
+        // 
+        // const skillLevel = ''
+        // this.state.skillLevel 
+
+
         return (
             <div className="meetupList">
                 <h2>Meetups</h2>
