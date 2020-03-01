@@ -30,9 +30,7 @@ class MeetupList extends React.Component {
 
 
         // ---- if MeetupPost does not == state (skill level) then make MeetupPost dull opacity ----
-        // function setSkill(skillLevel) {
-        //  return (skillLevel : className ? className2) 
-        // }
+
         // let postCardStyle = {className}        
         // let skillLevel = ''
         // if (this.state.skillLevel !== skillLevel){
@@ -59,7 +57,7 @@ class MeetupList extends React.Component {
 
                 <div className="cardList">
                     {this.props.posts.map((post, i) => {
-                        return <MeetupPost key={i} currentPost={post} />
+                        return <MeetupPost key={i} currentPost={post} activeSkill={this.state.skillLevel} />
                     })}
                 </div>
             </div>
