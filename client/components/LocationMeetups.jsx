@@ -49,8 +49,8 @@ class LocationMeetups extends React.Component {
                     <div className="widgetWrapper">
                         {
                             this.props.currentActivity.id == 1 
-                                ? <React.Fragment><link href="//www.surf-forecast.com/stylesheets/widget.css" media="screen" rel="stylesheet" type="text/css" /><div class="wf-width-cont surf-fc-widget"><div class="widget-container"><div class="external-cont"><iframe class="surf-fc-i" allowtransparency="true" src={this.props.location.widget} scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div></div></div></React.Fragment> 
-                                : <iframe src={this.props.location.widget} scrolling="no" frameborder="0" allowfullscreen="1" width="800px" height="400px" id="map0" />
+                                ? <React.Fragment><link href="//www.surf-forecast.com/stylesheets/widget.css" className='TrailforksWidgetMap' media="screen" rel="stylesheet" type="text/css" /><div class="wf-width-cont surf-fc-widget"><div class="widget-container"><div class="external-cont"><iframe class="surf-fc-i" allowtransparency="true" src={this.props.location.widget} scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div></div></div></React.Fragment> 
+                                : <iframe className='TrailforksWidgetMap' src={this.props.location.widget} scrolling="no" frameborder="0" allowfullscreen="1" width="400px" height="800px" id="map0" />
                         }
                     </div>
 
