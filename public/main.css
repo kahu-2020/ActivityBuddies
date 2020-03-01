@@ -92,7 +92,6 @@ font-size: 2rem;
 }
 
 
-
 .LocationMeetupContainer {
     color: #495264;
     display: flex;
@@ -228,9 +227,6 @@ font-size: 2rem;
 
 }
 
-.meetupCard:hover {
-    background-color: #8BB7C7;
-}
 
 .meetupCard p {
     text-align: center;
@@ -271,6 +267,11 @@ font-size: 2rem;
     height: 20px;
     background-color: #5fb174;
     color: #F3F5F0;
+    transition-duration: 0.4s;
+}
+
+.flagButton:hover {
+    background-color: #8BB7C7;
 }
 
 .imagesWrapper {
@@ -280,4 +281,44 @@ font-size: 2rem;
 .mapImages {
     width: 100%;
 }
+
+/* form styling */
+
+.addPostFormWrapper{
+
+        width: 60%; 
+        background-color: #F3F5F0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+.addPostForm {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #495264;
+    width: 75%;
+    height: 75%;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 2em;
+    justify-content: center;
+}
+
+.pst-frm-bck-btn {
+    border: none;
+    border-radius: 7px;
+    height: 20px;
+    background-color: #5fb174;
+    color: #F3F5F0;
+    transition-duration: 0.4s;
+}
+
+.pst-frm-bck-btn:hover {
+    background-color: #8BB7C7;
+}
+
+    
+
 

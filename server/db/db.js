@@ -80,6 +80,6 @@ module.exports = {
     getPostsByLocation: getPostsByLocation, 
     userExists,
     getUserByName,
-    createUser
+    createUser,
     setRsvp: setRsvp
 }
