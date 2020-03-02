@@ -31,7 +31,7 @@ class MeetupList extends React.Component {
 
         return (
             <div className="meetupList">
-                <h2>Meetups</h2>
+                <h2>{this.props.location.name} meetups</h2>
                 
                 <form className="">
                     <select className="skillDropdown" value={this.setState.skillLevel} onChange={this.handleChange}>
@@ -60,7 +60,8 @@ class MeetupList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        posts: state.postList
+        posts: state.postList,
+        location: state.currentLocation
     }
 }
 
