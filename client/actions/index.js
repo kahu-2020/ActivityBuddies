@@ -2,7 +2,6 @@ import request from 'superagent'
 import { gotPostsByLocationID } from './postListActions'
 
 export function setCurrentActivity(activity){
-    console.log(activity)
     return {
         type: 'SET_CURRENT_ACTIVITY', 
         currentActivity: activity
@@ -21,7 +20,6 @@ export function setCurrentLocation(location){
 }
 
 export function getLocations(id) {
-    console.log(id)
     return (dispatch) => {
         request.get('/api/v1/activities/'+id) // fix id is it $id
         .then(res => res.body)
@@ -38,7 +36,6 @@ export function gotLocations(locations) {
 }
 
 export function postAdded(newPost) {
-    console.log(newPost)
     return {
         type: 'ADD_POST',
         newPost: newPost
