@@ -29,6 +29,7 @@ export function getPostsByLocationId(locationId) {
 
 // function to add posts to the api
 export function addPostApi(newPost) {
+    console.log('ethan wants this')
     return request.post('api/v1/posts')
     .set({ 'Accept': 'application/json' })
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })

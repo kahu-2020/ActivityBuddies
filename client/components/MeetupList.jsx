@@ -2,6 +2,7 @@ import React from 'react'
 import MeetupPost from './MeetupPost'
 
 import { connect } from 'react-redux'
+import { IfAuthenticated } from './Authenticated'
 
 
 class MeetupList extends React.Component {
@@ -33,21 +34,20 @@ class MeetupList extends React.Component {
                 <h2>{this.props.location.name} meetups</h2>
                 
                 <form>
-                    <select value={this.setState.skillLevel} onChange={this.handleChange}>
+                    <select className="skillDropdown"value={this.setState.skillLevel} onChange={this.handleChange}>
                         <option value="">--Select your skill level--</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
                         <option value="Advanced">Advanced</option>
                         <option value="Expert">Expert</option>
                     </select>
-                    <input type="submit" value ="submit"/>
                 </form>
                 
                 <button onClick={this.props.handleClick} className="addButton"> + </button>
 
                 <div className="cardList">
                     {this.props.posts.map((post, i) => {
-                        return <MeetupPost key={i} currentPost={post} />
+                        return <MeetupPost key={i} currentPost={post} activeSkill={this.state.skillLevel} />
                     })}
                 </div>
             </div>
