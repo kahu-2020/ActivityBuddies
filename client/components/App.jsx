@@ -6,6 +6,10 @@ import Home from './Home'
 import LocationMeetups from './LocationMeetups'
 import AddPostForm from './AddPostForm'
 import Locations from './Locations'
+import Nav from './Nav'
+import Register from './Register'
+import Login from './Login'
+
 
 class App extends React.Component{
  
@@ -14,16 +18,17 @@ class App extends React.Component{
   return (
     <Router>
       <div>
+        <Nav />
         <h3 className='logo'>BUDS</h3>
         <Route exact path="/" component={Home} />
-        {/* <Route path='/locations' component={Locations} />
-        <Route path="/meetups" component={LocationMeetups} /> */}
         <Route path='/addpostform' component={AddPostForm} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
         <Route exact path='/:activity' component={Locations} />
         <Route exact path='/:activity/:location' component={LocationMeetups}/>
+       
       </div>
     </Router>
-
   )}
 }
 

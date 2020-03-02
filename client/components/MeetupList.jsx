@@ -3,6 +3,7 @@ import MeetupPost from './MeetupPost'
 
 import { connect } from 'react-redux'
 
+import { IfAuthenticated } from './Authenticated'
 
 class MeetupList extends React.Component {
     constructor(props) {
@@ -28,16 +29,6 @@ class MeetupList extends React.Component {
 
     render() {
 
-
-        // ---- if MeetupPost does not == state (skill level) then make MeetupPost dull opacity ----
-
-        // let postCardStyle = {className}        
-        // let skillLevel = ''
-        // if (this.state.skillLevel !== skillLevel){
-        //    {postCardStyle = {className}}
-        //  }
-
-
         return (
             <div className="meetupList">
                 <h2>Meetups</h2>
@@ -52,7 +43,7 @@ class MeetupList extends React.Component {
                     </select>
                 </form>
                 
-                <button onClick={this.props.handleClick} className="addButton"> + </button>
+                <IfAuthenticated><button onClick={this.props.handleClick} className="addButton"> + </button></IfAuthenticated>
 
                 <div className="cardList">
                     {this.props.posts.map((post, i) => {
