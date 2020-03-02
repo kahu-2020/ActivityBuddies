@@ -5,7 +5,7 @@ const server = express()
 const activitiesRoutes = require('./routes/activities')
 const postsRoutes = require('./routes/posts')
 const authRoutes = require('./routes/auth')
-
+server.use(express.urlencoded({extended: true})) // allows you to put info into post obj
 server.use(express.static(path.join(__dirname, '../public')))
 server.use(express.json())
 

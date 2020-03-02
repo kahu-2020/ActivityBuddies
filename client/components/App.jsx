@@ -17,21 +17,20 @@ class App extends React.Component{
  
 
   render() {
-    return (
-      <Router>
-        <div>
-          <Route path="/" component={Nav}/>
-          <h3 className='logo'>BUDS</h3>        
-          <Route exact path="/" component={Home} />
-          <Route path="/banana" component={LocationMeetups} />
-          <Route path='/locations' component={Locations} />
-          <Route path='/addpostform' component={AddPostForm} />
+  return (
+    <Router>
+      <div>
+        <Nav />
+        <h3 className='logo'>BUDS</h3>
+        <Route exact path="/" component={Home} />
+        <Route path='/locations' component={Locations} />
+        <Route path="/meetups" component={LocationMeetups} />
+        <Route path='/addpostform' component={AddPostForm} />
 
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-
-        </div>
-      </Router>
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+      </div>
+    </Router>
   )}
 }
 

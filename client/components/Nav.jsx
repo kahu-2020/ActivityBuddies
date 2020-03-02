@@ -8,9 +8,7 @@ class Nav extends React.Component {
     
     logout = () => {
         logOff()
-        .then(
-            window.location.reload(false)
-        )
+
     }
 
     render() {

@@ -6,6 +6,7 @@ const {generateHash} = require('authenticare/server')
 
 // get the locations based on the activity id of the current activity selected
 function getLocations(id, db = connection) {
+  console.log(id)
     return db('locations')
     .where('activity_id', '=', id)
     .select('*')
@@ -26,7 +27,8 @@ function addPost (post, db = connection) {
             dateTime: post.dateTime,
             tracks: post.tracks,
             skill: post.skill,
-            location_id: post.location_id
+            location_id: post.location_id, 
+            attendees: 0
         })
 }
 
@@ -34,14 +36,15 @@ function addPost (post, db = connection) {
 function getPostsByLocation(locationID, db = connection) {
     return db('posts')
     .where('posts.location_id', '=', locationID)
-    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill')
+    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
 }
 
-// function setRsvp(postId, db=connection) {
-//     return db('posts')
-//     .where('posts.id', '=', postID)
-//     .update()
-// }
+function setRsvp(post, db=connection) {
+    console.log(post)
+    return db('posts')
+    .where('posts.user_name', '=', post.user_name)
+    .increment('attendees', 1)
+}
 
 function createUser (user, db = connection) {
     return userExists(user.username, db)
@@ -79,6 +82,6 @@ module.exports = {
     getPostsByLocation: getPostsByLocation, 
     userExists,
     getUserByName,
-    createUser
-    // setRsvp: setRsvp
+    createUser, 
+    setRsvp: setRsvp
 }

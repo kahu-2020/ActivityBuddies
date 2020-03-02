@@ -4,7 +4,6 @@ import { getEncodedToken } from 'authenticare/client'
 
 
 export function getPosts() {
-    console.log('meetup posts')
     return request.get('/api/v1/posts')
     .then(res => {
         console.log(res)
@@ -22,7 +21,7 @@ export function getActivities() {
 
 export function getPostsByLocationId(locationId) {
     console.log('hi')
-    return request.get('api/v1/posts/' + locationId)
+    return request.get('/api/v1/posts/' + locationId)
     .then(res => {
         return res.body
     })
