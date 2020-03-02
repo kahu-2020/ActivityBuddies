@@ -1,6 +1,6 @@
 import React from 'react'
 import { register, isAuthenticated } from 'authenticare/client'
-import { tsConstructorType } from '@babel/types'
+import { Link } from 'react-router-dom'
 
 class Register extends React.Component {
 
@@ -36,13 +36,24 @@ class Register extends React.Component {
     render() {
         return (
         <React.Fragment>
-            <div className="login-wrapper">
-                <p> Register </p>
-                <input type="text" name="username" onChange={this.handleChange} />
-                <input type="password" name="password" onChange={this.handleChange} />
-                
+            <div className="register-wrapper">
+                <div className="register-column-one">
+                    <h2> Create An Account </h2>
+                </div>
+                <div className='register-column-two'>'
+                    <div className='rego-wrappr'>
+                        <p> Register </p>
+                        <input type="text" name="username" onChange={this.handleChange} />
+                        <input type="password" name="password" onChange={this.handleChange} />
+                    
+                        <button type='button' onClick={this.handleClick}>Register</button>
+                        <Link to="/login"><p className='rego-link'> Create your account →  </p></Link>
 
-                <button type='button' onClick={this.handleClick}>Register</button>
+                    </div>
+
+                </div>
+                    
+
             </div>
         </React.Fragment>
         )
