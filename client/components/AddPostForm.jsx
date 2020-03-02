@@ -43,8 +43,6 @@ class AddPostForm extends React.Component {
   render() {
     return (
       <div className='addPostFormWrapper'>
-
-        <h4>Add your new post here!</h4>
         <form className='addPostForm' onSubmit={this.handleSubmit}>
           <button className='pst-frm-bck-btn' onClick={this.props.goBack}>Go back</button>
 

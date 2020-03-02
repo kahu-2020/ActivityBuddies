@@ -4,11 +4,23 @@ const env = process.env.NODE_ENV || 'development'
 const connection = knex(config[env])
 const {generateHash} = require('authenticare/server')
 
+
+function getLocation(id, db=connection) {
+  return db('locations')
+    .where('id', '=', id)
+    .select('*')
+    .first()
+}
 // get the locations based on the activity id of the current activity selected
 function getLocations(id, db = connection) {
-  console.log(id)
     return db('locations')
     .where('activity_id', '=', id)
+    .select('*')
+}
+
+function getActivity(name, db=connection) {
+  return db('activities')
+    .where('name', '=', name)
     .select('*')
 }
 
@@ -51,7 +63,6 @@ function getUpComingPosts(locationID, db = connection) {
 }
 
 function setRsvp(post, db=connection) {
-    console.log(post)
     return db('posts')
     .where('posts.user_name', '=', post.user_name)
     .increment('attendees', 1)
@@ -96,5 +107,7 @@ module.exports = {
     userExists,
     getUserByName,
     createUser, 
-    setRsvp: setRsvp
+    setRsvp: setRsvp, 
+    getActivity,
+    getLocation,
 }
