@@ -70,7 +70,7 @@ exports.seed = function (knex) {
           id: 7,
           user_name: 'Scott',
           notes: 'Nice slow ride with a few challenging tracks',
-          dateTime: '2020-03-08T13:00',
+          dateTime: '2020-03-02T13:00',
           tracks: 'Mid Peak loop + Magic Carpet',
           skill: 'Intermediate',
           location_id: 1,
@@ -113,7 +113,7 @@ exports.seed = function (knex) {
           dateTime: '2020-03-08T13:00',
           tracks: 'Skyline',
           skill: 'Expert',
-          location_id: 3,
+          location_id: 5,
           attendees: 0
         },
         {
@@ -123,17 +123,17 @@ exports.seed = function (knex) {
           dateTime: '2020-03-08T13:00',
           tracks: 'Five Mile Loop',
           skill: 'Intermediate',
-          location_id: 3,
+          location_id: 4,
           attendees: 0
         },
         {
           id: 13,
           user_name: 'Jack',
           notes: 'Might pick up some fish and chips to take up the hill.',
-          dateTime: '2020-03-08T13:00',
+          dateTime: '2020-03-01T13:00',
           tracks: 'Mt Victoria look-out',
           skill: 'Beginner',
-          location_id: 3,
+          location_id: 6,
           attendees: 0
         }
       ]);
