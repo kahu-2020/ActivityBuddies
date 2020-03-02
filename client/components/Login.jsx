@@ -29,7 +29,7 @@ class Login extends React.Component {
           })
         .then((token) => {
             if(isAuthenticated()) {
-                this.props.history.push('/')
+                window.location.reload(false)
             }
         })
     }
