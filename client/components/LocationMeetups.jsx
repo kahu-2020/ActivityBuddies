@@ -51,10 +51,7 @@ class LocationMeetups extends React.Component {
     }
 
     render() {
-<<<<<<< HEAD
         console.log(this.props.location)
-=======
->>>>>>> fc44f413a855dfceafbbd0be2cf879274faefc2f
         
         return (
             <React.Fragment>
