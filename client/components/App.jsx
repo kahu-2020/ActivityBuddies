@@ -1,5 +1,6 @@
 import React from 'react'
-import { HashRouter as Router, Route } from 'react-router-dom'
+
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 //Component Imports
 import Home from './Home'
@@ -18,15 +19,16 @@ class App extends React.Component{
   return (
     <Router>
       <div>
-        <Nav />
-        <h3 className='logo'>MOVE</h3>
-        <Route exact path="/" component={Home} />
-        <Route path='/addpostform' component={AddPostForm} />
-        <Route path='/login' component={Login} />
-        <Route path='/register' component={Register} />
-        <Route exact path='/:activity' component={Locations} />
-        <Route exact path='/:activity/:location' component={LocationMeetups}/>
-       
+        <Route path="/" component={Nav} />
+        <h3 className='logo'>BUDS</h3>
+        <Switch> 
+          <Route exact path="/" component={Home} />
+          <Route path='/addpostform' component={AddPostForm} />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
+          <Route exact path='/:activity' component={Locations} />
+          <Route exact path='/:activity/:location' component={LocationMeetups}/>
+        </Switch> 
       </div>
     </Router>
   )}
