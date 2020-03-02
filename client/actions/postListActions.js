@@ -1,4 +1,5 @@
 import request from 'superagent'
+import { getUpComingPostsApi } from '../api'
 
 export function gotPostsByLocationID(id) {
     return (dispatch) => {
@@ -35,19 +36,20 @@ export function addRsvp(post) {
 }
 
 export function getUpComingPosts() {
-    console.log('dispatch up')
+    // console.log('dispatch up')
     return (dispatch) => {
-        request.get('api/v1/posts/upcoming/')
-        .then ( res => res.body)
+        getUpComingPostsApi(1) // request Api url and info
+        // TODO: pass location id in api function
         .then(upcomingposts => {
-            dispatch(gotUpComingPosts(upcomingposts))
+            dispatch(gotUpcoming(upcomingposts))
         })
     }
 }
 
-export function gotUpComingPosts(upcomingposts) {
+export function gotUpcoming(upcomingposts) {
     return {
-        type: 'GET_UPCOMING_POSTS',
-        upcomingposts: upcomingposts
+        type: 'GOT_UPCOMING', //GOT_COMING is being dent in reducer by dispatch
+        upcomingposts: upcomingposts 
     }
+
 }

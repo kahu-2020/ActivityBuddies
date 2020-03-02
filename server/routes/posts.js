@@ -29,9 +29,9 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/upcoming/:id', (req, res) => {
-  console.log('upcoming')
   db.getUpComingPosts(req.params.id)    
     .then(upComingPosts => {
+      console.log(upComingPosts)
         res.json(upComingPosts)
   })
 })

@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { getUpComingPosts } from '../actions'
-import MeetupList from './MeetupList'
+import { getUpComingPosts } from '../actions/postListActions'
+
+import MeetupPost from './MeetupPost'
 
 class Expiry extends React.Component {
     constructor(props) {
@@ -14,27 +15,29 @@ class Expiry extends React.Component {
     }
 
     componentDidMount() {
-        console.log('mount')
-        this.props.dispatch(getUpComingPosts())
+        
+        this.props.dispatch(getUpComingPosts(this.props.currentLocation)) //dispatch the action from postListActions
     }
 
 
 
     render() {
         let today = new Date();
-        let currentTime = (today.getYear() + 1900) + '-' + today.getMonth() + '-' + today.getDate() + ' '
-        + 'T' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            console.log(currentTime)
+            let upPosts = this.props.upcomingposts.filter((newestpost) => {
+                // newestpost is array of all postsby location
+                    let postTime = new Date(newestpost.dateTime.split(' ').join(''))
+                    // postTime variable format time of a post in yymmdd hh:mm
+                    // delete space between date and T
+                        return postTime.getTime() > today.getTime()
+                        //comparing time posted and current date+time
+            })
 
-        let upPosts = !this.props.upComingPosts || this.props.dateTime > currentTime
-            console.log(upPosts)
-        
             return (
                 <div>
-                    <h1>Expired</h1>
+                    <h1>Upcoming posts</h1>
                     <div className="cardList">
-                    {this.props.upPosts.filter((upComingPost => {
-                        return <MeetupList key={i} currentPost={upComingPosts} activeSkill={this.state.skillLevel} expiry={upComingPost > currentTime} />})
+                    {upPosts.map((function upComingPost(newestpost, idx) {
+                        return <MeetupPost key={idx} currentPost={newestpost} />})
                     )}
                     </div>
                 </div>
@@ -44,7 +47,8 @@ class Expiry extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        upcomingposts: state.upComingPosts
+        upcomingposts: state.postList, // from  PostListReduer reducer
+        currentLocation :state.currentLocation // from  currentLocation reducer
     }
 }
 

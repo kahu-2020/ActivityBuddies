@@ -21,8 +21,6 @@ export function setCurrentActivity(activity){
     }
 }
 
-<<<<<<< HEAD
-=======
 export function getCurrentLocation(id) {
     // going to back end to get whole currentLocation by id
     return (dispatch) => {
@@ -36,7 +34,6 @@ export function getCurrentLocation(id) {
     }
 }
 
->>>>>>> 31559f0d263965bf5b60b2f99d5e38bad989c0a0
 export function setCurrentLocation(location){
     
     return {
@@ -102,20 +99,13 @@ export function gotActivities(activities) {
     }
 }
 
-export function getUpComingPosts() {
-    return (dispatch) => {
-        request.get('/api/v1/posts/upcoming/') 
-        .then(res => res.body)
-        .then(upcomingposts => {
-            dispatch(gotUpcoming(upcomingposts))
-        })
-    }
-}
+// export function getUpComingPosts() {
+//     return (dispatch) => {
+//         request.get('/api/v1/posts/upcoming/') 
+//         .then(res => res.body)
+//         .then(upcomingposts => {
+//             dispatch(gotUpcoming(upcomingposts))
+//         })
+//     }
+// }
 
-export function gotUpcoming(upcomingposts) {
-    return {
-        type: 'GOT_UPCOMING',
-        upcomingposts: upcomingposts 
-    }
-
-}

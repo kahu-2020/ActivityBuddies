@@ -57,7 +57,7 @@ function getUpComingPosts(locationID, db = connection) {
     var currentTime = (today.getYear() + 1900) + '-' + today.getMonth() + '-' + today.getDate()
         return db('posts')
         .where('posts.location_id', '=', locationID)
-        .andWhere('dateTime', '>', currentTime) //
+        // .andWhere('dateTime', '>', currentTime)
         .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
         .orderBy('dateTime', 'desc')
 }
