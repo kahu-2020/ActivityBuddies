@@ -9,7 +9,6 @@ class MeetupPost extends React.Component {
     }
 
     buttonClicked = () => {
-        console.log(this.props.currentPost)
         this.props.dispatch(addRsvp(this.props.currentPost))
         this.props.dispatch(gotPostsByLocationID(this.props.location.id))
       }
@@ -17,8 +16,6 @@ class MeetupPost extends React.Component {
     render() {
         
         let active = !this.props.activeSkill || this.props.currentPost.skill == this.props.activeSkill
- 
-        console.log(this.props.currentPost.skill)
 
 
         return(

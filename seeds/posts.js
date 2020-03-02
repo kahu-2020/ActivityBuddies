@@ -69,11 +69,7 @@ exports.seed = function (knex) {
           id: 7,
           user_name: 'Scott',
           notes: 'Nice slow ride with a few challenging tracks',
-<<<<<<< HEAD
           dateTime: '2020-03-08  T13:00',
-=======
-          dateTime: '2020-03-02T13:00',
->>>>>>> 1093577de7f5608488288dd5ae08bb513b44113f
           tracks: 'Mid Peak loop + Magic Carpet',
           skill: 'Intermediate',
           location_id: 1,

@@ -1,6 +1,7 @@
 const express = require('express')
 const db = require('../db/db')
 const router = express.Router()
+const { getTokenDecoder } = require('authenticare/server')
 
 
 // router to get activity to set redux state of current activity by params name 

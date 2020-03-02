@@ -1,6 +1,6 @@
 import React from 'react'
 import { addPostApi } from '../api'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { addPost } from '../actions'
 
 class AddPostForm extends React.Component {
@@ -23,7 +23,6 @@ class AddPostForm extends React.Component {
 
   //the state change when user typing
   handleChange = (e) => {
-    console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     })
@@ -32,7 +31,6 @@ class AddPostForm extends React.Component {
 
   //once user hit submit, then new post added to post db
   handleSubmit = (e) => {
-    console.log('submit')
     e.preventDefault()
 
     const post = this.state
@@ -76,9 +74,9 @@ class AddPostForm extends React.Component {
             name='location_id' value={this.setState.location_id}
             onChange={this.handleChange}>
             <option value=''>--Please select the location--</option>
-            <option value='1'>Makara</option>
-            <option value='2'>Polhill</option>
-            <option value='3'>Mt. Vic</option>
+            {this.props.locations.map(location => {
+              return <option key={location.id} value={location.id}>{location.name}</option>
+            })}
           </select>
 
 
@@ -126,7 +124,8 @@ class AddPostForm extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    post: state.post
+    post: state.post,
+    locations: state.locations
   }
 }
 
