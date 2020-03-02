@@ -1,27 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { IfNotAuthenticated, IfAuthenticated } from './Authenticated'
+import { logOff } from 'authenticare/client'
+
 
 class Nav extends React.Component {
+    
+    logout = () => {
+        logOff()
+        .then(
+            window.location.reload(false)
+        )
+    }
 
     render() {
         return (
 
-            <nav className="navbar navbar-expand-lg navbar-light">
-                <div className='navo'>
-                <h2 className="navTitle">BUDS</h2>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="nav navbar-nav navbar-right">
-                        <li className="nav-item">
-                            <Link to={'/'}><button className="nav-link">Home</button></Link>
-                        </li>
-                    </ul>
-                </div>
-                </div>
-            </nav>
+            <ul className="navbar">
+                <li><Link to="/">Home</Link></li>
+                <IfNotAuthenticated><li><Link to="/login">Login</Link></li></IfNotAuthenticated>
+                <IfAuthenticated><li onClick={logOff}>Logoff</li></IfAuthenticated>
+                <IfNotAuthenticated><li><Link to="/register">Register</Link></li></IfNotAuthenticated>
+            </ul>
             
         )
     }

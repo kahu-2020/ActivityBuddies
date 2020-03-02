@@ -155,3 +155,31 @@ font-size: 2rem;
 .meetupCard h4 {
     margin-left: 25px;  
 }
+
+/* DEFAULT NAVBAR SETTINGS */
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #495264;
+}
+
+.navbar li {
+float: left;
+font-size: 1.25rem;
+}
+
+.navbar li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar li a:hover {
+background-color: #A25E59;
+}
