@@ -1,7 +1,9 @@
 import React from 'react'
 import { addPostApi } from '../api'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { addPost } from '../actions'
+// import { getLocations } from '../actions'
+// import { setCurrentLocation } from '../actions/index'
 
 class AddPostForm extends React.Component {
   constructor(props) {
@@ -19,20 +21,25 @@ class AddPostForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-
+//   componentDidMount() {
+//     this.props.dispatch(getLocations(this.props.currentActivity.id))
+//     this.props.dispatch(setCurrentLocation(location)) //(this.props.currentActivity.id) - will get all locationd for the currentActivities.id
+// }
 
   //the state change when user typing
   handleChange = (e) => {
-    console.log(e.target.value)
+    
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
+  handleDrop = (e) => {
+    console.log(this.props.locations)
+  }
 
   //once user hit submit, then new post added to post db
   handleSubmit = (e) => {
-    console.log('submit')
     e.preventDefault()
 
     const post = this.state
@@ -41,6 +48,7 @@ class AddPostForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.locations)
     return (
       <div className='addPostFormWrapper'>
 
@@ -76,14 +84,14 @@ class AddPostForm extends React.Component {
           <select
             className='frm-usr-ipt'
             name='location_id' value={this.setState.location_id}
-            onChange={this.handleChange}>
+            onChange={this.handleChange} onChange={this.handleDrop}>
             <option value=''>--Please select the location--</option>
-            <option value='1'>Makara</option>
-            <option value='2'>Polhill</option>
-            <option value='3'>Mt. Vic</option>
+            {this.props.locations.map(location => { 
+              return  <option key={location.id} value={location.id}>{location.name}</option>
+              })}
           </select>
 
-
+          
           <label className="frm-usr-lbl" htmlFor='name'>Tracks: </label>
           <input
             className='frm-usr-ipt'
@@ -133,7 +141,10 @@ class AddPostForm extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    post: state.post
+    post: state.post,
+    // currentActivity: state.currentActivity,
+    locations: state.locations,
+    // currentLocation: state.currentLocation
   }
 }
 

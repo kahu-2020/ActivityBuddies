@@ -23,7 +23,6 @@ class Locations extends React.Component {
 
     render() {
         let activity = this.props.currentActivity
-        console.log(this.props.locations)
 
         return (
             <div className='wrapper'>
