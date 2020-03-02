@@ -1,26 +1,34 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addRsvp } from '../actions/postListActions'
+import { gotPostsByLocationID } from '../actions/postListActions'
 
 class MeetupPost extends React.Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            value: 0
-        }
     }
 
-    buttonClicked = (event) => {
-        this.setState({value: this.state.value+1});
+    buttonClicked = () => {
+        console.log(this.props.currentPost)
+        this.props.dispatch(addRsvp(this.props.currentPost))
+        this.props.dispatch(gotPostsByLocationID(this.props.location.id))
       }
 
     render() {
+        
+        let active = !this.props.activeSkill || this.props.currentPost.skill == this.props.activeSkill
+ 
+        console.log(this.props.currentPost.skill)
+
+
         return(
-            <div className="meetupCard">
+            <div className={active ? "meetupCard" : "meetupCardInActive"}>
                 <h3> {this.props.currentPost.tracks} - {this.props.currentPost.user_name} </h3>
                 <p className="meetupSkill"> <span> Skill level: </span> {this.props.currentPost.skill} </p>
                 <p className="meetupTime"> <span> Meet at: </span> {this.props.currentPost.dateTime} </p>
                 <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>
-                <p>Attendees: {this.state.value}</p>
+
+                <p>Attendees: {this.props.currentPost.attendees}</p>
                 <button className="flagButton" onClick={this.buttonClicked}> RSVP </button>
 
             </div>
@@ -28,4 +36,11 @@ class MeetupPost extends React.Component {
     }
 }
 
-export default MeetupPost
+function mapStateToProps(state) {
+    return {
+        location: state.currentLocation
+    }
+}
+
+
+export default connect(mapStateToProps)(MeetupPost)

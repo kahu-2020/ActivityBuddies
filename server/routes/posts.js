@@ -11,16 +11,10 @@ router.get('/:id', (req, res) => {
   })
 })
 
-// router.post('/rsvp', (req, res) => {
-//   console.log(req.body)
-//   db.setRsvp(req.body)
-//   .then(console.log(attendees))// what do we get back from an update???
-// })
 
 //router to add new posts
 router.post('/', (req, res) => {
   const newPost = req.body
-  console.log(req.body)
   db.addPost(newPost)
   .then(newPostId => {
     res.json(newPostId)
@@ -41,5 +35,11 @@ router.get('/upcoming/:id', (req, res) => {
         res.json(postList)
   })
 })
+
+router.post('/rsvp', (req, res) => {
+  db.setRsvp(req.body)
+  .then(console.log('hello'))
+})
+
 
 module.exports = router

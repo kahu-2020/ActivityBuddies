@@ -9,13 +9,13 @@ exports.seed = function (knex) {
           id: 1, name: 'SURF',
           symbol: '',
           color: '',
-          photo: ''
+          photo: 'images/maps/surf.png'
         },
         {
           id: 2, name: 'RIDE',
           symbol: '',
           color: '',
-          photo: ''
+          photo: 'images/maps/ride.png'
         },
         {
           id: 3, name: 'HIKE',
