@@ -27,7 +27,7 @@ class Expiry extends React.Component {
             console.log(currentTime)
 
         let upPosts = !this.props.upComingPosts || this.props.dateTime > currentTime
-            console.log(this.props.upComingPosts)
+            console.log(upPosts)
         
             return (
                 <div>
