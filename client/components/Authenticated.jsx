@@ -1,7 +1,7 @@
 import React from 'react'
 
 // TODO: implement or import a proper isAuthenticated function
-const isAuthenticated = () => false
+import { isAuthenticated } from 'authenticare/client'
 
 export function IfAuthenticated ({ children }) {
   return isAuthenticated()
