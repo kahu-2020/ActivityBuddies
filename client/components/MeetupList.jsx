@@ -3,7 +3,6 @@ import MeetupPost from './MeetupPost'
 
 import { connect } from 'react-redux'
 
-import { IfAuthenticated } from './Authenticated'
 
 class MeetupList extends React.Component {
     constructor(props) {
@@ -21,7 +20,7 @@ class MeetupList extends React.Component {
 
 
     handleChange = (e) => {
-        
+        console.log(e.target.value)
         this.setState({
             skillLevel: e.target.value
         })
@@ -33,23 +32,22 @@ class MeetupList extends React.Component {
             <div className="meetupList">
                 <h2>{this.props.location.name} meetups</h2>
                 
-                <form className="">
-                    <select className="skillDropdown" value={this.setState.skillLevel} onChange={this.handleChange}>
+                <form>
+                    <select value={this.setState.skillLevel} onChange={this.handleChange}>
                         <option value="">--Select your skill level--</option>
                         <option value="Beginner">Beginner</option>
                         <option value="Intermediate">Intermediate</option>
                         <option value="Advanced">Advanced</option>
                         <option value="Expert">Expert</option>
                     </select>
+                    <input type="submit" value ="submit"/>
                 </form>
                 
-                <IfAuthenticated>
-                    <button onClick={this.props.handleClick} className="addButton"> + </button>
-                    </IfAuthenticated>
+                <button onClick={this.props.handleClick} className="addButton"> + </button>
 
                 <div className="cardList">
                     {this.props.posts.map((post, i) => {
-                        return <MeetupPost key={i} currentPost={post} activeSkill={this.state.skillLevel} />
+                        return <MeetupPost key={i} currentPost={post} />
                     })}
                 </div>
             </div>
