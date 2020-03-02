@@ -29,10 +29,10 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/upcoming/:id', (req, res) => {
-  console.log('expiry')
+  console.log('upcoming')
   db.getUpComingPosts(req.params.id)    
-    .then(postList => {
-        res.json(postList)
+    .then(upComingPosts => {
+        res.json(upComingPosts)
   })
 })
 

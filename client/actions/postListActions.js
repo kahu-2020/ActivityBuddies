@@ -33,3 +33,21 @@ export function addRsvp(post) {
         .then(console.log('attendees updated')) 
     }
 }
+
+export function getUpComingPosts() {
+    console.log('dispatch up')
+    return (dispatch) => {
+        request.get('api/v1/posts/upcoming/')
+        .then ( res => res.body)
+        .then(upcomingposts => {
+            dispatch(gotUpComingPosts(upcomingposts))
+        })
+    }
+}
+
+export function gotUpComingPosts(upcomingposts) {
+    return {
+        type: 'GET_UPCOMING_POSTS',
+        upcomingposts: upcomingposts
+    }
+}

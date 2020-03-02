@@ -28,8 +28,8 @@ export function getPostsByLocationId(locationId) {
 }
 
 export function getUpcomingPosts(locationId, ) {
-    console.log('hi')
-    return request.get('/api/v1/posts/' + locationId)
+    console.log('upcoming')
+    return request.get('/api/v1/posts/upcoming/' + locationId)
     .then(res => {
         return res.body
     })

@@ -71,6 +71,22 @@ export function gotActivities(activities) {
         type: 'GOT_ACTIVITIES',
         activities: activities 
     }
-
 }
 
+export function getUpComingPosts() {
+    return (dispatch) => {
+        request.get('/api/v1/posts/upcoming/') 
+        .then(res => res.body)
+        .then(upcomingposts => {
+            dispatch(gotUpcoming(upcomingposts))
+        })
+    }
+}
+
+export function gotUpcoming(upcomingposts) {
+    return {
+        type: 'GOT_UPCOMING',
+        upcomingposts: upcomingposts 
+    }
+
+}

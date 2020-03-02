@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { getUpComingPosts } from '../actions'
 import MeetupList from './MeetupList'
-// import { fetchData } from '../actions'
 
 class Expiry extends React.Component {
     constructor(props) {
@@ -14,7 +14,8 @@ class Expiry extends React.Component {
     }
 
     componentDidMount() {
-
+        console.log('mount')
+        this.props.dispatch(getUpComingPosts())
     }
 
 
@@ -25,16 +26,15 @@ class Expiry extends React.Component {
         + 'T' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             console.log(currentTime)
 
-        let upComingPost = !this.props.activeSkill || this.props.currentPost.skill == this.props.activeSkill
-            // console.log(this.props.currentPost.skill)
+        let upPosts = !this.props.upComingPosts || this.props.dateTime > currentTime
+            console.log(this.props.upComingPosts)
         
             return (
                 <div>
                     <h1>Expired</h1>
                     <div className="cardList">
-                    {this.props.posts.filter((upComingPost => {
-                        console.log(dateTime)
-                        return <MeetupList key={i} currentPost={post} activeSkill={this.state.skillLevel} expiry={upComingPost > currentTime} />})
+                    {this.props.upPosts.filter((upComingPost => {
+                        return <MeetupList key={i} currentPost={upComingPosts} activeSkill={this.state.skillLevel} expiry={upComingPost > currentTime} />})
                     )}
                     </div>
                 </div>
@@ -44,7 +44,7 @@ class Expiry extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        posts: state.postList
+        upcomingposts: state.upComingPosts
     }
 }
 
