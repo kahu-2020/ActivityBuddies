@@ -21,7 +21,7 @@ exports.seed = function (knex) {
           id: 3, name: 'HIKE',
           symbol: '',
           color: '',
-          photo: ''
+          photo: 'images/maps/hike.png'
         }
       ]);
     });

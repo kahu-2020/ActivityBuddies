@@ -33,7 +33,7 @@ class Locations extends React.Component {
                 <div className='wrapperBody'>
                    
                     <div className='widgetWrapper'>
-                        <img src={activity.photo} className='TrailforksWidgetMap' alt="locations pinpointed on Wellington map" />
+                        <img src={activity.photo} className='locationMap' alt="locations pinpointed on Wellington map" />
                     </div>
 
                     <div className='locationWrapper'>
