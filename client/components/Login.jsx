@@ -18,8 +18,6 @@ class Login extends React.Component {
 
     handleClick = (e) => {
         e.preventDefault()
-        console.log("Gets past something.")
-        console.log(this.state.username, this.state.password)
 
         signIn({
             username: this.state.username,
@@ -29,7 +27,8 @@ class Login extends React.Component {
           })
         .then((token) => {
             if(isAuthenticated()) {
-                window.location.reload(false)
+                // window.location.reload(false)
+                this.props.history.push('/')
             }
         })
     }
