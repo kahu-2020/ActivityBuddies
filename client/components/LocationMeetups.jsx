@@ -55,9 +55,6 @@ class LocationMeetups extends React.Component {
         
         return (
             <React.Fragment>
-                <div className="LocationMeetupHeader">
-                    <h1> {this.props.location.name} </h1>
-                </div>
 
                 <div className="LocationMeetupContainer">
                     <div className="widgetWrapper">
