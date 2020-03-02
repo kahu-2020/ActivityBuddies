@@ -4,6 +4,9 @@ const router = express.Router()
 
 router.use(express.json())
 
+const { getTokenDecoder } = require('authenticare/server')
+
+
 router.get('/:id', (req, res) => {
   db.getPostsByLocation(req.params.id)
   .then(postList => {
@@ -21,8 +24,8 @@ router.post('/', (req, res) => {
   })
 })
 
-router.get('/:id', (req, res) => {
-
+router.get('/:id', getTokenDecoder(), (req, res) => {
+    console.log('hi' + req.user)
     db.getPostsByLocation(req.params.id)
     .then(postList => {
         res.json(postList)

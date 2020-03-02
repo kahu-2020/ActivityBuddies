@@ -22,7 +22,6 @@ class AddPostForm extends React.Component {
 
   //the state change when user typing
   handleChange = (e) => {
-    
     this.setState({
       [e.target.name]: e.target.value
     })

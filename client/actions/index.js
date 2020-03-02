@@ -27,7 +27,6 @@ export function getCurrentLocation(id) {
         request.get('/api/v1/activities/location/'+id)
         .then(res => res.body)
         .then(location => {
-            
             dispatch(setCurrentLocation(location))
             dispatch(gotPostsByLocationID(location.id))
         })
@@ -74,7 +73,6 @@ export function addPost(newPost) {
             dispatch(postAdded(newPost))
         })
         .then(() => {
-            console.log('hi', getState()) 
             dispatch(gotPostsByLocationID(getState().currentLocation.id))
         })
         .catch(err => {

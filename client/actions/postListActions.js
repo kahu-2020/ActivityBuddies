@@ -25,7 +25,6 @@ export function setRsvp(rsvp) {
 }
 
 export function addRsvp(post) {
-    console.log(post)
     return () => {
         request
         .post('/api/v1/posts/rsvp')

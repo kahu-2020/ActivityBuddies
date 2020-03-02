@@ -21,7 +21,6 @@ class MeetupList extends React.Component {
 
 
     handleChange = (e) => {
-        console.log(e.target.value)
         this.setState({
             skillLevel: e.target.value
         })

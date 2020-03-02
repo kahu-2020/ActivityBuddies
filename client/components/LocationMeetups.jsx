@@ -51,7 +51,6 @@ class LocationMeetups extends React.Component {
     }
 
     render() {
-             
         return (
             <React.Fragment>
 

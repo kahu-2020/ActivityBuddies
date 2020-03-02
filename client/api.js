@@ -6,21 +6,23 @@ import { getEncodedToken } from 'authenticare/client'
 export function getPosts() {
     return request.get('/api/v1/posts')
     .then(res => {
-        console.log(res)
         return res.body
     })
 }
 
 export function getActivities() {
     return request.get('/api/v1/activities/')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     .then(res => {
-        console.log(res)
         return res.body
     })
 }
 
 export function getPostsByLocationId(locationId) {
     console.log('hi')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     return request.get('/api/v1/posts/' + locationId)
     .then(res => {
         return res.body
@@ -29,7 +31,7 @@ export function getPostsByLocationId(locationId) {
 
 // function to add posts to the api
 export function addPostApi(newPost) {
-    console.log('ethan wants this')
+
     return request.post('api/v1/posts')
     .set({ 'Accept': 'application/json' })
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
