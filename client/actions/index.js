@@ -1,6 +1,19 @@
 import request from 'superagent'
 import { gotPostsByLocationID } from './postListActions'
 
+
+export function getCurrentActivity(name) {
+    // going to back end to get whole currentActivity by name
+    return (dispatch) => {
+        request.get('/api/v1/activities/activity/'+name)
+        .then(res => res.body)
+        .then(activity => {
+            dispatch(setCurrentActivity(activity))
+            dispatch(getLocations(activity.id))
+        })
+    }
+}
+
 export function setCurrentActivity(activity){
     return {
         type: 'SET_CURRENT_ACTIVITY', 
@@ -8,8 +21,18 @@ export function setCurrentActivity(activity){
     }
 }
 
-
-
+export function getCurrentLocation(id) {
+    // going to back end to get whole currentLocation by id
+    return (dispatch) => {
+        request.get('/api/v1/activities/location/'+id)
+        .then(res => res.body)
+        .then(location => {
+            console.log(location)
+            dispatch(setCurrentLocation(location))
+            dispatch(gotPostsByLocationID(location.id))
+        })
+    }
+}
 
 export function setCurrentLocation(location){
     
@@ -21,7 +44,7 @@ export function setCurrentLocation(location){
 
 export function getLocations(id) {
     return (dispatch) => {
-        request.get('/api/v1/activities/'+id) // fix id is it $id
+        request.get('/api/v1/activities/'+id) 
         .then(res => res.body)
         .then(locations => {
             dispatch(gotLocations(locations))
