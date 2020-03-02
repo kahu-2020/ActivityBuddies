@@ -92,7 +92,6 @@ font-size: 2rem;
 }
 
 
-
 .LocationMeetupContainer {
     color: #495264;
     display: flex;
@@ -140,18 +139,17 @@ font-size: 2rem;
     background-color: #F3F5F0;
 
     height: 900px;
-    width: 40%;
+    width: 50%;
 }
 
 .TrailforksWidgetMap {
     margin-top: 65px;
-
     border-right: 4px solid #262626;
     border-bottom: 4px solid #262626;
 
 
     box-shadow: 5px 10px 18px #000000;
-    height: 800px;
+    height: 400px;
     
 }
 
@@ -161,7 +159,7 @@ font-size: 2rem;
     
     background-color: #F3F5F0;
 
-    width: 60%;
+    width: 50%;
 }
 
 .meetupList {
@@ -264,9 +262,7 @@ font-size: 2rem;
     border-radius: 7px
 }
 
-.meetupCard:hover {
-    background-color: #8BB7C7;
-}
+
 
 .meetupCard p {
     text-align: center;
@@ -307,6 +303,11 @@ font-size: 2rem;
     height: 20px;
     background-color: #5fb174;
     color: #F3F5F0;
+    transition-duration: 0.4s;
+}
+
+.flagButton:hover {
+    background-color: #8BB7C7;
 }
 
 .imagesWrapper {
@@ -316,4 +317,69 @@ font-size: 2rem;
 .mapImages {
     width: 100%;
 }
+
+/* form styling */
+
+.addPostFormWrapper{
+
+        width: 60%; 
+        background-color: #F3F5F0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+.addPostForm {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #495264;
+    width: 75%;
+    height: 75%;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 2em;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pst-frm-bck-btn {
+    border: none;
+    border-radius: 7px;
+    height: 40px;
+    background-color: #5fb174;
+    color: #F3F5F0;
+    margin-top: 20px;
+    width: 80%;
+    transition-duration: 0.4s;
+    margin: auto;
+    font-size: 30px;
+
+}
+
+.pst-frm-bck-btn:hover {
+    background-color: #8BB7C7;
+
+}
+
+.frm-usr-lbl{
+    color: white;
+
+}
+
+.frm-usr-ipt {
+    background-color: rgb(214, 184, 113);
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    border-radius: 7px;
+    height: 40px;
+}
+
+.frm-usr-ipt::placeholder{
+    font-family: 'Noto Sans JP' ;
+}
+
+    
+
 
