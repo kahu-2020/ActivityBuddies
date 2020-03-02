@@ -1,0 +1,471 @@
+h1 {
+    margin: 0px;
+    color: white;
+}
+
+.front-links {
+    margin-top: 0px;
+} 
+
+
+.act-btn {
+    color: white;
+    margin: auto;
+    margin-top: 0%;
+    margin-bottom: 5%;
+    font-size: 100px;
+    text-decoration: none;
+}
+
+.activity-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-shadow: black 2px 2px;
+    
+}
+
+.about-blurb {
+    font-size: 30px;
+    color: white;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-shadow: black 2px 2px;
+    margin: 5px 10% 5px 10%;
+    background-color: rgba(0, 0, 0, 0.39);
+
+
+
+
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 300;
+    font-size: 25px;
+    font-family: 'Noto Sans JP' ;
+    color: white;
+    background-image: url(images/river.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+h1 h2 h3 h4 h5 h6 {
+    font-weight: lighter;
+}
+
+
+.logo{
+text-align: center;
+font-size: 2rem;
+margin: 40px 0px;
+padding: 0px;
+}
+/* wrapper around each individual component excluding home */
+.wrapperBody {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.wrapper { 
+    color: grey;
+    width: 100%;
+    height: 100%;
+}
+
+/* Location-Meetups CSS */
+
+.loc-nav {
+    display: flex;
+    margin: 0px 30px 0px 30px;
+}
+
+.loc-home {
+    padding: auto;
+}
+
+.loc-hedr {
+    margin-left: 20%;
+}
+
+.locationList {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.LocationMeetupContainer {
+    color: #495264;
+    display: flex;
+    height: 900px;
+    font-size: 16px;
+}
+
+.locationWrapper {
+    display: flex;
+    justify-content: right;
+    background-color: #F3F5F0;
+    width: 50%;
+}
+.locationWrapper h1 {
+    color:black;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.loc-btn{
+    width: 100%;
+    margin: 20px;
+}
+.locationBtns {
+    margin: 10px;
+}
+
+.btn {
+    background-color:  #495264;
+    border: none;
+    color: white;
+    padding: 30px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    transition-duration: 0.4s;
+    width: 80%;
+    margin: 15px 65px;
+    border-radius: 2em;
+}
+
+
+.btn:hover {
+    background-color: #8BB7C7;
+    color: white;
+  }
+
+.widgetWrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #F3F5F0;
+    height: 900px;
+    width: 50%;
+}
+
+.widget-container{
+    margin: 120px 0px 20px 50px; 
+    border: 2px solid #262626;
+    /*border-bottom: 4px solid #262626;
+    box-shadow: 5px 10px 18px #000000;  */
+    height: 400px;
+    width: 100%;
+    /* for surf widget */
+}
+
+.TrailforksWidgetMap {
+    margin: 120px 0px 20px 120px;
+    border: 2px solid #262626;
+    /*border-bottom: 4px solid #262626; */
+    width: 750px;
+    height: 400px;
+    /* box-shadow: 5px 10px 18px #000000; */
+   
+    /* for riding widget */
+}
+
+.postListingWrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #F3F5F0;
+    width: 50%;
+}
+
+.meetupList {
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F5F0;
+    width: 75%;
+    height: 95%;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 2em;
+}
+
+.cardList {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin-top: 0px;
+
+    overflow-y: scroll;
+
+    height: 65%;
+}
+
+.meetupList h2 {
+    height: 8%;
+    font-size: 3.5rem;
+    /* background-color: F3F5F0;  */
+    color: black;
+    /* color: #F3F5F0; */
+    padding: 0px 0px 20px 0px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px
+}
+
+.meetupCard {
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #495264;
+    color: #F3F5F0;
+
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding: 5px;
+
+    width: 85%;
+
+    text-align: left;   
+    
+    border-radius: 7px;
+    box-shadow: black;
+
+    transition: 0.3s;
+
+}
+
+.meetupCardInActive {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #49526493;
+    color: #F3F5F0;
+
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    padding: 5px;
+
+    width: 85%;
+
+    text-align: left;   
+    
+    border-radius: 7px;
+    box-shadow: black;
+
+    transition: 0.3s;
+}
+
+.skillDropdown {
+    background-color: #5fb174;
+    color: #F3F5F0;
+    margin-top: 3px;
+    padding-top: 0px;
+    text-align: center;
+    font-size: 1rem;
+    height: 30px;
+    width: 88%;
+    border: none;
+    border-radius: 7px
+}
+
+
+
+.meetupCard p {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: none;
+    font-weight: light;
+}
+
+.meetupCard h3 {
+    margin-left: 25px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.addButton {
+    background-color: #B4954E;
+    color: #F3F5F0;
+    margin-top: 5px;
+    margin-right: 6%;
+    margin-left: 6%;
+    padding-top: 0px;
+
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;  
+    
+    height: 60px;
+    width: 88%;
+    border: none;
+
+    border-radius: 7px;
+}
+
+.flagButton {
+    border: none;
+    border-radius: 7px;
+    height: 30px;
+    background-color: #5fb174;
+    color: #F3F5F0;
+    transition-duration: 0.4s;
+    font-size: 18px;
+}
+
+.flagButton:hover {
+    background-color: #8BB7C7;
+}
+
+/* DEFAULT NAVBAR SETTINGS */
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #495264;
+}
+
+.navbar li {
+float: left;
+font-size: 1.25rem;
+}
+
+.navbar li a {
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar li a:hover {
+background-color: #A25E59;
+}
+
+
+.imagesWrapper {
+    width: 50%;
+}
+
+.mapImages {
+    width: 100%;
+}
+
+/* form styling */
+
+.addPostFormWrapper{
+
+        width: 60%; 
+        background-color: #F3F5F0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+}
+
+.addPostForm {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #495264;
+    width: 75%;
+    height: 75%;
+    margin-top: 20pxpx;
+    text-align: center;
+    border-radius: 2em;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pst-frm-bck-btn {
+    border: none;
+    border-radius: 7px;
+    height: 40px;
+    background-color: #5fb174;
+    color: #F3F5F0;
+    margin-top: 20px;
+    width: 80%;
+    transition-duration: 0.4s;
+    margin: auto;
+    font-size: 30px;
+
+}
+
+.pst-frm-bck-btn:hover {
+    background-color: #8BB7C7;
+
+}
+
+.frm-usr-lbl{
+    color: white;
+
+}
+
+.frm-usr-ipt {
+    background-color: lightgray;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    border-radius: 7px;
+    height: 40px;
+}
+
+.frm-usr-ipt::placeholder{
+    font-family: 'Noto Sans JP' ;
+}
+
+.register-wrapper {
+    display: flex;
+    align-content: justify;
+
+    margin: auto;
+    width: 75%;
+    height: 400px;
+    border: 3px solid black;
+
+    background-color: blue;
+}
+
+.register-column-one {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    justify-content: center;
+
+    text-align: center;
+    height: 100%;
+    width: 60%;
+}
+
+.register-column-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    height: 100%;
+    width: 40%;
+}
+
+
+
+

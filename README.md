@@ -157,11 +157,11 @@ git commit -m "commmit message"
 
 git checkout dev
 
-git pull origin dev
+.git pull origin dev
 
-git checkout feature_branch
+..git checkout feature_branch
 
-git pull origin dev
+...git pull origin dev
 
 fix all conflicts - check localhost still works*
 
