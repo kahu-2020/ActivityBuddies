@@ -43,7 +43,9 @@ class MeetupList extends React.Component {
                     </select>
                 </form>
                 
-                <IfAuthenticated><button onClick={this.props.handleClick} className="addButton"> + </button></IfAuthenticated>
+                {/* <IfAuthenticated> */}
+                    <button onClick={this.props.handleClick} className="addButton"> + </button>
+                    {/* </IfAuthenticated> */}
 
                 <div className="cardList">
                     {this.props.posts.map((post, i) => {
