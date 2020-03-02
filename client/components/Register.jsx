@@ -28,7 +28,7 @@ class Register extends React.Component {
         })
         .then((token) => {
             if (isAuthenticated()) {
-                window.location.reload(false)
+                this.props.history.push('/')
             }
         })
     }
@@ -40,14 +40,17 @@ class Register extends React.Component {
                 <div className="register-column-one">
                     <h2> Create An Account </h2>
                 </div>
-                <div className='register-column-two'>'
-                    <div className='rego-wrappr'>
-                        <p> Register </p>
-                        <input type="text" name="username" onChange={this.handleChange} />
-                        <input type="password" name="password" onChange={this.handleChange} />
-                    
-                        <button type='button' onClick={this.handleClick}>Register</button>
-                        <Link to="/login"><p className='rego-link'> Create your account →  </p></Link>
+                <div className='register-column-two'>
+                    <div className='rego-wrapper'>
+                        <label>Username:</label>
+                        <input className='rego-input' type="text" name="username" onChange={this.handleChange} />
+                        
+                        <label>Password:</label>
+                        <input className='rego-input' type="password" name="password" onChange={this.handleChange} />
+
+                        <br/>
+                        <button className='rego-button' type='button' onClick={this.handleClick}>Register</button>
+                        {/* <Link to="/register"><p className='rego-link'> Login to your account →  </p></Link> */}
 
                     </div>
 

@@ -42,7 +42,7 @@ class Locations extends React.Component {
                         <h1>{activity.name}</h1>
                         <div className='locationBtns'>
                             {this.props.locations.map(location => {
-                                return <Link to={`/${this.props.currentActivity.name}/${location.id}`} className='links'>
+                                return <Link to={`/move/${this.props.currentActivity.name}/${location.id}`} className='links'>
                                     <button className='btn btn-outline-primary' key={location.id} onClick={() => this.handleClick(location)}>{location.name}</button>
                                 </Link>
                             })}
