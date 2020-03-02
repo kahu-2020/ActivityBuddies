@@ -20,9 +20,7 @@ export function getActivities() {
 }
 
 export function getPostsByLocationId(locationId) {
-    console.log('hi')
-    .set({ 'Accept': 'application/json' })
-    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+    console.log('banana in pajama')
     return request.get('/api/v1/posts/' + locationId)
     .then(res => {
         return res.body

@@ -13,7 +13,8 @@ exports.seed = function (knex) {
           tracks: 'To Summit + Ridgeline',
           skill: 'Expert',
           location_id: 1,
-          attendees: 0
+          attendees: 0, 
+          user_id: 1
         },
         {
           id: 2,
@@ -23,18 +24,20 @@ exports.seed = function (knex) {
           tracks: 'To Summit + Trickle Falls',
           skill: 'Expert',
           location_id: 1,
-          attendees: 0
+          attendees: 0, 
+          user_id: 1
         },
         {
           id: 3,
           user_name: 'Ethan',
-          notes: 'has anyone seen Lui?',
+          notes: '"best biker in the world" - Claire',
           dateTime: '2020-03-08T13:00',
 
           tracks: 'Mid Peak loop + Starfish',
           skill: 'Advanced',
           location_id: 1,
-          attendees: 0
+          attendees: 0, 
+          user_id: 1
         },
         {
           id: 4,
@@ -44,7 +47,8 @@ exports.seed = function (knex) {
           tracks: 'Hataitai Zigzag',
           skill: 'Beginner',
           location_id: 3,
-          attendees: 0
+          attendees: 0, 
+          user_id: 1
         },
         {
           id: 5,
@@ -54,7 +58,8 @@ exports.seed = function (knex) {
           tracks: 'Clinical + Highbury fling + Serendipity + Transient',
           skill: 'Advanced',
           location_id: 2,
-          attendees: 0
+          attendees: 0, 
+          user_id: 2
         },
         {
           id: 6,
@@ -64,7 +69,8 @@ exports.seed = function (knex) {
           tracks: 'Beginners loop + Skills area',
           skill: 'Beginner',
           location_id: 1,
-          attendees: 0
+          attendees: 0, 
+          user_id: 2
         },
         {
           id: 7,
@@ -74,7 +80,8 @@ exports.seed = function (knex) {
           tracks: 'Mid Peak loop + Magic Carpet',
           skill: 'Intermediate',
           location_id: 1,
-          attendees: 0
+          attendees: 0, 
+          user_id: 2
         },
         {
           id: 8,
@@ -84,7 +91,8 @@ exports.seed = function (knex) {
           tracks: '',
           skill: 'Expert',
           location_id: 9,
-          attendees: 0
+          attendees: 0, 
+          user_id: 2
         },
         {
           id: 9,
@@ -94,7 +102,8 @@ exports.seed = function (knex) {
           tracks: 'Maranui end',
           skill: 'Beginner',
           location_id: 7,
-          attendees: 0
+          attendees: 0, 
+          user_id: 2
         },
         {
           id: 10,
@@ -104,7 +113,8 @@ exports.seed = function (knex) {
           tracks: 'Airport reef end',
           skill: 'Intermediate',
           location_id: 7,
-          attendees: 0
+          attendees: 0,
+          user_id: 3
         },
         {
           id: 11,
@@ -114,7 +124,8 @@ exports.seed = function (knex) {
           tracks: 'Skyline',
           skill: 'Expert',
           location_id: 5,
-          attendees: 0
+          attendees: 0, 
+          user_id: 3
         },
         {
           id: 12,
@@ -124,7 +135,8 @@ exports.seed = function (knex) {
           tracks: 'Five Mile Loop',
           skill: 'Intermediate',
           location_id: 4,
-          attendees: 0
+          attendees: 0, 
+          user_id: 3
         },
         {
           id: 13,
@@ -134,7 +146,8 @@ exports.seed = function (knex) {
           tracks: 'Mt Victoria look-out',
           skill: 'Beginner',
           location_id: 6,
-          attendees: 0
+          attendees: 0, 
+          user_id: 3
         }
       ]);
     });
