@@ -21,7 +21,7 @@ class App extends React.Component{
     <Router>
       <div>
         <Nav />
-        <h3 className='logo'>BUDS</h3>
+        <h3 className='logo'>MOVE</h3>
         <Route exact path="/" component={Home} />
         <Route path='/locations' component={Locations} />
         <Route path="/meetups" component={LocationMeetups} />
