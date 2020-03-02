@@ -41,11 +41,11 @@ function getPostsByLocation(locationID, db = connection) {
 }
 
 function getUpComingPosts(locationID, db = connection) {
-    var today = new Date();
-    var currentTime = (today.getYear() + 1900) + '-' + today.getMonth() + '-' + today.getDate() + ' ' + 'T' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var today = new Date()
+    var currentTime = (today.getYear() + 1900) + '-' + today.getMonth() + '-' + today.getDate()
         return db('posts')
         .where('posts.location_id', '=', locationID)
-        .andWhere('dateTime', '>', today) //
+        .andWhere('dateTime', '>', currentTime) //
         .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
         .orderBy('dateTime', 'desc')
 }

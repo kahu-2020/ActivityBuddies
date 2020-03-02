@@ -8,9 +8,6 @@ export function setCurrentActivity(activity){
     }
 }
 
-
-
-
 export function setCurrentLocation(location){
     
     return {

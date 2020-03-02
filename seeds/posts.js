@@ -30,7 +30,6 @@ exports.seed = function (knex) {
           user_name: 'Ethan',
           notes: 'has anyone seen Lui?',
           dateTime: '2020-03-03  T13:00',
-
           tracks: 'Mid Peak loop + Starfish',
           skill: 'Advanced',
           location_id: 1,
