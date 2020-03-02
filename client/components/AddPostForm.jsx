@@ -28,9 +28,6 @@ class AddPostForm extends React.Component {
     })
   }
 
-  handleDrop = (e) => {
-    console.log(this.props.locations)
-  }
 
   //once user hit submit, then new post added to post db
   handleSubmit = (e) => {
@@ -76,7 +73,7 @@ class AddPostForm extends React.Component {
           <select
             className='frm-usr-ipt'
             name='location_id' value={this.setState.location_id}
-            onChange={this.handleChange} onChange={this.handleDrop}>
+            onChange={this.handleChange}>
             <option value=''>--Please select the location--</option>
             {this.props.locations.map(location => { 
               return  <option key={location.id} value={location.id}>{location.name}</option>
