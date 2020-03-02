@@ -18,8 +18,6 @@ class Login extends React.Component {
 
     handleClick = (e) => {
         e.preventDefault()
-        console.log("Gets past something.")
-        console.log(this.state.username, this.state.password)
 
         signIn({
             username: this.state.username,

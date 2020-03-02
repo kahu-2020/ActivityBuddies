@@ -2,8 +2,6 @@ import React from 'react'
 import { addPostApi } from '../api'
 import { connect } from 'react-redux'
 import { addPost } from '../actions'
-// import { getLocations } from '../actions'
-// import { setCurrentLocation } from '../actions/index'
 
 class AddPostForm extends React.Component {
   constructor(props) {
@@ -21,10 +19,6 @@ class AddPostForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-//   componentDidMount() {
-//     this.props.dispatch(getLocations(this.props.currentActivity.id))
-//     this.props.dispatch(setCurrentLocation(location)) //(this.props.currentActivity.id) - will get all locationd for the currentActivities.id
-// }
 
   //the state change when user typing
   handleChange = (e) => {
@@ -41,22 +35,20 @@ class AddPostForm extends React.Component {
   //once user hit submit, then new post added to post db
   handleSubmit = (e) => {
     e.preventDefault()
-
+    console.log('work')
     const post = this.state
     this.props.goBack()
     this.props.dispatch(addPost(post))
   }
 
   render() {
-    console.log(this.props.locations)
+    
     return (
       <div className='addPostFormWrapper'>
 
         <h4>Add your new post here!</h4>
         <form className='addPostForm' onSubmit={this.handleSubmit}>
           <button className='pst-frm-bck-btn' onClick={this.props.goBack}>Go back</button>
-
-          {/* Add new post form */}
 
           <label className="frm-usr-lbl" htmlFor='name'>Username: </label>
           <input
@@ -142,9 +134,7 @@ class AddPostForm extends React.Component {
 function mapStateToProps(state) {
   return {
     post: state.post,
-    // currentActivity: state.currentActivity,
-    locations: state.locations,
-    // currentLocation: state.currentLocation
+    locations: state.locations,   
   }
 }
 
