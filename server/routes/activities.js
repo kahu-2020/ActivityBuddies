@@ -3,13 +3,19 @@ const db = require('../db/db')
 const router = express.Router()
 
 
+// router to get activity to set redux state of current activity by params name 
+router.get('/activity/:name', (req, res) => {
+  db.getActivity(req.params.name)
+  .then(activity => res.json(activity[0]))
+})
 
+router.get('/location/:id', (req, res) => {
+  db.getLocation(req.params.id)
+  .then(location => res.json(location))
+})
 
 //router to get the locations of a corresponding activity id 
-// MERGE CONFLICT
 router.get('/:id', (req, res) => {
-  console.log('hi')
-  console.log(req.params.id)
     db.getLocations(req.params.id)
       .then(locations => res.json(locations))
   })

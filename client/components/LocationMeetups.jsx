@@ -4,6 +4,8 @@ import AddPostForm from './AddPostForm'
 
 import { connect } from 'react-redux'
 import { gotPostsByLocationID } from '../actions/postListActions'
+import { setCurrentLocation, setCurrentActivity } from '../actions'
+import { getCurrentActivity, getCurrentLocation } from '../actions/index'
 
 //check if the user is authenticated.
 
@@ -18,6 +20,7 @@ class LocationMeetups extends React.Component {
         this.state = {
             currentDifficulty: 0,
             addingMeetup: false,
+            loading: true,
         }
     }
 
@@ -34,11 +37,22 @@ class LocationMeetups extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(gotPostsByLocationID(this.props.location.id))
+        // this.props.dispatch(gotPostsByLocationID(this.props.location.id))
+        this.props.dispatch(getCurrentLocation(this.props.match.params.location))
+        this.props.dispatch(getCurrentActivity(this.props.match.params.activity))
+
+        setTimeout(this.handleLoad, 3000)
+    }
+
+    handleLoad = () => {
+        this.setState({
+            loading: false
+        })
     }
 
     render() {
-
+        console.log(this.props.location)
+        
         return (
             <React.Fragment>
                 <div className="LocationMeetupHeader">
@@ -50,8 +64,10 @@ class LocationMeetups extends React.Component {
                         {
                             this.props.currentActivity.id == 1 
                                 ? <React.Fragment><link href="//www.surf-forecast.com/stylesheets/widget.css" className='TrailforksWidgetMap' media="screen" rel="stylesheet" type="text/css" /><div class="wf-width-cont surf-fc-widget"><div class="widget-container"><div class="external-cont"><iframe class="surf-fc-i" allowtransparency="true" src={this.props.location.widget} scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div></div></div></React.Fragment> 
-                                : <iframe className='TrailforksWidgetMap' src={this.props.location.widget} scrolling="no" frameborder="0" allowfullscreen="1" width="800px" height="400px" id="map0" />
+                                : <div style={{display: this.state.loading ? 'none' : 'block'}}><iframe className='TrailforksWidgetMap' src={this.props.location.widget} scrolling="no" frameborder="0" allowfullscreen="1" width="400px" height="800px" id="map0" /></div>
                         }
+
+                        { this.state.loading ? 'loading' : 'done' }
                     </div>
 
                     <div className="postListingWrapper">

@@ -1,10 +1,8 @@
 import React from 'react'
-
 import { HashRouter as Router, Route } from 'react-router-dom'
-import Home from './Home'
-import ActivityList from './ActivityList'
 
 //Component Imports
+import Home from './Home'
 import LocationMeetups from './LocationMeetups'
 import AddPostForm from './AddPostForm'
 import Locations from './Locations'
@@ -23,12 +21,12 @@ class App extends React.Component{
         <Nav />
         <h3 className='logo'>MOVE</h3>
         <Route exact path="/" component={Home} />
-        <Route path='/locations' component={Locations} />
-        <Route path="/meetups" component={LocationMeetups} />
         <Route path='/addpostform' component={AddPostForm} />
-
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
+        <Route exact path='/:activity' component={Locations} />
+        <Route exact path='/:activity/:location' component={LocationMeetups}/>
+       
       </div>
     </Router>
   )}
