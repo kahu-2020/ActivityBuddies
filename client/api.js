@@ -1,4 +1,6 @@
 import request from 'superagent'
+import { getEncodedToken } from 'authenticare/client'
+
 
 
 export function getPosts() {
@@ -27,7 +29,9 @@ export function getPostsByLocationId(locationId) {
 
 // function to add posts to the api
 export function addPostApi(newPost) {
-    return request.post('/api/v1/posts')
+    return request.post('api/v1/posts')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     .send(newPost)
     .then(res => {
         return res.body
