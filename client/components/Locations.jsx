@@ -29,13 +29,13 @@ class Locations extends React.Component {
             <div className='wrapper'>
                 <h1>{activity.name}</h1>
                 <div className='wrapperBody'>
-                    <div className='imagesWrapper'>
+                    <div className='widgetWrapper'>
                         <img src={activity.photo} className='TrailforksWidgetMap' alt="locations pinpointed on Wellington map" />
                     </div>
 
                     <div className='locationWrapper'>
 
-                        <div className='locationList'>
+                        <div className='loc-btn'>
                             {this.props.locations.map(location => {
                                 return <Link to='/meetups' className='links'>
                                     <button className='btn btn-outline-primary' key={location.id} onClick={() => this.handleClick(location)}>{location.name}</button>
