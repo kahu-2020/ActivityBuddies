@@ -51,7 +51,7 @@ class Login extends React.Component {
                         <br></br>
 
                         <button className='rego-button' type='button' onClick={this.handleClick}>Login</button>
-                        <Link to="/register"><p className='rego-link'> Create your account →  </p></Link>
+                        <Link to="/register" className='rego-link'><p> Create your account →  </p></Link>
                     </div>
                 </div>
 
