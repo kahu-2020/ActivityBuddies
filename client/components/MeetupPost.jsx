@@ -2,21 +2,28 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addRsvp } from '../actions/postListActions'
 import { gotPostsByLocationID } from '../actions/postListActions'
+import { sendEmail } from '../api.js'
 
 class MeetupPost extends React.Component {
     constructor(props) {
         super(props)
     }
 
+    //TODO : add unclickability to rsvp
     buttonClicked = () => {
         this.props.dispatch(addRsvp(this.props.currentPost))
         this.props.dispatch(gotPostsByLocationID(this.props.location.id))
+        sendEmail()
+        .then(stuff => {
+            console.log('woohoo')
+        })
       }
 
     render() {
         
+        
         let active = !this.props.activeSkill || this.props.currentPost.skill == this.props.activeSkill
-
+        
 
         return(
             <div className={active ? "meetupCard" : "meetupCardInActive"}>
@@ -26,7 +33,10 @@ class MeetupPost extends React.Component {
                 <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>
 
                 <p>Attendees: {this.props.currentPost.attendees}</p>
-                <button className="flagButton" onClick={this.buttonClicked}> RSVP </button>
+                
+                
+                   <button className="flagButton" onClick={this.buttonClicked}> RSVP </button>
+                
 
             </div>
         )

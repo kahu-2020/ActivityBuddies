@@ -34,10 +34,9 @@ export function addRsvp(post) {
     }
 }
 
-export function getUpComingPosts() {
-    // console.log('dispatch up')
+export function getUpComingPosts(locationId) {
     return (dispatch) => {
-        getUpComingPostsApi(1) // request Api url and info
+        getUpComingPostsApi(locationId) // request Api url and info
         // TODO: pass location id in api function
         .then(upcomingposts => {
             dispatch(gotUpcoming(upcomingposts))
