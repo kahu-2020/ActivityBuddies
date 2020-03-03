@@ -1,35 +1,50 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getProfile } from '../actions/'
-import {getDecodedToken} from 'authenticare/client'
+import { getDecodedToken } from 'authenticare/client'
 
 class Profile extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-
-        }
     }
 
-    componentDidMount () {
-        // console.log()
+    componentDidMount() {
         this.props.dispatch(getProfile(getDecodedToken().id))
     }
 
-    //make a dispatch to an action that calls our api. I like just having it all in one, and not having it in an API file, because then you don't have to import / export.
 
     render() {
+        let profile = this.props.profile
+        return (
+            <div className='profileWrapper'>
+                <div className='profColOne'>
+                    <img className='profImg' src={profile.image_url} alt="" />
+                    <div className='profInfo'>
+                        <h2> {profile.name} </h2>
+                            <p>{profile.email}</p>
+                        <h4>A bit about me</h4>
+                            <p>{profile.about}</p>
+                        <h4>My favourite activity is</h4>
+                            <p>{profile.favourite_activity}</p>
+                    </div>
+                </div>
+                <div className='profColTwo'>
+                {/*  map through props of posts and display some info.... */}
+                {/* {userPosts.map(post => {
+                    <li>{post.date}</li> // something like this
+                })} */}
 
-        return(
-            <button> {this.props.profile.name} </button>
+                </div>
+            </div>
         )
     }
 }
 
 function mapStateToProps(state) {
     return {
-        profile: state.profile
+        profile: state.profile,
+        userPosts: state.postList
     }
 }
 

@@ -61,7 +61,10 @@ export function getProfile(id) {
     console.log(id)
     return (dispatch) => {
         request.get('/api/v1/profile/' + id)
-        .then (res => dispatch(gotProfile(res.body)))
+        .then (res => {
+            dispatch(gotProfile(res.body))
+            dispatch(getPostsByUser(res.body.id))
+        })
     }
 }
 
