@@ -38,3 +38,13 @@ export function addPostApi(newPost) {
         return res.body
     })
 }
+
+export function getProfileById() {
+    console.log("GetProfileById: Reached the front end Api.")
+    return request.get('api/v1/profile/')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+    .then(res => {
+        return res.body
+    })
+}

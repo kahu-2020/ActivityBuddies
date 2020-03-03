@@ -86,6 +86,26 @@ function createUser (user, db = connection) {
       .first()
   }
 
+  //get profiles via owner id
+  function getProfileByUser(userId, db = connection) {
+    console.log("reaching the database: get profiles by userID")
+    return db('profiles')
+    .select()
+    .where('user_id', userId)   
+  }
+
+
+  //get posts via owner id
+  function getPostsByUser (userId, db = connection) {
+    console.log("reaching the database: get posts by userID")
+    return db('posts')
+    .select()
+    .where('user_id', userId)
+  }
+
+  
+
+
 module.exports = {
     getLocations: getLocations, 
     getActivities: getActivities,
@@ -97,4 +117,6 @@ module.exports = {
     setRsvp: setRsvp, 
     getActivity,
     getLocation,
+    getPostsByUser,
+    getProfileByUser
 }
