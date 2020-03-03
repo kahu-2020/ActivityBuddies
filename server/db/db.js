@@ -49,17 +49,6 @@ function getPostsByLocation(locationID, db = connection) {
     return db('posts')
     .where('posts.location_id', '=', locationID)
     .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
-    .orderBy('dateTime', 'desc')
-}
-
-function getUpComingPosts(locationID, db = connection) {
-    var today = new Date()
-    var currentTime = (today.getYear() + 1900) + '-' + today.getMonth() + '-' + today.getDate()
-        return db('posts')
-        .where('posts.location_id', '=', locationID)
-        // .andWhere('dateTime', '>', currentTime)
-        .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
-        .orderBy('dateTime', 'desc')
 }
 
 function setRsvp(post, db=connection) {
@@ -97,32 +86,10 @@ function createUser (user, db = connection) {
       .first()
   }
 
-  //get profiles via owner id
-  function getProfileByUser(userId, db = connection) {
-    console.log("reaching the database: get profiles by userID")
-    return db('profiles')
-    .select()
-    .where('user_id', userId)   
-  }
-
-
-  //get posts via owner id
-  function getPostsByUser (userId, db = connection) {
-    console.log("reaching the database: get posts by userID")
-    return db('posts')
-    .select()
-    .where('user_id', userId)
-  }
-
-  
-
-
 module.exports = {
     getLocations: getLocations, 
     getActivities: getActivities,
     addPost: addPost,
-    getPostsByLocation: getPostsByLocation,
-    getUpComingPosts: getUpComingPosts,
     getPostsByLocation: getPostsByLocation, 
     userExists,
     getUserByName,
@@ -130,6 +97,4 @@ module.exports = {
     setRsvp: setRsvp, 
     getActivity,
     getLocation,
-    getPostsByUser,
-    getProfileByUser
 }
