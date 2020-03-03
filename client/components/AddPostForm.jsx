@@ -105,16 +105,21 @@ class AddPostForm extends React.Component {
             <option value='Expert'>Expert</option>
           </select>
 
+
           <label className="frm-usr-lbl" htmlFor='name'>Date and time: </label>
-            <input className='frm-usr-ipt'
-              type="datetime-local" id="meeting-time"
-              name="dateTime"
-              min={new Date()} max="2040-06-14  T00:00" onChange={this.handleChange}>
-            </input>
-            <br /><br />
-          
-            <input className='frm-usr-ipt' type='submit' value='submit' />
+          <input
+            className='frm-usr-ipt'
+            type="datetime-local" id="meeting-time"
+            name="dateTime"
+            min={new Date()} max="2040-06-14T00:00" onChange={this.handleChange}>
+          </input>
+
+
+
+          <input className='frm-usr-ipt' type='submit' value='submit' />
+
         </form>
+
       </div>
     )
   }

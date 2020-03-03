@@ -77,8 +77,7 @@ class MeetupList extends React.Component {
 function mapStateToProps(state) {
     return {
         posts: state.postList,
-        location: state.currentLocation,
-        upcomingposts: state.postList, // from PostListReduer reducer
+        location: state.currentLocation
     }
 }
 

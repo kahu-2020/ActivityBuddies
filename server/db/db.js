@@ -49,17 +49,6 @@ function getPostsByLocation(locationID, db = connection) {
     return db('posts')
     .where('posts.location_id', '=', locationID)
     .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
-    .orderBy('dateTime', 'desc')
-}
-
-function getUpComingPosts(locationID, db = connection) {
-    var today = new Date()
-    var currentTime = (today.getYear() + 1900) + '-' + today.getMonth() + '-' + today.getDate()
-        return db('posts')
-        .where('posts.location_id', '=', locationID)
-        // .andWhere('dateTime', '>', currentTime)
-        .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
-        .orderBy('dateTime', 'desc')
 }
 
 function setRsvp(post, db=connection) {
@@ -120,8 +109,6 @@ module.exports = {
     getLocations: getLocations, 
     getActivities: getActivities,
     addPost: addPost,
-    getPostsByLocation: getPostsByLocation,
-    getUpComingPosts: getUpComingPosts,
     getPostsByLocation: getPostsByLocation, 
     userExists,
     getUserByName,
@@ -129,6 +116,4 @@ module.exports = {
     setRsvp: setRsvp, 
     getActivity,
     getLocation,
-    getPostsByUser,
-    getProfileByUser
 }

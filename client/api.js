@@ -29,15 +29,6 @@ export function getPostsByLocationId(locationId) {
     })
 }
 
-export function getUpComingPostsApi(locationId) {
-    // console.log('upcoming')
-    return request.get('/api/v1/posts/upcoming/' + locationId)
-    .then(res => {
-        console.log(res.body, locationId)
-        return res.body
-    })
-}
-
 // function to add posts to the api
 // slash is to stop potential prefix issues -kelly
 export function addPostApi(newPost) {
@@ -49,6 +40,7 @@ export function addPostApi(newPost) {
         return res.body
     })
 }
+<<<<<<< HEAD
 
 export function sendEmail() {
     return request.get('/api/v1/posts')
@@ -66,3 +58,16 @@ export function getProfileById() {
         return res.body
     })
 }
+||||||| merged common ancestors
+
+export function getProfileById() {
+    console.log("GetProfileById: Reached the front end Api.")
+    return request.get('api/v1/profile/')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+    .then(res => {
+        return res.body
+    })
+}
+=======
+>>>>>>> 46cb19e1b39417551e9cf77daf2971bbd57cce7e

@@ -1,5 +1,4 @@
 import request from 'superagent'
-import { getUpComingPostsApi } from '../api'
 
 export function gotPostsByLocationID(id) {
     return (dispatch) => {
