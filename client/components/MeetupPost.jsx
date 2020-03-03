@@ -3,11 +3,15 @@ import { connect } from 'react-redux'
 import { addRsvp } from '../actions/postListActions'
 import { gotPostsByLocationID } from '../actions/postListActions'
 import { sendEmail } from '../api.js'
+import { getDecodedToken } from 'authenticare/client'
 
 class MeetupPost extends React.Component {
     constructor(props) {
         super(props)
+        
     }
+
+
 
     //TODO : add unclickability to rsvp
     buttonClicked = () => {
@@ -15,8 +19,8 @@ class MeetupPost extends React.Component {
         this.props.dispatch(gotPostsByLocationID(this.props.location.id))
 
         const to = this.props.currentPost.email
-        const from = "activityBuds@gmail.com"
-        const subject = "RSVP for " + this.props.currentPost.tracks
+        const from = "ActivityBuds@gmail.com"
+        const subject = "RSVP for " + this.props.currentPost.tracks + ' from ' + getDecodedToken().username
         sendEmail(to, from, subject)
         .then(stuff => {
             console.log('woohoo')
