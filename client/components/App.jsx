@@ -11,7 +11,7 @@ import Expiry from './Expiry'
 import Nav from './Nav'
 import Register from './Register'
 import Login from './Login'
-
+import Profile from './Profile'
 
 class App extends React.Component{
  
@@ -30,6 +30,7 @@ class App extends React.Component{
           <Route path='/expiry' component={Expiry} />
           <Route exact path='/move/:activity' component={Locations} />
           <Route exact path='/move/:activity/:location' component={LocationMeetups}/>
+          <Route path="/profile" component={Profile} />
         </Switch> 
       </div>
     </Router>

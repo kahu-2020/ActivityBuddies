@@ -21,7 +21,6 @@ export function getActivities() {
 
 export function getPostsByLocationId(locationId) {
    
-
     return request.get('/api/v1/posts/' + locationId)
     .set({ 'Accept': 'application/json' })
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
@@ -55,5 +54,15 @@ export function sendEmail() {
     return request.get('/api/v1/posts')
     .then(res => {
         return res.text
+    })
+}
+
+export function getProfileById() {
+    console.log("GetProfileById: Reached the front end Api.")
+    return request.get('api/v1/profile/')
+    .set({ 'Accept': 'application/json' })
+    .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
+    .then(res => {
+        return res.body
     })
 }

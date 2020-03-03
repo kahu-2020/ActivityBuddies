@@ -1,10 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import { IfAuthenticated } from  './Authenticated'
 import { getUpComingPosts } from '../actions/postListActions'
 import MeetupPost from './MeetupPost'
-
-
 
 
 class MeetupList extends React.Component {
@@ -17,10 +15,7 @@ class MeetupList extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-
     }
-
-
 
     handleChange = (e) => {
         this.setState({
@@ -29,14 +24,10 @@ class MeetupList extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if(this.props.location == undefined && nextProps.location != undefined) {
+        if (this.props.location == undefined && nextProps.location != undefined) {
             this.props.dispatch(getUpComingPosts(nextProps.location.id)) //dispatch the action from postListActions
         }
-
-
     }
-
-
 
     render() {
         let today = new Date();
@@ -47,11 +38,11 @@ class MeetupList extends React.Component {
             // postTime variable format time of a post in yymmdd hh:mm
             // delete space between date and T
 
-            
+
             return postTime.getTime() > today.getTime()
             //comparing time posted and current date+time
         })
-        
+
         return (
             <div className="meetupList">
                 <h2>{this.props.location.name}</h2>
@@ -66,14 +57,14 @@ class MeetupList extends React.Component {
                     </select>
                 </form>
 
-                
+                <IfAuthenticated>
                     <button onClick={this.props.handleClick} className="addButton"> + </button>
-                
+                </IfAuthenticated>
 
                 <div className="cardList">
                     {upPosts.map(((newposts, idx) => {
-                        
-                        return <MeetupPost key={idx} currentPost={newposts} activeSkill={this.state.skillLevel}/>
+
+                        return <MeetupPost key={idx} currentPost={newposts} activeSkill={this.state.skillLevel} />
                     })
                     )}
                 </div>
