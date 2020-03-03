@@ -5,6 +5,7 @@ import { gotPostsByLocationID } from '../actions/postListActions'
 import { sendEmail } from '../api.js'
 import { getDecodedToken } from 'authenticare/client'
 
+//important comment 
 class MeetupPost extends React.Component {
     constructor(props) {
         super(props)
