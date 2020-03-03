@@ -12,7 +12,7 @@ exports.seed = function(knex) {
           about: 'For food safety, the CDC recommends proper fruit handling and preparation to reduce the risk of food contamination and foodborne illness. Fresh fruits and vegetables should be carefully selected;  at the store, they should not be damaged or bruised; and precut pieces should be refrigerated or surrounded by ice.',
           favourite_activity: 'Biking',
           user_id: 1,
-
+          email: 'thanos@hotmail.com',
         },
         {
           id: 2,
@@ -21,7 +21,7 @@ exports.seed = function(knex) {
           about: 'Another reason why techniques often appear different in forms when contrasted with sparring application is thought by some to come from the concealment of the actual functions of the techniques from outsiders.',
           favourite_activity: 'Spiking',
           user_id: 2,
-
+          email: 'manchu_fu@gmail.com',
         },
         {
           id: 3,
@@ -30,7 +30,7 @@ exports.seed = function(knex) {
           about: "Mattel later returned for the third season of RuPaul's Drag Race: All Stars, which started airing on January 25, 2018. On March 15, 2018, her fellow competitors voted for her to advance to the final two, where she ultimately won against runner-up Kennedy Davenport in the final lipsync battle.",
           favourite_activity: 'Slaying',
           user_id: 3,
-
+          email: 'your.agent@gmail.com',
         },
       ]);
     });
