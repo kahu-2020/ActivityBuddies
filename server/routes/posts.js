@@ -32,17 +32,11 @@ router.get('/:id', getTokenDecoder(), (req, res) => {
     })
 })
 
-router.get('/upcoming/:id', (req, res) => {
-  db.getUpComingPosts(req.params.id)    
-    .then(upComingPosts => {
-      console.log(upComingPosts)
-        res.json(upComingPosts)
-  })
-})
 
 router.post('/rsvp', (req, res) => {
   db.setRsvp(req.body)
   .then(console.log('hello'))
 })
+
 
 module.exports = router

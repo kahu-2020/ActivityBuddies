@@ -27,7 +27,6 @@ export function getCurrentLocation(id) {
         request.get('/api/v1/activities/location/'+id)
         .then(res => res.body)
         .then(location => {
-            console.log(location)
             dispatch(setCurrentLocation(location))
             dispatch(gotPostsByLocationID(location.id))
         })
@@ -35,6 +34,7 @@ export function getCurrentLocation(id) {
 }
 
 export function setCurrentLocation(location){
+    
     return {
         type: 'SET_CURRENTLOCATION', 
         currentLocation: location
@@ -95,5 +95,6 @@ export function gotActivities(activities) {
         type: 'GOT_ACTIVITIES',
         activities: activities 
     }
+
 }
 
