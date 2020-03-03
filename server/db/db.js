@@ -47,8 +47,9 @@ function addPost (post, db = connection) {
 //get all posts via location id
 function getPostsByLocation(locationID, db = connection) {
     return db('posts')
+    .leftOuterJoin('profiles', 'posts.user_id', 'profiles.user_id')
     .where('posts.location_id', '=', locationID)
-    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees')
+    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees', 'email', 'name')
     .orderBy('dateTime', 'desc')
 }
 

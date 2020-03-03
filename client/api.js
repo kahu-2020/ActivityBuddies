@@ -50,10 +50,13 @@ export function addPostApi(newPost) {
     })
 }
 
-export function sendEmail() {
-    return request.get('/api/v1/posts')
+export function sendEmail(to, from, subject) {
+    return request.post('/api/v1/posts/sendEmail')
+    .send({
+        to, from, subject
+    })
     .then(res => {
-        return res.text
+        return res.body
     })
 }
 

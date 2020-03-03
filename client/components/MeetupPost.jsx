@@ -13,7 +13,11 @@ class MeetupPost extends React.Component {
     buttonClicked = () => {
         this.props.dispatch(addRsvp(this.props.currentPost))
         this.props.dispatch(gotPostsByLocationID(this.props.location.id))
-        sendEmail()
+
+        const to = this.props.currentPost.email
+        const from = "activityBuds@gmail.com"
+        const subject = "RSVP for " + this.props.currentPost.tracks
+        sendEmail(to, from, subject)
         .then(stuff => {
             console.log('woohoo')
         })
@@ -27,7 +31,7 @@ class MeetupPost extends React.Component {
 
         return(
             <div className={active ? "meetupCard" : "meetupCardInActive"}>
-                <h3> {this.props.currentPost.tracks} - {this.props.currentPost.user_name} </h3>
+                <h3> {this.props.currentPost.tracks} - {this.props.currentPost.name} </h3>
                 <p className="meetupSkill"> <span> Skill level: </span> {this.props.currentPost.skill} </p>
                 <p className="meetupTime"> <span> Meet at: </span> {this.props.currentPost.dateTime} </p>
                 <p className="meetupNotes"> <span> Notes: </span> {this.props.currentPost.notes} </p>

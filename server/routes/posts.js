@@ -47,21 +47,25 @@ router.post('/rsvp', (req, res) => {
   .then(console.log('hello'))
 })
 
-// TODO: turn this into a post route so can use req.body to send 
-//       data.
-router.get('/', (req,res) => {
+
+router.post('/sendEmail', (req,res) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-   to: 'hnry.harcourt@gmail.com',
-   from: 'test@example.com',
-   subject: 'Sending with Twilio SendGrid is Fun',
-   text: 'and easy to do anywhere, even with Node.js',
-   html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+   to: req.body.to,
+   from: req.body.from,
+   subject: req.body.subject,
+   text: 'The date is ' + new Date(),
+   html: '<strong>The date is ' + new Date() + '</strong>',
  };
  sgMail.send(msg)
- .then(stuff => {
-   res.send('yay')
+ .then(apiRes => {
+   console.log(apiRes.body)
+   res.json({message: 'sent'})
  })
+ .catch(err => {
+   console.log(err)
+  res.status(500).json({message: 'error'})
+})
 })
 
 module.exports = router
