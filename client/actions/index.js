@@ -34,7 +34,6 @@ export function getCurrentLocation(id) {
 }
 
 export function setCurrentLocation(location){
-    
     return {
         type: 'SET_CURRENTLOCATION', 
         currentLocation: location
@@ -54,6 +53,41 @@ export function gotLocations(locations) {
     return {
         type: 'GOT_LOCATIONS',
         locations: locations 
+    }
+}
+
+export function getProfile(id) {
+    console.log(id)
+    return (dispatch) => {
+        request.get('/api/v1/profile/' + id)
+        .then (res => {
+            dispatch(gotProfile(res.body))
+            dispatch(getPostsByUserId(res.body.id))
+        })
+    }
+}
+
+export function gotProfile(profile) {
+    console.log(profile)
+    return {
+        type: 'GOT_PROFILE',
+        profile: profile
+    }
+}
+
+export function getPostsByUserId(id) {
+    return(dispatch) => {
+        request.get('/api/v1/profile/posts/'+ id)
+        .then(res => {
+            dispatch(gotUserPosts(res.body))
+        })
+    }
+}
+
+export function gotUserPosts(userPosts) {
+    return {
+        type: 'GOT_USER_POSTS',
+        userPosts: userPosts
     }
 }
 
@@ -95,6 +129,4 @@ export function gotActivities(activities) {
         type: 'GOT_ACTIVITIES',
         activities: activities 
     }
-
 }
-
