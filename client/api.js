@@ -30,13 +30,21 @@ export function getPostsByLocationId(locationId) {
 }
 
 // function to add posts to the api
+// slash is to stop potential prefix issues -kelly
 export function addPostApi(newPost) {
         console.log('SOMETHING ACTUAL')
-    return request.post('api/v1/posts')
+    return request.post('/api/v1/posts')
     .set({ 'Accept': 'application/json' })
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
     .send(newPost)
     .then(res => {
         return res.body
+    })
+}
+
+export function sendEmail() {
+    return request.get('/api/v1/posts')
+    .then(res => {
+        return res.text
     })
 }

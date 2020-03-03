@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addRsvp } from '../actions/postListActions'
 import { gotPostsByLocationID } from '../actions/postListActions'
+import { sendEmail } from '../api.js'
 
 class MeetupPost extends React.Component {
     constructor(props) {
@@ -11,6 +12,10 @@ class MeetupPost extends React.Component {
     buttonClicked = () => {
         this.props.dispatch(addRsvp(this.props.currentPost))
         this.props.dispatch(gotPostsByLocationID(this.props.location.id))
+        sendEmail()
+        .then(stuff => {
+            console.log('woohoo')
+        })
       }
 
     render() {

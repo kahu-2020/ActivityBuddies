@@ -23,5 +23,10 @@ module.exports = {
   plugins: [
     new Dotenv()
   ],
-  devtool: 'source-map'
+  devtool: 'source-map',
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
 }
