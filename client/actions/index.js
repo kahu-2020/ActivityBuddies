@@ -34,7 +34,6 @@ export function getCurrentLocation(id) {
 }
 
 export function setCurrentLocation(location){
-    
     return {
         type: 'SET_CURRENTLOCATION', 
         currentLocation: location
@@ -95,6 +94,5 @@ export function gotActivities(activities) {
         type: 'GOT_ACTIVITIES',
         activities: activities 
     }
-
 }
 

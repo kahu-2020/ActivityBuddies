@@ -18,8 +18,11 @@ class App extends React.Component {
     return (
       <div>
           <ActivityList/>
-          <p className="about-blurb">This is a shitty placeholder text that tells you sweet fuck all about this website but looks pretty while doing nothing. And it has to take up a decent portion of the page which is why im typing this sentence.
-</p>
+          <div className="about-blurb">
+          <p >Register with us and make new connections . Join an organised meet up or make your own and explore some of Wellington’s best outdoor activities. </p>
+          <p>Get out , meet up , move !</p>
+          </div>
+
       </div>
     )
   }

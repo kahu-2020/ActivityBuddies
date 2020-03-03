@@ -20,11 +20,21 @@ export function getActivities() {
 }
 
 export function getPostsByLocationId(locationId) {
-    console.log('hi')
+   
+
+    return request.get('/api/v1/posts/' + locationId)
     .set({ 'Accept': 'application/json' })
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })
-    return request.get('/api/v1/posts/' + locationId)
     .then(res => {
+        return res.body
+    })
+}
+
+export function getUpComingPostsApi(locationId) {
+    // console.log('upcoming')
+    return request.get('/api/v1/posts/upcoming/' + locationId)
+    .then(res => {
+        console.log(res.body, locationId)
         return res.body
     })
 }
@@ -32,7 +42,6 @@ export function getPostsByLocationId(locationId) {
 // function to add posts to the api
 // slash is to stop potential prefix issues -kelly
 export function addPostApi(newPost) {
-        console.log('SOMETHING ACTUAL')
     return request.post('/api/v1/posts')
     .set({ 'Accept': 'application/json' })
     .set({ 'Authorization': `Bearer ${getEncodedToken()}` })

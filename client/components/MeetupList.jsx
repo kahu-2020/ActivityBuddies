@@ -1,9 +1,11 @@
 import React from 'react'
-import MeetupPost from './MeetupPost'
-
 import { connect } from 'react-redux'
 
-import { IfAuthenticated } from './Authenticated'
+import { getUpComingPosts } from '../actions/postListActions'
+import MeetupPost from './MeetupPost'
+
+
+
 
 class MeetupList extends React.Component {
     constructor(props) {
@@ -26,12 +28,34 @@ class MeetupList extends React.Component {
         })
     }
 
-    render() {
+    componentWillReceiveProps(nextProps) {
+        if(this.props.location == undefined && nextProps.location != undefined) {
+            this.props.dispatch(getUpComingPosts(nextProps.location.id)) //dispatch the action from postListActions
+        }
 
+
+    }
+
+
+
+    render() {
+        let today = new Date();
+        let upPosts = this.props.upcomingposts.filter((newestposts) => {
+            // newestpost is array of all postsby location
+
+            let postTime = new Date(newestposts.dateTime.split(' ').join(''))
+            // postTime variable format time of a post in yymmdd hh:mm
+            // delete space between date and T
+
+            
+            return postTime.getTime() > today.getTime()
+            //comparing time posted and current date+time
+        })
+        
         return (
             <div className="meetupList">
-                <h2>{this.props.location.name} meetups</h2>
-                
+                <h2>{this.props.location.name}</h2>
+
                 <form className="">
                     <select className="skillDropdown" value={this.setState.skillLevel} onChange={this.handleChange}>
                         <option value="">--Select your skill level--</option>
@@ -41,13 +65,17 @@ class MeetupList extends React.Component {
                         <option value="Expert">Expert</option>
                     </select>
                 </form>
+
                 
-                <button onClick={this.props.handleClick} className="addButton"> + </button>
+                    <button onClick={this.props.handleClick} className="addButton"> + </button>
+                
 
                 <div className="cardList">
-                    {this.props.posts.map((post, i) => {
-                        return <MeetupPost key={i} currentPost={post} activeSkill={this.state.skillLevel} />
-                    })}
+                    {upPosts.map(((newposts, idx) => {
+                        
+                        return <MeetupPost key={idx} currentPost={newposts} activeSkill={this.state.skillLevel}/>
+                    })
+                    )}
                 </div>
             </div>
         )
@@ -58,7 +86,8 @@ class MeetupList extends React.Component {
 function mapStateToProps(state) {
     return {
         posts: state.postList,
-        location: state.currentLocation
+        location: state.currentLocation,
+        upcomingposts: state.postList, // from PostListReduer reducer
     }
 }
 
