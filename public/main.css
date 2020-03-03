@@ -28,6 +28,7 @@ h1 {
 
 .about-blurb {
     font-size: 30px;
+    text-align: center;
     color: white;
     margin: auto;
     margin-top: 5%;
@@ -503,6 +504,10 @@ background-color: #262626;
     text-decoration: none !important;
 }
 
+.about-blurb p {
+    padding: 0px;
+    margin:0px;
+}
 
 
 
