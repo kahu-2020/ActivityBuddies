@@ -16,24 +16,31 @@ class Profile extends React.Component {
 
     render() {
         let profile = this.props.profile
+        let userPosts = this.props.userPosts
+        console.log(this.props.userPosts)
         return (
             <div className='profileWrapper'>
                 <div className='profColOne'>
                     <img className='profImg' src={profile.image_url} alt="" />
                     <div className='profInfo'>
                         <h2> {profile.name} </h2>
-                            <p>{profile.email}</p>
+                        <p>{profile.email}</p>
                         <h4>A bit about me</h4>
-                            <p>{profile.about}</p>
+                        <p>{profile.about}</p>
                         <h4>My favourite activity is</h4>
-                            <p>{profile.favourite_activity}</p>
+                        <p>{profile.favourite_activity}</p>
                     </div>
                 </div>
                 <div className='profColTwo'>
-                {/*  map through props of posts and display some info.... */}
-                {/* {userPosts.map(post => {
-                    <li>{post.date}</li> // something like this
-                })} */}
+                    {/*map through props of posts and display some info.... */}
+                    {userPosts.map(post => {
+                        return (
+                            <div>
+                                <p>{post.dateTime}</p><br />
+                                <p>{post.tracks}</p>
+                            </div>
+                        )
+                    })}
 
                 </div>
             </div>
@@ -48,4 +55,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps)(Profile) 

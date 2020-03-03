@@ -8,6 +8,9 @@ export default function postList (state = initialState, action) {
 
         case 'GOT_UPCOMING':
             return action.upcomingposts
+
+        case 'GOT_USER_POSTS':
+            return action.userPosts
             
         default:
             return state

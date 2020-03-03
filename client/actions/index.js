@@ -27,7 +27,6 @@ export function getCurrentLocation(id) {
         request.get('/api/v1/activities/location/'+id)
         .then(res => res.body)
         .then(location => {
-            console.log(location)
             dispatch(setCurrentLocation(location))
             dispatch(gotPostsByLocationID(location.id))
         })
@@ -63,7 +62,7 @@ export function getProfile(id) {
         request.get('/api/v1/profile/' + id)
         .then (res => {
             dispatch(gotProfile(res.body))
-            dispatch(getPostsByUser(res.body.id))
+            dispatch(getPostsByUserId(res.body.id))
         })
     }
 }
@@ -73,6 +72,22 @@ export function gotProfile(profile) {
     return {
         type: 'GOT_PROFILE',
         profile: profile
+    }
+}
+
+export function getPostsByUserId(id) {
+    return(dispatch) => {
+        request.get('/api/v1/profile/posts/'+ id)
+        .then(res => {
+            dispatch(gotUserPosts(res.body))
+        })
+    }
+}
+
+export function gotUserPosts(userPosts) {
+    return {
+        type: 'GOT_USER_POSTS',
+        userPosts: userPosts
     }
 }
 
