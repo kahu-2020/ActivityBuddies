@@ -67,8 +67,10 @@ h1 h2 h3 h4 h5 h6 {
 .logo{
 text-align: center;
 font-size: 2rem;
-margin: 40px 0px;
-padding: 0px;
+margin: 40px 45%;
+padding: 10px;
+border:white 2px solid;
+border-radius: 40%;
 }
 /* wrapper around each individual component excluding home */
 .wrapperBody {
