@@ -51,7 +51,7 @@ class LocationMeetups extends React.Component {
     }
 
     render() {
-        
+        console.log(this.props.location)
         return (
             <React.Fragment>
 
@@ -59,11 +59,11 @@ class LocationMeetups extends React.Component {
                     <div className="widgetWrapper">
                         {
                             this.props.currentActivity.id == 1 
-                                ? <React.Fragment><link href="//www.surf-forecast.com/stylesheets/widget.css" className='TrailforksWidgetMap' media="screen" rel="stylesheet" type="text/css" /><div class="wf-width-cont surf-fc-widget"><div class="widget-container"><div class="external-cont"><iframe class="surf-fc-i" allowtransparency="true" src={this.props.location.widget} scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div></div></div></React.Fragment> 
+                                ? <div style={{display: this.state.loading ? 'none' : 'block'}}><link href="//www.surf-forecast.com/stylesheets/widget.css" className='TrailforksWidgetMap' media="screen" rel="stylesheet" type="text/css" /><div class="wf-width-cont surf-fc-widget"><div class="widget-container"><div class="external-cont"><iframe class="surf-fc-i" allowtransparency="true" src={this.props.location.widget} scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div></div></div></div> 
                                 : <div style={{display: this.state.loading ? 'none' : 'block'}}><iframe className='TrailforksWidgetMap' src={this.props.location.widget} scrolling="no" frameborder="0" allowfullscreen="1" width="400px" height="800px" id="map0" /></div>
                        }
 
-                        { this.state.loading ? 'loading' : 'done' }
+                        { this.state.loading ? 'loading' : '' }
                     </div>
 
                     <div className="postListingWrapper">
