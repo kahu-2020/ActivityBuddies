@@ -57,6 +57,22 @@ export function gotLocations(locations) {
     }
 }
 
+export function getProfile(id) {
+    console.log(id)
+    return (dispatch) => {
+        request.get('/api/v1/profile/' + id)
+        .then (res => dispatch(gotProfile(res.body)))
+    }
+}
+
+export function gotProfile(profile) {
+    console.log(profile)
+    return {
+        type: 'GOT_PROFILE',
+        profile: profile
+    }
+}
+
 export function postAdded(newPost) {
     return {
         type: 'ADD_POST',
@@ -96,4 +112,3 @@ export function gotActivities(activities) {
         activities: activities 
     }
 }
-

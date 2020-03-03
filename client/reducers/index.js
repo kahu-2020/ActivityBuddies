@@ -6,6 +6,7 @@ import currentLocation from './currentLocation'
 import newPost from './newPost'
 import activities from './activities'
 import currentActivity from './currentActivity'
+import profile from './profileReducer'
 
 
 export default combineReducers({
@@ -16,5 +17,5 @@ export default combineReducers({
     newPost,
     activities, 
     currentActivity,
-
+    profile
 })
