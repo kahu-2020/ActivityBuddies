@@ -449,10 +449,9 @@ background-color: #262626;
 .register-wrapper {
     display: flex;
     align-content: justify;
-
-    margin: auto;
+    margin: 5px auto;
     width: 60%;
-    height: 400px;
+    height: auto;
     border: 3px solid black;
 
     background-color: rgba(0, 0, 0, 0.577);
@@ -479,12 +478,10 @@ background-color: #262626;
     display: flex;
     flex-direction: column;
     align-content: center;
-
-    justify-content: center;
-
+    margin: auto;
     text-align: center;
     height: 100%;
-    width: 60%;
+    width: 40%;
 }
 
 .register-column-two {
@@ -494,7 +491,7 @@ background-color: #262626;
     align-content: center;
     margin: 20px;
     height: 100%;
-    width: 40%;
+    width: 60%;
 }
 
 .rego-input {
@@ -510,6 +507,35 @@ background-color: #262626;
 .about-blurb p {
     padding: 0px;
     margin:0px;
+}
+
+
+/* PROFILE PAGE  */
+
+.profileWrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    background-color: white;
+    color: black;
+}
+
+.profColOne {
+    width: 30%;
+    margin: 30px;
+}
+
+.profColTwo {
+    width: 70%;
+    margin: 30px;
+}
+
+.profImg {
+    width: 100%;
+}
+
+.profInfo {
+    border: 2px solid black;
 }
 
 

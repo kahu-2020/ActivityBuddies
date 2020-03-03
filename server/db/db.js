@@ -108,10 +108,9 @@ function createUser (user, db = connection) {
 
   //get posts via owner id
   function getPostsByUser (userId, db = connection) {
-    console.log("reaching the database: get posts by userID")
     return db('posts')
-    .select()
     .where('user_id', userId)
+    .select()
   }
 
   
