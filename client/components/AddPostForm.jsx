@@ -41,9 +41,9 @@ class AddPostForm extends React.Component {
   render() {
     return (
       <div className='addPostFormWrapper'>
-        <form className='addPostForm' onSubmit={this.handleSubmit}>
+        
           <button className='pst-frm-bck-btn' onClick={this.props.goBack}>Go back</button>
-
+          <form className='addPostForm' onSubmit={this.handleSubmit}>
           {/* Add new post form */}
 
           <label className="frm-usr-lbl" htmlFor='name'>Username: </label>
@@ -105,21 +105,16 @@ class AddPostForm extends React.Component {
             <option value='Expert'>Expert</option>
           </select>
 
-
           <label className="frm-usr-lbl" htmlFor='name'>Date and time: </label>
-          <input
-            className='frm-usr-ipt'
-            type="datetime-local" id="meeting-time"
-            name="dateTime"
-            min={new Date()} max="2040-06-14T00:00" onChange={this.handleChange}>
-          </input>
-
-
-
-          <input className='frm-usr-ipt' type='submit' value='submit' />
-
+            <input className='frm-usr-ipt'
+              type="datetime-local" id="meeting-time"
+              name="dateTime"
+              min={new Date()} max="2040-06-14  T00:00" onChange={this.handleChange}>
+            </input>
+            <br /><br />
+          
+            <input className='frm-usr-ipt' type='submit' value='submit' />
         </form>
-
       </div>
     )
   }
