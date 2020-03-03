@@ -4,19 +4,19 @@ const router = express.Router()
 
 router.use(express.json())
 
-const { getTokenDecoder } = require('authenticare/server')
 
-router.get('posts/', (req, res) => {
-    db.getPostsByUser(req.user.id)
+router.get('/posts/:id', (req, res) => {
+    db.getPostsByUser(req.params.id)
     .then ( posts => {
+        console.log(posts)
         res.json(posts)
     })
 })
 
-router.get('/', (req, res) => {
-    db.getProfileByUser(req.user.id)
-    .then ( posts => {
-        res.json(posts)
+router.get('/:id', (req, res) => {
+    db.getProfileByUser(req.params.id)
+    .then ( profile => {
+        res.json(profile[0])
     })
 })
 

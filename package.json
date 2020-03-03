@@ -8,8 +8,7 @@
     "dev:client": "webpack --watch",
     "dev:server": "nodemon --watch server",
     "test": "jest --watchAll",
-    "start": "node server",
-    "postinstall": "webpack"
+    "start": "node server"
   },
   "author": "EDA",
   "license": "ISC",
@@ -29,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.5.3",
     "authenticare": "^0.4.6",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^1.7.0",

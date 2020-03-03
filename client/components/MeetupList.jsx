@@ -1,11 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { IfAuthenticated } from './Authenticated'
-
+import { IfAuthenticated } from  './Authenticated'
 import { getUpComingPosts } from '../actions/postListActions'
 import MeetupPost from './MeetupPost'
-
-
 
 
 class MeetupList extends React.Component {
@@ -18,10 +15,7 @@ class MeetupList extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-
     }
-
-
 
     handleChange = (e) => {
         this.setState({
@@ -29,31 +23,30 @@ class MeetupList extends React.Component {
         })
     }
 
-    componentDidMount() {
-        this.props.dispatch(getUpComingPosts(this.props.currentLocation)) //dispatch the action from postListActions
-        
+    componentWillReceiveProps(nextProps) {
+        if (this.props.location == undefined && nextProps.location != undefined) {
+            this.props.dispatch(getUpComingPosts(nextProps.location.id)) //dispatch the action from postListActions
+        }
     }
-
-
 
     render() {
         let today = new Date();
         let upPosts = this.props.upcomingposts.filter((newestposts) => {
-        // newestpost is array of all postsby location
-                    
+            // newestpost is array of all postsby location
+
             let postTime = new Date(newestposts.dateTime.split(' ').join(''))
             // postTime variable format time of a post in yymmdd hh:mm
             // delete space between date and T
-            
-            console.log(postTime)
+
+
             return postTime.getTime() > today.getTime()
             //comparing time posted and current date+time
-            })
+        })
 
         return (
             <div className="meetupList">
                 <h2>{this.props.location.name}</h2>
-                
+
                 <form className="">
                     <select className="skillDropdown" value={this.setState.skillLevel} onChange={this.handleChange}>
                         <option value="">--Select your skill level--</option>
@@ -63,13 +56,16 @@ class MeetupList extends React.Component {
                         <option value="Expert">Expert</option>
                     </select>
                 </form>
-                
-                <button onClick={this.props.handleClick} className="addButton"> + </button>
+
+                <IfAuthenticated>
+                    <button onClick={this.props.handleClick} className="addButton"> + </button>
+                </IfAuthenticated>
 
                 <div className="cardList">
-                    {upPosts.map((function upComingPost(newposts, idx) {
-                        console.log(newposts)
-                        return <MeetupPost key={idx} currentPost={newposts} />})
+                    {upPosts.map(((newposts, idx) => {
+
+                        return <MeetupPost key={idx} currentPost={newposts} activeSkill={this.state.skillLevel} />
+                    })
                     )}
                 </div>
             </div>

@@ -6,6 +6,7 @@ exports.up = function(knex) {
         table.string('image_url')
         table.string('about')
         table.string('favourite_activity')
+        table.string('email')
         table.string('user_id')
     })   
 };
