@@ -67,7 +67,7 @@ exports.seed = function (knex) {
           dateTime: '2020-03-14  T12:00',
           tracks: 'Beginners loop + Skills area',
           skill: 'Beginner',
-          location_id: 1,
+          location_id: 2,
           attendees: 0, 
           user_id: 2
         },
@@ -78,7 +78,7 @@ exports.seed = function (knex) {
           dateTime: '2020-03-18  T13:00',
           tracks: 'Mid Peak loop + Magic Carpet',
           skill: 'Intermediate',
-          location_id: 1,
+          location_id: 3,
           attendees: 0, 
           user_id: 2
         },
