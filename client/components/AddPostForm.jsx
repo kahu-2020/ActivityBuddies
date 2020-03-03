@@ -2,6 +2,7 @@ import React from 'react'
 import { addPostApi } from '../api'
 import { connect } from 'react-redux'
 import { addPost } from '../actions'
+import {getDecodedToken} from 'authenticare/client'
 
 class AddPostForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class AddPostForm extends React.Component {
       dateTime: '',
       tracks: '',
       skill: '',
-      location_id: ''
+      location_id: '',
+      user_id: getDecodedToken().id
     }
     this.handleChange = this.handleChange.bind(this),
       this.handleSubmit = this.handleSubmit.bind(this)

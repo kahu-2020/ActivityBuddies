@@ -40,7 +40,8 @@ function addPost (post, db = connection) {
             tracks: post.tracks,
             skill: post.skill,
             location_id: post.location_id, 
-            attendees: 0
+            attendees: 0,
+            user_id: post.user_id
         })
 }
 

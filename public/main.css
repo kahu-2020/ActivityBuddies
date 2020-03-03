@@ -355,10 +355,16 @@ border-radius: 40%;
     padding: 0;
     overflow: hidden;
     background-color: #495264;
+    display: flex;
+    justify-content: space-between;
+}
+.navAuth{
+    display: flex;
+    flex-direction: row;
 }
 
 .navbar li {
-float: left;
+/* float: left; */
 font-size: 1.25rem;
 }
 

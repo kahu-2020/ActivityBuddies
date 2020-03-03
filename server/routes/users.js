@@ -5,8 +5,8 @@ const router = express.Router()
 router.use(express.json())
 
 
-router.get('posts/', (req, res) => {
-    db.getPostsByUser(req.user.id)
+router.get('posts/:id', (req, res) => {
+    db.getPostsByUser(req.params.id)
     .then ( posts => {
         res.json(posts)
     })
