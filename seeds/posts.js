@@ -8,7 +8,7 @@ exports.seed = function (knex) {
         {
           id: 1,
           user_name: 'Henry',
-          notes: 'cowabunga',
+          notes: 'Meet in the carpark',
           dateTime: '2020-03-01  T09:00',
           tracks: 'To Summit + Ridgeline',
           skill: 'Expert',
@@ -18,7 +18,7 @@ exports.seed = function (knex) {
         {
           id: 2,
           user_name: 'Claire',
-          notes: 'double shakka',
+          notes: 'Meet by the bikepump. Coffee afterwards?',
           dateTime: '2020-03-02  T12:00',
           tracks: 'To Summit + Trickle Falls',
           skill: 'Expert',
@@ -28,7 +28,7 @@ exports.seed = function (knex) {
         {
           id: 3,
           user_name: 'Ethan',
-          notes: 'has anyone seen Lui?',
+          notes: 'Meet at the Koru entrance in the carpark',
           dateTime: '2020-03-03  T13:00',
           tracks: 'Mid Peak loop + Starfish',
           skill: 'Advanced',
@@ -38,7 +38,7 @@ exports.seed = function (knex) {
         {
           id: 4,
           user_name: 'Kel',
-          notes: 'how long will this take?',
+          notes: 'Meet at the Saddle',
           dateTime: '2020-02-08  T13:00',
           tracks: 'Hataitai Zigzag',
           skill: 'Beginner',
@@ -48,7 +48,7 @@ exports.seed = function (knex) {
         {
           id: 5,
           user_name: 'Dan',
-          notes: 'can someone lend me a bike please?',
+          notes: 'Meet at the end of Holloway Rd',
           dateTime: '2020-02-08  T10:00',
           tracks: 'Clinical + Highbury fling + Serendipity + Transient',
           skill: 'Advanced',
@@ -58,7 +58,7 @@ exports.seed = function (knex) {
         {
           id: 6,
           user_name: 'Seb',
-          notes: 'Meeting at the carpark, coffee afterwards?',
+          notes: 'Meeting Fat Bird resturant',
           dateTime: '2020-03-07  T12:00',
           tracks: 'Beginners loop + Skills area',
           skill: 'Beginner',
@@ -68,7 +68,7 @@ exports.seed = function (knex) {
         {
           id: 7,
           user_name: 'Scott',
-          notes: 'Nice slow ride with a few challenging tracks',
+          notes: 'Meet in the carpark, can carpool if needed.',
           dateTime: '2020-03-08  T13:00',
           tracks: 'Mid Peak loop + Magic Carpet',
           skill: 'Intermediate',
@@ -78,17 +78,18 @@ exports.seed = function (knex) {
         {
           id: 8,
           user_name: 'Clive',
-          notes: 'Beer on the beach afterwards?',
+          notes: 'Meet at Maranui cafe. Beer on the beach afterwards?',
+          tracks: 'Airport reef end',
           dateTime: '2020-04-08  T13:00',
           tracks: '',
           skill: 'Expert',
-          location_id: 9,
+          location_id: 7,
           attendees: 0
         },
         {
           id: 9,
           user_name: 'Reuben',
-          notes: 'Spare boogieboards if needed',
+          notes: 'Meet at ParrodDog. Spare boogieboards if needed',
           dateTime: '2020-03-07  T12:00',
           tracks: 'Maranui end',
           skill: 'Beginner',
@@ -98,7 +99,7 @@ exports.seed = function (knex) {
         {
           id: 10,
           user_name: 'Samantha',
-          notes: 'Fish and chips to share post surf',
+          notes: 'Meet at airport side carpark. Fish and chips afterwards?',
           dateTime: '2020-04-08  T13:00',
           tracks: 'Airport reef end',
           skill: 'Intermediate',
