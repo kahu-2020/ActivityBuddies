@@ -1,9 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { IfAuthenticated } from './Authenticated'
+
+import { getUpComingPosts } from '../actions/postListActions'
 import MeetupPost from './MeetupPost'
 
-import { connect } from 'react-redux'
 
-import { IfAuthenticated } from './Authenticated'
+
 
 class MeetupList extends React.Component {
     constructor(props) {
@@ -26,7 +29,26 @@ class MeetupList extends React.Component {
         })
     }
 
+    componentDidMount() {
+        this.props.dispatch(getUpComingPosts(this.props.currentLocation)) //dispatch the action from postListActions
+        
+    }
+
+
+
     render() {
+        let today = new Date();
+        let upPosts = this.props.upcomingposts.filter((newestposts) => {
+        // newestpost is array of all postsby location
+                    
+            let postTime = new Date(newestposts.dateTime.split(' ').join(''))
+            // postTime variable format time of a post in yymmdd hh:mm
+            // delete space between date and T
+            
+            console.log(postTime)
+            return postTime.getTime() > today.getTime()
+            //comparing time posted and current date+time
+            })
 
         return (
             <div className="meetupList">
@@ -45,9 +67,10 @@ class MeetupList extends React.Component {
                 <button onClick={this.props.handleClick} className="addButton"> + </button>
 
                 <div className="cardList">
-                    {this.props.posts.map((post, i) => {
-                        return <MeetupPost key={i} currentPost={post} activeSkill={this.state.skillLevel} />
-                    })}
+                    {upPosts.map((function upComingPost(newposts, idx) {
+                        console.log(newposts)
+                        return <MeetupPost key={idx} currentPost={newposts} />})
+                    )}
                 </div>
             </div>
         )
@@ -58,7 +81,8 @@ class MeetupList extends React.Component {
 function mapStateToProps(state) {
     return {
         posts: state.postList,
-        location: state.currentLocation
+        location: state.currentLocation,
+        upcomingposts: state.postList, // from PostListReduer reducer
     }
 }
 
