@@ -20,8 +20,9 @@ class Profile extends React.Component {
         console.log(this.props.userPosts)
         return (
             <div className='profileWrapper'>
+
                 <div className='profColOne'>
-                    <img className='profImg' src={profile.image_url} alt="" />
+                    <img className='profImg' src={profile.image_url} alt="profile image of user" />
                     <div className='profInfo'>
                         <h2> {profile.name} </h2>
                         <p>{profile.email}</p>
@@ -31,8 +32,8 @@ class Profile extends React.Component {
                         <p>{profile.favourite_activity}</p>
                     </div>
                 </div>
-                <div className='profColTwo'>
-                    {/*map through props of posts and display some info.... */}
+
+                <div className='profColTwo'> 
                     {userPosts.map(post => {
                         return (
                             <div>
@@ -41,8 +42,8 @@ class Profile extends React.Component {
                             </div>
                         )
                     })}
-
                 </div>
+
             </div>
         )
     }
