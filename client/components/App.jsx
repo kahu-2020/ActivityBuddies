@@ -28,8 +28,8 @@ class App extends React.Component{
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/expiry' component={Expiry} />
-          <Route exact path='/:activity' component={Locations} />
-          <Route exact path='/:activity/:location' component={LocationMeetups}/>
+          <Route exact path='/move/:activity' component={Locations} />
+          <Route exact path='/move/:activity/:location' component={LocationMeetups}/>
         </Switch> 
       </div>
     </Router>
