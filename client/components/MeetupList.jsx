@@ -30,7 +30,7 @@ class MeetupList extends React.Component {
 
         return (
             <div className="meetupList">
-                <h2>{this.props.location.name} meetups</h2>
+                <h2>{this.props.location.name}</h2>
                 
                 <form className="">
                     <select className="skillDropdown" value={this.setState.skillLevel} onChange={this.handleChange}>
@@ -42,7 +42,7 @@ class MeetupList extends React.Component {
                     </select>
                 </form>
                 
-                <IfAuthenticated><button onClick={this.props.handleClick} className="addButton"> + </button></IfAuthenticated>
+                <button onClick={this.props.handleClick} className="addButton"> + </button>
 
                 <div className="cardList">
                     {this.props.posts.map((post, i) => {
