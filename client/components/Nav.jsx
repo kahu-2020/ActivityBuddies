@@ -9,7 +9,7 @@ class Nav extends React.Component {
     
     logout = () => {
         logOff()
-        window.location.reload(false)
+       this.props.history.push('/')
     }
 
     render() {
