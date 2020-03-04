@@ -33,7 +33,7 @@ export function getUpComingPostsApi(locationId) {
     // console.log('upcoming')
     return request.get('/api/v1/posts/upcoming/' + locationId)
     .then(res => {
-        console.log(res.body, locationId)
+        //console.log(res.body, locationId)
         return res.body
     })
 }
