@@ -3,8 +3,8 @@ exports.up = function(knex) {
     return knex.schema.createTable('profiles', (table) => {
         table.increments('id').primary
         table.string('name')
-        table.string('image_url')
-        table.string('about')
+        table.text('image_url')
+        table.text('about')
         table.string('favourite_activity')
         table.string('email')
         table.string('user_id')
