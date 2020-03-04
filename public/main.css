@@ -7,6 +7,22 @@ h1 {
     margin-top: 0px;
 } 
 
+.fmlImg {
+    width: 80px;
+}
+
+.fml p{
+    font-size: 16px;
+    padding: 10px;
+    
+}
+
+a.fml {
+    margin: 0px 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
 
 .act-btn {
     color: white;
@@ -39,11 +55,16 @@ h1 {
     text-shadow: black 2px 2px;
     margin: 5px 10% 5px 10%;
     background-color: rgba(0, 0, 0, 0.132);
-
-
-
-
 }
+
+.home-btn-links:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    transition-duration: 0.4s;
+}
+
+
 body {
     padding: 0;
     margin: 0;
@@ -63,14 +84,24 @@ h1 h2 h3 h4 h5 h6 {
     font-weight: lighter;
 }
 
+.arrow {
+   width: 50px;
+   height: 50px; 
+    margin: 20px 40px;
+}
+
+.backsection {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
 
 .logo{
 text-align: center;
 font-size: 2rem;
 margin: 40px 45%;
 padding: 10px;
-border:white 2px solid;
-border-radius: 40%;
+font-family: 'Montserrat Subrayada', sans-serif;
 }
 /* wrapper around each individual component excluding home */
 .wrapperBody {
@@ -123,6 +154,7 @@ border-radius: 40%;
     color:black;
     text-align: center;
     font-size: 5rem;
+    font-weight: lighter;
 }
 
 .loc-btn{
@@ -141,11 +173,12 @@ border-radius: 40%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 35px;
     transition-duration: 0.4s;
     width: 80%;
     margin: 15px 65px;
     border-radius: 1em;
+    font-weight: lighter;
 }
 
 
@@ -156,11 +189,13 @@ border-radius: 40%;
 
 .widgetWrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     background-color: #F3F5F0;
     height: 900px;
     width: 65%;
     font-size: 40px;
+    text-align: center;
 }
 
 .widget-container{
@@ -229,7 +264,8 @@ border-radius: 40%;
 
 .meetupList h2 {
     height: 8%;
-    font-size: 4rem;
+    font-size: 4.5rem;
+    font-weight: lighter;
     /* background-color: F3F5F0;  */
     color: black;
     /* color: #F3F5F0; */

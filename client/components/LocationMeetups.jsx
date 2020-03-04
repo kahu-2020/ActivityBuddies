@@ -51,7 +51,7 @@ class LocationMeetups extends React.Component {
     }
 
     render() {
-        console.log(this.props.location)
+    
         return (
             <React.Fragment>
 
@@ -63,7 +63,13 @@ class LocationMeetups extends React.Component {
                                 : <div style={{display: this.state.loading ? 'none' : 'block'}}><iframe className='TrailforksWidgetMap' src={this.props.location.widget} scrolling="no" frameborder="0" allowfullscreen="1" width="400px" height="800px" id="map0" /></div>
                        }
 
-                        { this.state.loading ? 'loading' : '' }
+                        { this.state.loading ? 'loading' : <a className='fml'>
+                       <img className='fmlImg' src="/images/fml.png" alt=" link to follow my lead site"/><p>Take a dog on your adventure!</p> 
+                       </a> }
+                        
+                        {/* <a >
+                       <img className='fmlImg' src="/images/fml.png" alt=" link to follow my lead site"/>
+                       </a> */}
                     </div>
 
                     <div className="postListingWrapper">

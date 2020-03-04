@@ -21,6 +21,7 @@ class Profile extends React.Component {
         //console.log(this.props.userPosts)
         return (
             <div className='profileWrapper'>
+
                 <div className='profColOne'>
                     <img className='profImg' src={profile.image_url} alt="" />
                     <h2 className='profile-title'> {profile.name} </h2>
@@ -52,6 +53,7 @@ class Profile extends React.Component {
                     </div>
 
                 </div>
+
             </div>
         )
     }
