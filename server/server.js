@@ -16,7 +16,6 @@ server.use('/api/v1/posts', postsRoutes)
 server.use('/api/v1', authRoutes)
 
 
-
 module.exports = server
 
 

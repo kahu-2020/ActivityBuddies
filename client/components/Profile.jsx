@@ -15,33 +15,43 @@ class Profile extends React.Component {
 
 
     render() {
+        console.log(this.props.userPosts[0])
         let profile = this.props.profile
         let userPosts = this.props.userPosts
-        console.log(this.props.userPosts)
+        //console.log(this.props.userPosts)
         return (
             <div className='profileWrapper'>
 
                 <div className='profColOne'>
-                    <img className='profImg' src={profile.image_url} alt="profile image of user" />
+                    <img className='profImg' src={profile.image_url} alt="" />
+                    <h2 className='profile-title'> {profile.name} </h2>
                     <div className='profInfo'>
-                        <h2> {profile.name} </h2>
+                        
                         <p>{profile.email}</p>
                         <h4>A bit about me</h4>
-                        <p>{profile.about}</p>
+                        <p className='profileBlurb'>{profile.about}</p>
                         <h4>My favourite activity is</h4>
                         <p>{profile.favourite_activity}</p>
                     </div>
                 </div>
-
-                <div className='profColTwo'> 
+                <div className='profColTwo'>
+                    <h2> Your Meetups </h2>
+                    <div className='profCardList'>
+                    {/*map through props of posts and display some info.... */}
                     {userPosts.map(post => {
                         return (
-                            <div>
-                                <p>{post.dateTime}</p><br />
-                                <p>{post.tracks}</p>
+                            <div className='profilePostCard'>
+                                <div className='profileCardHeader'>
+                                <p>{post.name} :</p>
+                                <p>{post.dateTime}</p>
+                                </div>
+                                <p className='meetupP'><span className='cardTitle'> Notes: </span>{post.notes}</p>
+                                <p className='meetupP'><span className='cardTitle'> The Plan: </span>{post.tracks}</p>
                             </div>
                         )
                     })}
+                    </div>
+
                 </div>
 
             </div>

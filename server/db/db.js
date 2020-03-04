@@ -40,7 +40,8 @@ function addPost (post, db = connection) {
             tracks: post.tracks,
             skill: post.skill,
             location_id: post.location_id, 
-            attendees: 0
+            attendees: 0,
+            user_id: post.user_id
         })
 }
 
@@ -109,8 +110,9 @@ function createUser (user, db = connection) {
   //get posts via owner id
   function getPostsByUser (userId, db = connection) {
     return db('posts')
+    .join('locations', 'locations.id', '=', 'location_id')
     .where('user_id', userId)
-    .select()
+    .select('user_name', 'notes', 'dateTime', 'tracks', 'skill', 'attendees', 'name')
   }
 
   
