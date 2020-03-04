@@ -6,7 +6,7 @@ Have fun. Cement the stack. Master full stack development. One week. That's what
 
 The focus of this app is to provide a way for people to have new experiences and make new friends via outdoor Wellington activities. Our hope is that we have a place for people looking to expand both their friend group and adventurous horizons.
 
-
+Key: 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 
 
 ## The Tech
 
