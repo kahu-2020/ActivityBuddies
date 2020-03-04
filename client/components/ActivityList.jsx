@@ -19,7 +19,6 @@ class ActivityList extends React.Component {
     }
 
     render() {
-
         return (
             <div className='activity-container'>
                 {this.props.activities.map(activity => {
