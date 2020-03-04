@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path')
 const Dotenv = require('dotenv-webpack')
 
@@ -21,7 +22,10 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
-    new Dotenv()
+    new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env.BASE_API_URL': JSON.stringify(process.env.BASE_API_URL)
+    })
   ],
   devtool: 'source-map',
   node: {
