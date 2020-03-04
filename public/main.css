@@ -568,7 +568,7 @@ background-color: #262626;
     margin: 20px;
     background-color: #FFFAFA;
     color: black;
-    height: 90vh;
+    height: 800px;
     text-align: center;
 }
 
@@ -605,7 +605,6 @@ background-color: #262626;
 .profCardList {
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll;
 }
 
 .profImg {
@@ -618,7 +617,6 @@ background-color: #262626;
 
 .profInfo {
     height: 30vh;
-    overflow-y: scroll;
 }
 
 .profInfo h4 {
