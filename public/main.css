@@ -7,6 +7,22 @@ h1 {
     margin-top: 0px;
 } 
 
+.fmlImg {
+    width: 80px;
+}
+
+.fml p{
+    font-size: 16px;
+    padding: 10px;
+    
+}
+
+a.fml {
+    margin: 0px 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
 
 .act-btn {
     color: white;
@@ -173,11 +189,13 @@ font-family: 'Montserrat Subrayada', sans-serif;
 
 .widgetWrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     background-color: #F3F5F0;
     height: 900px;
     width: 65%;
     font-size: 40px;
+    text-align: center;
 }
 
 .widget-container{
