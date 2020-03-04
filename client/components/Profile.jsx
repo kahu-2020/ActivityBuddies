@@ -30,8 +30,7 @@ class Profile extends React.Component {
                         <p>{profile.email}</p>
                         <h4>A bit about me</h4>
                         <p className='profileBlurb'>{profile.about}</p>
-                        <h4>My favourite activity is</h4>
-                        <p>{profile.favourite_activity}</p>
+
                     </div>
                 </div>
                 <div className='profColTwo'>
