@@ -5,9 +5,10 @@ const router = express.Router()
 router.use(express.json())
 
 
-router.get('posts/:id', (req, res) => {
+router.get('/posts/:id', (req, res) => {
     db.getPostsByUser(req.params.id)
     .then ( posts => {
+        console.log(posts)
         res.json(posts)
     })
 })

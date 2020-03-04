@@ -9,7 +9,7 @@ class AddPostForm extends React.Component {
     super(props)
 
     this.state = {
-      user_name: '',
+      user_name: getDecodedToken().username,
       notes: '',
       dateTime: '',
       tracks: '',
@@ -48,15 +48,7 @@ class AddPostForm extends React.Component {
           <form className='addPostForm' onSubmit={this.handleSubmit}>
           {/* Add new post form */}
 
-          <label className="frm-usr-lbl" htmlFor='name'>Username: </label>
-          <input
-            className='frm-usr-ipt'
-            type='text'
-            name='user_name'
-            placeholder='username'
-            value={this.setState.user_name}
-            onChange={this.handleChange}
-          />
+
 
 
           <label className="frm-usr-lbl" htmlFor='name'>Notes: </label>
