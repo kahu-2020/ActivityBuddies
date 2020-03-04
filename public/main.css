@@ -618,7 +618,7 @@ background-color: #262626;
 
 .profInfo {
     height: 30vh;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
 }
 
 .profInfo h4 {
