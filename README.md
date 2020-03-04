@@ -17,6 +17,7 @@ We are going to need the following:
 * [Express](https://expressjs.com/en/api.html)
 * [Knex.js (SQL)](https://knexjs.org/)
 * [React-Router](#)
+* [Send-Grid](#)
 
 We will create database migrations through knex to create a database. We will use seed files to insert test data into our database.
 
@@ -30,26 +31,30 @@ As a user I should be able to...
 
 * navigate through the pages of the website without issue.
 * select my sport/outdoor activity of choice.
-* see a list of tracks/locations specific to skill level.
+* see a list of locations specific to activity.
 * see a list of meetup posts.
+* change the posts view by skill level.
 * create a meetup with a skill-level and location, as well as some other junk.
-* say if I am going to attend a meetup.
+* join another users meetup.
 
 ### Stretch
 
 * ...register and login to the website.
 * ...and only be able to make new postings if I am a registered user.
-* ...I should be able to see anyone who is going to attend a meetup I have created.
+* ...I want to be able to see how many people are coming to my meetup.
 * ...only be able to respond to a meetup if I am logged in.
 * ...I should have a user page and profile and shows my meetups and a pretty photo of me.
 * ...Create a new sport/activity that specifically has to be outside.
-* ... Set expiry date on post which would delete it.
+* ... Set expiry date on post which would stop it showing on the meetup page.
+
 ## Views (Client Side)
   | name | purpose |
   | --- | --- |
-  | home | displays a selection of activites via icons that allows you to search through for the one you want. It also contains a small blurb about the website. |
+  | home | displays a selection of activites. It also contains a small blurb about the website. |
   | location | this view shows a map of wellington alongside a list of locations relevant to your chosen activity. |
-  | meetups | this view shows a list of the meetup postings alongside a widget or similar map to show where you go and who is doing stuff there. Also lets us make a new thing by changing out the meetupList for a meetupAdd form. | 
+  | meetups | this view shows a list of the meetup postings alongside a widget or similar map to show where you go and who is doing stuff there. Also lets us to add a meetup through a meetupAdd form. | 
+  | profile | displays the user's photo, name, blurb, email address, meetup posts. |
+  | login/register | input fields for each column i user seed data |
 
   * in the meetups we have the post list, the widget, and the 'add a post' form.
 
@@ -59,9 +64,13 @@ As a user I should be able to...
   | --- | --- |
   | auth(*stretch) | Store information regarding user logins, auth status and auth errors | 
   | skillLevel (this is local state, not reducer)| Changes the CSS of the meetups posting |
+  | activities| List of all the activities for the home page |
   | currentActivity | Hold current activity information |
+  | Locations | Hold the list of all locations for the specific activity |
   | currentLocation | Hold current location information |
   | posts | posts and changes posts |
+  | currentUser | Holds the current users info including active posts |
+  | RSVP | Holds current number of attendees |
   
 ## Actions (Client Side)
 
@@ -75,6 +84,7 @@ As a user I should be able to...
   | ADD_POST | posts | To Make a post and add it to posts |
   | SET_RSVP | posts | Changes the display of post referring to the number of people going |
 
+...etc for extra stretch
 
 ## API (Client - Server)
 
@@ -85,6 +95,8 @@ As a user I should be able to...
 | Get | /api/v1/posts/:id | No | get posts for a certain location using location id | object |
 | POST | /api/v1/posts | Yes (if we do it) | post a post to the database| null |
 | POST | /api/v1/posts/rsvp | Yes (if we do it) | set rsvp for a post | null |
+
+...etc for extra stretch
 
 
 ## DB (Server Side) -
@@ -121,6 +133,21 @@ As a user I should be able to...
  | tracks | string | post tracks |
  | skill | string | post skill level of post |
  | location_id | integer | Foreign key for locations |
+ ---
+
+
+### Stretch 
+### Profiles
+ | Column Name | Data Type | Purpose |
+ | --- | --- | --- |
+ | id | Integer | Unique identifier for each post |
+ | user_name | string | Used for login |
+ | name | string | first name|
+ | image_url | string | users profile picture |
+ | about | string | about user section |
+ | favourite_activity | string | Users fav activity |
+ | user_id | integer | user_id to link to posts |
+ | email | string | email address for send-grid |
  ---
 
 
