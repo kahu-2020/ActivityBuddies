@@ -22,11 +22,7 @@ class ActivityList extends React.Component {
         return (
             <div className='activity-container'>
                 {this.props.activities.map(activity => {
-<<<<<<< HEAD
                     return <Link className='act-btn hover-1' to={'/move/'+activity.name} onClick={() => this.handleClick(activity)}><p className='home-btn-links' key={activity.id}>{activity.name}</p></Link>
-=======
-                return <Link className='act-btn hover-1' to={'/move/'+activity.name} onClick={() => this.handleClick(activity)}><p key={activity.id} className="home-btn-links">{activity.name}</p></Link>
->>>>>>> 8228b881ec5810e22ef0736624ba5c3d42c76498
                 })}
             </div>
         )
